@@ -1,0 +1,217 @@
+{
+  "site": {
+    "title": "Your Name — Full-stack & AI Engineer",
+    "description": "Portfolio of Your Name: full-stack engineer building scalable, AI-driven products.",
+    "url": "https://example.com",
+    "locale": "en",
+    "ogImage": null
+  },
+  "person": {
+    "name": "Your Name",
+    "shortName": "Your Name",
+    "role": "Engineer"
+  },
+  "nav": {
+    "links": [
+      { "label": "Stack", "href": "#stack" },
+      { "label": "Experience", "href": "#experience" },
+      { "label": "Work", "href": "#work" }
+    ],
+    "cta": { "label": "Contact", "href": "#contact" }
+  },
+  "hero": {
+    "eyebrow": "Full-stack · AI engineer · Portfolio",
+    "title": "Hi, I'm [Your]\nName",
+    "tagline": "a full-stack engineer with a passion for building scalable and [AI-driven] applications.",
+    "primaryCta": { "label": "See my Works", "href": "#work" },
+    "secondaryCta": { "label": "Get in touch", "href": "#contact" },
+    "chapters": ["01 / The room", "02 / The desk", "03 / The shelf", "04 / The code"],
+    "poster": null
+  },
+  "process": {
+    "label": "How I work",
+    "steps": [
+      { "label": "Ideas", "icon": "idea", "accent": "amber" },
+      { "label": "Concepts", "icon": "concept", "accent": "pink" },
+      { "label": "Designs", "icon": "design", "accent": "violet" },
+      { "label": "Code", "icon": "code", "accent": "cyan" }
+    ]
+  },
+  "stack": {
+    "id": "stack",
+    "eyebrow": "Introduction",
+    "title": "My preferred\ntech [stack].",
+    "intro": "A short line about the kinds of problems you like to solve and the tools you reach for.",
+    "roles": [
+      { "title": "Role One", "tags": ["Tool", "Tool", "Tool"], "model": "cube", "accent": "violet" },
+      { "title": "Role Two", "tags": ["Tool", "Tool", "Tool"], "model": "hex", "accent": "green" },
+      { "title": "Role Three", "tags": ["Tool", "Tool", "Tool"], "model": "interlock", "accent": "blue" },
+      { "title": "Role Four", "tags": ["Tool", "Tool", "Tool"], "model": "orbitals", "accent": "cyan" },
+      { "title": "Role Five", "tags": ["Tool", "Tool", "Tool"], "model": "branch", "accent": "pink" }
+    ]
+  },
+  "experience": {
+    "id": "experience",
+    "eyebrow": "What I have done so far",
+    "title": "Work [experience].",
+    "labels": {
+      "ribbon": "Career ribbon · parallel tracks",
+      "ribbonHint": "Hover a track",
+      "present": "Present",
+      "ongoing": "ongoing",
+      "solo": "Sole role at the time",
+      "parallelOne": "Ran in parallel with 1 role",
+      "parallelMany": "Ran in parallel with {n} roles"
+    },
+    "items": [
+      {
+        "title": "Job Title Six",
+        "company": "Company Six",
+        "logo": null,
+        "start": "2024-12",
+        "end": null,
+        "accent": "violet",
+        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack.", "Measurable impact (latency, cost, users, revenue)."]
+      },
+      {
+        "title": "Job Title Five",
+        "company": "Company Five",
+        "logo": null,
+        "start": "2025-02",
+        "end": null,
+        "accent": "cyan",
+        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack.", "Measurable impact (latency, cost, users, revenue)."]
+      },
+      {
+        "title": "Job Title Four",
+        "company": "Company Four",
+        "logo": null,
+        "start": "2024-09",
+        "end": "2025-03",
+        "accent": "amber",
+        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack."]
+      },
+      {
+        "title": "Job Title Three",
+        "company": "Company Three",
+        "logo": null,
+        "start": "2022-09",
+        "end": null,
+        "accent": "pink",
+        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack.", "Measurable impact (latency, cost, users, revenue)."]
+      },
+      {
+        "title": "Job Title Two",
+        "company": "Company Two",
+        "logo": null,
+        "start": "2021-08",
+        "end": "2022-12",
+        "accent": "green",
+        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack."]
+      },
+      {
+        "title": "Job Title One",
+        "company": "Company One",
+        "logo": null,
+        "start": "2019-10",
+        "end": "2021-09",
+        "accent": "blue",
+        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack."]
+      }
+    ]
+  },
+  "projects": {
+    "id": "work",
+    "eyebrow": "My work",
+    "title": "Selected [projects].",
+    "intro": "A sentence framing the work below — real products, live demos, open source.",
+    "labels": { "source": "Source code", "demo": "Live demo" },
+    "items": [
+      {
+        "title": "Project One",
+        "tagline": "One-line tagline for the project",
+        "description": "Two sentences on the problem, what you built, and the result. Keep it under 30 words.",
+        "cover": null,
+        "repo": "https://github.com/your-handle/project-one",
+        "demo": null,
+        "accent": "violet",
+        "tags": [{ "label": "react", "accent": "cyan" }, { "label": "node", "accent": "green" }, { "label": "postgres", "accent": "pink" }]
+      },
+      {
+        "title": "Project Two",
+        "tagline": "One-line tagline for the project",
+        "description": "Two sentences on the problem, what you built, and the result. Keep it under 30 words.",
+        "cover": null,
+        "repo": "https://github.com/your-handle/project-two",
+        "demo": null,
+        "accent": "cyan",
+        "tags": [{ "label": "python", "accent": "blue" }, { "label": "fastapi", "accent": "green" }, { "label": "ai", "accent": "violet" }]
+      },
+      {
+        "title": "Project Three",
+        "tagline": "One-line tagline for the project",
+        "description": "Two sentences on the problem, what you built, and the result. Keep it under 30 words.",
+        "cover": null,
+        "repo": "https://github.com/your-handle/project-three",
+        "demo": null,
+        "accent": "pink",
+        "tags": [{ "label": "nextjs", "accent": "cyan" }, { "label": "typescript", "accent": "blue" }, { "label": "tailwind", "accent": "amber" }]
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "Why work with me",
+    "title": "How I [build].",
+    "items": [
+      { "title": "Value One", "description": "One line describing this strength.", "icon": "shield", "accent": "violet" },
+      { "title": "Value Two", "description": "One line describing this strength.", "icon": "cloud", "accent": "cyan" },
+      { "title": "Value Three", "description": "One line describing this strength.", "icon": "lock", "accent": "green" },
+      { "title": "Value Four", "description": "One line describing this strength.", "icon": "chip", "accent": "pink" },
+      { "title": "Value Five", "description": "One line describing this strength.", "icon": "clock", "accent": "amber" }
+    ],
+    "stats": [
+      { "value": 10, "suffix": "+", "label": "Stat label one" },
+      { "value": 90, "suffix": "%", "label": "Stat label two" },
+      { "value": 20, "suffix": "+", "label": "Stat label three" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "What others say",
+    "title": "[Testimonials].",
+    "labels": { "previous": "Previous testimonial", "next": "Next testimonial" },
+    "items": [
+      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person One", "role": "Role", "company": "Company", "avatar": null, "accent": "violet" },
+      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person Two", "role": "Role", "company": "Company", "avatar": null, "accent": "cyan" },
+      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person Three", "role": "Role", "company": "Company", "avatar": null, "accent": "pink" },
+      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person Four", "role": "Role", "company": "Company", "avatar": null, "accent": "amber" },
+      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person Five", "role": "Role", "company": "Company", "avatar": null, "accent": "green" }
+    ]
+  },
+  "contact": {
+    "id": "contact",
+    "eyebrow": "Contact",
+    "title": "Get In [Touch].",
+    "body": "Have a project in mind or want to discuss potential opportunities? Feel free to reach out through any of the channels below.",
+    "formEndpoint": "",
+    "email": "hello@example.com",
+    "fields": {
+      "name": { "label": "Your name", "placeholder": "What's your name?" },
+      "email": { "label": "Your email", "placeholder": "What's your email address?" },
+      "message": { "label": "Your message", "placeholder": "What would you like to build?" }
+    },
+    "labels": {
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Sent — thank you",
+      "error": "Something went wrong — please check the fields and try again."
+    }
+  },
+  "socials": [
+    { "label": "GitHub", "handle": "your-handle", "href": "https://github.com/your-handle", "icon": "github" },
+    { "label": "LinkedIn", "handle": "your-handle", "href": "https://www.linkedin.com/in/your-handle", "icon": "linkedin" }
+  ],
+  "footer": {
+    "copyright": "© {year} Your Name",
+    "note": "Built with Next.js · Three.js · GSAP"
+  }
+}

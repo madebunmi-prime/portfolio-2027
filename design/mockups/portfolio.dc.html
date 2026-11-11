@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#0e0e10;color:#d9ecff;-webkit-font-smoothing:antialiased}
+a{color:#d9ecff;text-decoration:none}
+a:hover{color:#ffffff}
+input,textarea{font:inherit}
+input::placeholder,textarea::placeholder{color:#839cb5;opacity:1}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family:'Mona Sans',ui-sans-serif,system-ui,sans-serif;font-variation-settings:'wght' 420,'wdth' 100;background:#0e0e10;color:#d9ecff;font-size:clamp(1rem,0.3vw + 0.9rem,1.125rem);line-height:1.55">
+
+<canvas data-cursor="1" style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:60"></canvas>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(14,14,16,0.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1c1c21">
+  <div style="max-width:1400px;margin:0 auto;padding:16px clamp(1.25rem,4vw,4rem);display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" style="display:flex;align-items:center;gap:12px" aria-label="Miracle Adebunmi — home">
+      <svg viewBox="0 0 32 32" style="width:28px;height:28px"><g fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,27 16,5 28,27"></polyline><polyline points="10.5,27 10.5,18 16,23 21.5,18 21.5,27"></polyline></g></svg>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff">M. Adebunmi</span>
+    </a>
+    <div style="display:flex;gap:clamp(16px,3vw,40px);font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em">
+      <a href="#stack" style="color:#839cb5">Stack</a>
+      <a href="#experience" style="color:#839cb5">Experience</a>
+      <a href="#work" style="color:#839cb5">Work</a>
+      <a href="#contact" style="color:#839cb5">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section id="top" data-hero="1" data-screen-label="01 Hero" style="position:relative;height:360vh">
+  <div data-trail-zone="1" style="position:sticky;top:0;height:100vh;overflow:hidden;cursor:none">
+    <canvas data-tile="hero" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+    <div style="position:absolute;inset:0;max-width:1400px;margin:0 auto;padding:0 clamp(1.25rem,4vw,4rem);box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;padding-top:96px;padding-bottom:clamp(96px,14vh,160px);pointer-events:none">
+      <div data-hero-copy="1" style="display:flex;flex-direction:column;gap:32px;max-width:min(100%,880px);pointer-events:auto">
+        <h1 style="margin:0;max-width:22ch;font-size:clamp(2.25rem,2vw + 1.5rem,4.25rem);line-height:1.02;letter-spacing:-0.02em;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92;text-wrap:balance">Hi, I'm Miracle Adebunmi, a full-stack engineer with a passion for building scalable and <span style="text-decoration:underline;text-decoration-color:#ff6a3d;text-decoration-thickness:0.07em;text-underline-offset:0.12em">AI-driven</span> applications.</h1>
+        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+          <a href="#work" style="display:inline-flex;align-items:center;gap:12px;padding:16px 28px;background:#ffffff;color:#0e0e10;font-variation-settings:'wght' 600,'wdth' 100;cursor:pointer" style-hover="background:#d9ecff;color:#0e0e10">See my Works <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;right:clamp(1.25rem,4vw,4rem);bottom:32px;display:flex;flex-direction:row;flex-wrap:wrap;gap:12px 24px;font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;pointer-events:none">
+      <span data-frame="0" style="color:#ffffff;display:flex;gap:12px;align-items:center;justify-content:flex-end">Establish<span style="width:24px;height:1px;background:currentColor"></span></span>
+      <span data-frame="1" style="color:#839cb5;display:flex;gap:12px;align-items:center;justify-content:flex-end">Approach<span style="width:12px;height:1px;background:currentColor"></span></span>
+      <span data-frame="2" style="color:#839cb5;display:flex;gap:12px;align-items:center;justify-content:flex-end">Orbit<span style="width:12px;height:1px;background:currentColor"></span></span>
+      <span data-frame="3" style="color:#839cb5;display:flex;gap:12px;align-items:center;justify-content:flex-end">Descend<span style="width:12px;height:1px;background:currentColor"></span></span>
+    </div>
+    <div style="position:absolute;left:clamp(1.25rem,4vw,4rem);bottom:32px;display:flex;flex-direction:row;align-items:center;gap:12px;pointer-events:none">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">Scroll</span>
+      <span style="width:1px;height:40px;background:#282732;position:relative;overflow:hidden;order:-1"><span data-scroll-tick="1" style="position:absolute;left:0;top:0;width:1px;height:14px;background:#d9ecff"></span></span>
+    </div>
+  </div>
+</section>
+
+<div style="position:relative;z-index:2;background:#0e0e10">
+<div style="max-width:1400px;margin:0 auto;padding:0 clamp(1.25rem,4vw,4rem);box-sizing:border-box;display:flex;flex-direction:column">
+
+<section data-screen-label="02 Process" style="border-top:1px solid #282732;border-bottom:1px solid #282732;padding:40px 0;display:flex;flex-wrap:wrap;gap:32px 64px;align-items:center;justify-content:space-between">
+  <h2 data-reveal="head" style="margin:0;font-size:clamp(1.5rem,1vw + 1.1rem,2rem);line-height:1.1;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">From idea to <span style="text-decoration:underline;text-decoration-color:#ff6a3d;text-decoration-thickness:0.08em;text-underline-offset:0.14em">shipped</span> code.</h2>
+  <ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center">
+    <li data-reveal="1" style="display:flex;align-items:center;gap:14px"><svg viewBox="0 0 24 24" style="width:24px;height:24px"><circle cx="12" cy="12" r="8" fill="none" stroke="#d9ecff" stroke-width="1.6"></circle></svg><span style="display:flex;flex-direction:column"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.08em;color:#839cb5">01</span><span style="color:#ffffff;font-variation-settings:'wght' 600,'wdth' 100">Ideas</span></span></li>
+    <li aria-hidden="true" style="color:#839cb5;font-family:'JetBrains Mono',monospace">→</li>
+    <li data-reveal="1" data-delay="80" style="display:flex;align-items:center;gap:14px"><svg viewBox="0 0 24 24" style="width:24px;height:24px"><polygon points="12,3 21,12 12,21 3,12" fill="none" stroke="#d9ecff" stroke-width="1.6" stroke-linejoin="round"></polygon></svg><span style="display:flex;flex-direction:column"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.08em;color:#839cb5">02</span><span style="color:#ffffff;font-variation-settings:'wght' 600,'wdth' 100">Concepts</span></span></li>
+    <li aria-hidden="true" style="color:#839cb5;font-family:'JetBrains Mono',monospace">→</li>
+    <li data-reveal="1" data-delay="160" style="display:flex;align-items:center;gap:14px"><svg viewBox="0 0 24 24" style="width:24px;height:24px"><rect x="4" y="4" width="16" height="16" fill="none" stroke="#d9ecff" stroke-width="1.6"></rect><line x1="4" y1="12" x2="20" y2="12" stroke="#d9ecff" stroke-width="1.6"></line></svg><span style="display:flex;flex-direction:column"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.08em;color:#839cb5">03</span><span style="color:#ffffff;font-variation-settings:'wght' 600,'wdth' 100">Designs</span></span></li>
+    <li aria-hidden="true" style="color:#839cb5;font-family:'JetBrains Mono',monospace">→</li>
+    <li data-reveal="1" data-delay="240" style="display:flex;align-items:center;gap:14px"><svg viewBox="0 0 24 24" style="width:24px;height:24px"><polyline points="8,6 2,12 8,18" fill="none" stroke="#d9ecff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline><polyline points="16,6 22,12 16,18" fill="none" stroke="#d9ecff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline></svg><span style="display:flex;flex-direction:column"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.08em;color:#839cb5">04</span><span style="color:#ffffff;font-variation-settings:'wght' 600,'wdth' 100">Code</span></span></li>
+  </ol>
+</section>
+
+<section id="stack" data-screen-label="03 Skills" style="padding:clamp(96px,12vw,176px) 0 0;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">03 — Roles</span>
+    <h2 data-reveal="head" style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);line-height:1.05;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">My preferred tech <span style="text-decoration:underline;text-decoration-color:#ff6a3d;text-decoration-thickness:0.08em;text-underline-offset:0.14em">stack</span>.</h2>
+  </div>
+  <div data-trail-zone="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;cursor:none">
+    <sc-for list="{{ roles }}" as="r" hint-placeholder-count="5">
+      <div data-reveal="1" style="display:flex;flex-direction:column;background:#1c1c21">
+        <canvas data-tile="{{ r.tile }}" style="width:100%;aspect-ratio:1;display:block"></canvas>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:20px 20px 24px;border-top:1px solid #282732">
+          <span style="color:#ffffff;font-variation-settings:'wght' 600,'wdth' 96">{{ r.title }}</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.08em;color:#839cb5">{{ r.n }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="experience" data-screen-label="04 Experience" style="padding:clamp(96px,12vw,176px) 0 0;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">04 — 2019 to now</span>
+    <h2 data-reveal="head" style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);line-height:1.05;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">Professional work <span style="text-decoration:underline;text-decoration-color:#ff6a3d;text-decoration-thickness:0.08em;text-underline-offset:0.14em">experience</span>.</h2>
+  </div>
+  <div style="display:flex;flex-direction:column">
+    <div style="display:flex;flex-wrap:wrap;gap:12px 48px;padding-bottom:12px">
+      <span style="flex:1 1 360px"></span>
+      <div style="flex:1 1 380px;position:relative;height:16px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#839cb5">
+        <sc-for list="{{ years }}" as="y" hint-placeholder-count="7"><span style="position:absolute;left:{{ y.left }};transform:translateX(-50%)">{{ y.label }}</span></sc-for>
+      </div>
+    </div>
+    <sc-for list="{{ roles2 }}" as="e" hint-placeholder-count="6">
+      <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:16px 48px;align-items:center;padding:28px 0;border-top:1px solid #282732">
+        <div style="flex:1 1 360px;display:grid;grid-template-columns:minmax(0,1fr);gap:6px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">{{ e.range }}</span>
+          <span style="font-size:clamp(1.25rem,0.6vw + 1rem,1.5rem);line-height:1.2;color:#ffffff;font-variation-settings:'wght' 640,'wdth' 94">{{ e.title }}</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">{{ e.note }}</span>
+        </div>
+        <div style="flex:1 1 380px;position:relative;height:28px">
+          <span style="position:absolute;left:0;right:0;top:13px;height:2px;background:#1c1c21"></span>
+          <sc-for list="{{ years }}" as="y" hint-placeholder-count="7"><span style="position:absolute;left:{{ y.left }};top:6px;width:1px;height:16px;background:#282732"></span></sc-for>
+          <span style="position:absolute;left:{{ e.left }};width:{{ e.width }};top:8px;height:12px;background:#d9ecff"></span>
+          <sc-if value="{{ e.current }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;right:-4px;top:4px;width:2px;height:20px;background:#ffffff"></span></sc-if>
+        </div>
+      </div>
+    </sc-for>
+    <div style="border-top:1px solid #282732"></div>
+  </div>
+</section>
+
+<section id="work" data-screen-label="05 Projects" style="padding:clamp(96px,12vw,176px) 0 0;display:flex;flex-direction:column;gap:56px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">05 — Projects</span>
+    <h2 data-reveal="head" style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);line-height:1.05;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">Selected <span style="text-decoration:underline;text-decoration-color:#ff6a3d;text-decoration-thickness:0.08em;text-underline-offset:0.14em">works</span>.</h2>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(56px,7vw,112px)">
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px 56px;align-items:end">
+        <div data-reveal="1" style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#1c1c21 0 10px,#19191e 10px 20px);border:1px solid #282732;display:flex;align-items:flex-end;padding:20px;box-sizing:border-box">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">{{ p.img }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;max-width:46ch;padding-bottom:8px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">{{ p.n }}</span>
+          <h3 data-reveal="head" style="margin:0;font-size:clamp(1.5rem,1.2vw + 1.1rem,2.5rem);line-height:1.05;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">{{ p.title }}</h3>
+          <p style="margin:0;color:#ffffff;font-variation-settings:'wght' 520,'wdth' 100">{{ p.tagline }}</p>
+          <p style="margin:0;color:#d9ecff;text-wrap:pretty">{{ p.desc }}</p>
+          <a href="#work" style="align-self:flex-start;display:inline-flex;gap:10px;padding-bottom:4px;border-bottom:1px solid #839cb5;font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff" style-hover="border-bottom-color:#ffffff">View case study <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="06 Approach" style="padding:clamp(96px,12vw,176px) 0 0;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">06 — Approach</span>
+    <h2 data-reveal="head" style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);line-height:1.05;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">The way I <span style="text-decoration:underline;text-decoration-color:#ff6a3d;text-decoration-thickness:0.08em;text-underline-offset:0.14em">build</span>.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;background:#282732;border:1px solid #282732">
+    <sc-for list="{{ approach }}" as="a" hint-placeholder-count="5">
+      <div data-reveal="1" style="background:#0e0e10;padding:32px 28px 40px;display:flex;flex-direction:column;gap:40px;min-height:220px;box-sizing:border-box">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.08em;color:#839cb5">{{ a.n }}</span>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto">
+          <span style="font-size:1.25rem;line-height:1.2;color:#ffffff;font-variation-settings:'wght' 640,'wdth' 94">{{ a.title }}</span>
+          <span style="color:#d9ecff;text-wrap:pretty">{{ a.desc }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #d9ecff;padding-top:20px">
+        <span style="font-size:clamp(3rem,3vw + 2rem,5.5rem);line-height:1;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 88;letter-spacing:-0.03em">{{ s.v }}</span>
+        <span style="display:flex;gap:12px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">{{ s.label }}<span style="padding:2px 6px;border:1px solid #282732;font-size:11px">TBD</span></span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="07 Testimonials" style="padding:clamp(96px,12vw,176px) 0 0;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">07 — Testimonials</span>
+    <h2 data-reveal="head" style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);line-height:1.05;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">Words from <span style="text-decoration:underline;text-decoration-color:#ff6a3d;text-decoration-thickness:0.08em;text-underline-offset:0.14em">collaborators</span>.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px">
+    <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="5">
+      <figure data-reveal="1" style="margin:0;background:#1c1c21;padding:28px;display:flex;flex-direction:column;gap:32px;justify-content:space-between">
+        <blockquote style="margin:0;color:#d9ecff;font-size:1.0625rem;line-height:1.5;text-wrap:pretty">“Quote pending — a two-to-three sentence testimonial sits here, set at this size and measure.”</blockquote>
+        <figcaption style="display:flex;align-items:center;gap:14px">
+          <span style="width:44px;height:44px;border-radius:50%;flex:none;background:repeating-linear-gradient(135deg,#282732 0 4px,#232229 4px 8px)"></span>
+          <span style="display:flex;flex-direction:column;gap:2px">
+            <span style="color:#ffffff;font-variation-settings:'wght' 600,'wdth' 100">{{ t.name }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">Role · company TBD</span>
+          </span>
+        </figcaption>
+      </figure>
+    </sc-for>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="08 Contact" style="padding:clamp(96px,12vw,176px) 0 clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:56px clamp(48px,8vw,128px)">
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">08 — Contact</span>
+    <h2 data-reveal="head" style="margin:0;font-size:clamp(2.75rem,3.2vw + 2rem,6.5rem);line-height:0.95;letter-spacing:-0.02em;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">Get In <span style="text-decoration:underline;text-decoration-color:#ff6a3d;text-decoration-thickness:0.07em;text-underline-offset:0.12em">Touch</span></h2>
+    <p style="margin:0;max-width:44ch;text-wrap:pretty">Have a project in mind or want to discuss potential opportunities? Feel free to reach out through any of the channels below.</p>
+    <div style="display:flex;flex-direction:column;margin-top:16px;border-top:1px solid #282732">
+      <a href="https://github.com/miracle5284" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid #282732;color:#ffffff" style-hover="color:#d9ecff;padding-left:8px">
+        <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">GitHub</span><span>github.com/miracle5284</span></span><span aria-hidden="true">↗</span>
+      </a>
+      <a href="https://linkedin.com/in/blueprime1" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid #282732;color:#ffffff" style-hover="color:#d9ecff;padding-left:8px">
+        <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">LinkedIn</span><span>linkedin.com/in/blueprime1</span></span><span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+  <form onSubmit="{{ submit }}" data-reveal="1" style="display:flex;flex-direction:column;gap:24px;background:#1c1c21;padding:clamp(24px,3vw,40px);align-self:end">
+    <label style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">Your name</span><input required="" name="name" placeholder="Ada Okafor" style="background:#0e0e10;border:1px solid #282732;color:#ffffff;padding:16px;outline:none" style-focus="border-color:#d9ecff"></input></label>
+    <label style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">Email</span><input required="" type="email" name="email" placeholder="you@company.com" style="background:#0e0e10;border:1px solid #282732;color:#ffffff;padding:16px;outline:none" style-focus="border-color:#d9ecff"></input></label>
+    <label style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">Message</span><textarea required="" name="message" rows="5" placeholder="What are you building?" style="background:#0e0e10;border:1px solid #282732;color:#ffffff;padding:16px;outline:none;resize:vertical" style-focus="border-color:#d9ecff"></textarea></label>
+    <button type="submit" style="align-self:flex-start;display:inline-flex;gap:12px;align-items:center;padding:16px 28px;background:#ffffff;color:#0e0e10;border:0;cursor:pointer;font-variation-settings:'wght' 600,'wdth' 100" style-hover="background:#d9ecff">{{ sendLabel }} <span aria-hidden="true">→</span></button>
+  </form>
+</section>
+
+<footer style="border-top:1px solid #282732;padding:24px 0 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">
+  <span>© 2027 Miracle Adebunmi</span><span>Source · github.com/madebunmi-prime</span>
+</footer>
+
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;trail&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;comet&quot;,&quot;chevron&quot;,&quot;leaf&quot;,&quot;zigzag&quot;],&quot;default&quot;:&quot;comet&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Cursor&quot;},&quot;rim&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Shader&quot;},&quot;grain&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.035,&quot;min&quot;:0,&quot;max&quot;:0.12,&quot;step&quot;:0.005,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Shader&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const SHAPES = {
+  comet: 'M100 20 A8 8 0 0 1 92 28 L0 20 L92 12 A8 8 0 0 1 100 20 Z',
+  chevron: 'M100 20 L58 6 L66 18 L0 19 L0 21 L66 22 L58 34 Z',
+  leaf: 'M100 20 C80 2 30 6 0 20 C34 28 78 34 100 20 Z',
+  zigzag: 'M100 20 L66 8 L62 17 L30 9 L0 20 L34 26 L38 19 L70 31 Z',
+};
+const VERT = `varying vec3 vN; varying vec3 vP;
+void main(){ vN = normalize(mat3(modelMatrix)*normal); vec4 w = modelMatrix*vec4(position,1.0); vP = w.xyz; gl_Position = projectionMatrix*viewMatrix*w; }`;
+const FRAG = `uniform vec3 uAccent; uniform float uRim; uniform float uGrain; uniform float uTime; uniform vec3 uLight; uniform float uFade;
+varying vec3 vN; varying vec3 vP;
+float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898,78.233)))*43758.5453); }
+void main(){
+  vec3 N = normalize(vN); if(!gl_FrontFacing) N = -N;
+  vec3 V = normalize(cameraPosition - vP);
+  float ndl = dot(N, normalize(uLight))*0.5+0.5;
+  float ndv = clamp(dot(N,V),0.0,1.0);
+  vec3 base = mix(vec3(0.07,0.075,0.10), vec3(0.85,0.92,1.0), pow(ndl,1.7)*0.88);
+  vec3 rim = uAccent * pow(1.0-ndv, 2.5) * uRim;
+  float g = (hash(gl_FragCoord.xy + fract(uTime*7.0)*97.0)-0.5)*uGrain;
+  vec3 c = base + rim + g;
+  gl_FragColor = vec4(mix(vec3(0.055,0.055,0.063), c, uFade), 1.0);
+}`;
+const M0 = (y, m) => (y - 2019) * 12 + (m - 10);
+const NOWM = M0(2026, 11);
+const EXP = [
+  { title: 'Freelance Python & Django Engineer', range: 'Oct 2019 — Sep 2021', s: M0(2019, 10), e: M0(2021, 9) },
+  { title: 'Backend Engineer', range: 'Aug 2021 — Dec 2022', s: M0(2021, 8), e: M0(2022, 12) },
+  { title: 'AI Software Engineer', range: 'Sep 2022 — Present', s: M0(2022, 9), e: null },
+  { title: 'AI Trainer', range: 'Sep 2024 — Mar 2025', s: M0(2024, 9), e: M0(2025, 3) },
+  { title: 'Chief Software Architect & Founder', range: 'Dec 2024 — Present', s: M0(2024, 12), e: null },
+  { title: 'Data Scientist', range: 'Feb 2025 — Present', s: M0(2025, 2), e: null },
+];
+
+class Component extends DCLogic {
+  state = { sent: false };
+  rootRef = React.createRef();
+  qa(s) { return (this.rootRef.current || document).querySelectorAll(s); }
+  q(s) { return (this.rootRef.current || document).querySelector(s); }
+
+  componentDidMount() {
+    this.alive = true;
+        this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.setupReveals();
+    this.setupCursor();
+    import('https://unpkg.com/three@0.170.0/build/three.module.js').then(T => { if (this.alive) { try { this.setup3D(T); } catch (err) { console.error('setup3D failed', err); } } }).catch(err => console.error('three import failed', err));
+  }
+  componentWillUnmount() {
+    this.alive = false;
+    cancelAnimationFrame(this.raf); cancelAnimationFrame(this.craf); clearInterval(this.watch); clearInterval(this.revealTimer); clearTimeout(this.revealHard); window.removeEventListener('scroll', this.onRevealScroll); window.removeEventListener('hashchange', this.onRevealScroll);
+    [this.ro, this.io, this.rio].forEach(o => o && o.disconnect());
+    window.removeEventListener('pointermove', this.onMove);
+    this.renderer && this.renderer.dispose();
+  }
+  componentDidUpdate() { if (this.U) { this.U.uGrain.value = this.props.grain ?? 0.035; this.dirty = true; } }
+  motionOn() { return (this.props.motion ?? true) && !this.reduced; }
+
+  setupReveals() {
+    if (this.reduced) return;
+    const ease = 'cubic-bezier(.215,.61,.355,1)';
+    const arm = () => this.qa('[data-reveal]:not([data-armed])').forEach(el => {
+      el.setAttribute('data-armed', '1');
+      const head = el.dataset.reveal === 'head';
+      el.style.clipPath = head ? 'inset(0 100% 0 0)' : 'inset(0 0 100% 0)';
+      el.style.transition = `clip-path ${head ? 1000 : 850}ms ${ease}, font-variation-settings 1200ms ${ease}`;
+      el.style.transitionDelay = (el.dataset.delay || 0) + 'ms';
+    });
+    const check = () => this.qa('[data-armed="1"]').forEach(el => {
+      const b = el.getBoundingClientRect();
+      if (b.top < innerHeight * 0.9) {
+        el.setAttribute('data-armed', '2');
+        el.style.clipPath = 'inset(0 0 0 0)';
+        if (el.dataset.reveal === 'head') el.style.fontVariationSettings = "'wght' 680, 'wdth' 100";
+      }
+    });
+    arm(); check(); setTimeout(() => { arm(); check(); }, 400);
+    this.revealTimer = setInterval(() => { arm(); check(); }, 120);
+    this.onRevealScroll = () => check();
+    window.addEventListener('scroll', this.onRevealScroll, { passive: true });
+    window.addEventListener('hashchange', this.onRevealScroll);
+    this.revealHard = setTimeout(() => this.qa('[data-armed="1"]').forEach(el => { const b = el.getBoundingClientRect(); if (b.top < innerHeight) { el.setAttribute('data-armed', '2'); el.style.transition = 'none'; el.style.clipPath = 'none'; } }), 3000);
+  }
+
+  setupCursor() {
+    const c = this.q('canvas[data-cursor]'); if (!c) return;
+    const ctx = c.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const fit = () => { c.width = innerWidth * dpr; c.height = innerHeight * dpr; };
+    fit(); window.addEventListener('resize', fit);
+    const pts = []; let cur = null;
+    this.onMove = e => {
+      const now = performance.now();
+      if (this.last) { const dt = Math.max(1, now - this.last.t); const v = Math.hypot(e.clientX - this.last.x, e.clientY - this.last.y) / dt * 1000; this.boost = Math.max(this.boost || 0, Math.min(1.6, v / 1800)); }
+      this.last = { x: e.clientX, y: e.clientY, t: now };
+      const inZone = e.target && e.target.closest && e.target.closest('[data-trail-zone]') && e.pointerType !== 'touch';
+      cur = inZone ? { x: e.clientX * dpr, y: e.clientY * dpr } : null;
+      if (inZone && this.motionOn()) pts.push({ x: cur.x, y: cur.y, t: now });
+    };
+    window.addEventListener('pointermove', this.onMove);
+    const LIFE = 420;
+    const draw = () => {
+      if (!this.alive) return;
+      this.craf = requestAnimationFrame(draw);
+      const now = performance.now();
+      while (pts.length && now - pts[0].t > LIFE) pts.shift();
+      ctx.clearRect(0, 0, c.width, c.height);
+      const path = new Path2D(SHAPES[this.props.trail ?? 'comet'] || SHAPES.comet);
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = 1; i < pts.length; i++) {
+        const a = pts[i - 1], b = pts[i];
+        const dx = b.x - a.x, dy = b.y - a.y, dt = Math.max(1, b.t - a.t);
+        const sp = Math.hypot(dx, dy) / dt / dpr;
+        const life = 1 - (now - b.t) / LIFE;
+        ctx.save(); ctx.globalAlpha = life * 0.5;
+        ctx.translate(b.x, b.y); ctx.rotate(Math.atan2(dy, dx));
+        ctx.scale(Math.min(3.2, 0.5 + sp * 0.9) * dpr * 0.6, (0.55 + 0.45 * life) * dpr * 0.6); ctx.translate(-100, -20);
+        ctx.fillStyle = '#ff6a3d'; ctx.fill(path); ctx.restore();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      if (cur) { ctx.fillStyle = '#ff6a3d'; ctx.beginPath(); ctx.arc(cur.x, cur.y, 4 * dpr, 0, Math.PI * 2); ctx.fill(); }
+    };
+    draw();
+  }
+
+  setup3D(T) {
+    const MAXW = 2048, MAXH = 1280;
+    const r = new T.WebGLRenderer({ antialias: true });
+    r.setPixelRatio(1); r.setSize(MAXW, MAXH, false); r.setClearColor(0x0e0e10, 1); r.setScissorTest(true);
+    this.renderer = r;
+    this.U = { uAccent: { value: new T.Vector3(1.0, 0.416, 0.239) }, uRim: { value: 1 }, uGrain: { value: this.props.grain ?? 0.035 }, uTime: { value: 0 }, uLight: { value: new T.Vector3(-0.5, 0.85, 0.6) }, uFade: { value: 1 } };
+    this.mat = new T.ShaderMaterial({ vertexShader: VERT, fragmentShader: FRAG, uniforms: this.U, side: T.DoubleSide });
+    this.boost = this.boost || 0;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.tiles = [];
+    this.ro = new ResizeObserver(ents => ents.forEach(en => {
+      const t = this.tiles.find(x => x.canvas === en.target); if (!t) return;
+      let pw = Math.round(en.contentRect.width * dpr), ph = Math.round(en.contentRect.height * dpr);
+      const s = Math.min(1, MAXW / pw, MAXH / ph); pw = Math.round(pw * s); ph = Math.round(ph * s);
+      t.canvas.width = pw; t.canvas.height = ph; t.pw = pw; t.ph = ph;
+      t.camera.aspect = pw / ph; t.camera.updateProjectionMatrix(); this.dirty = true;
+    }));
+    this.io = new IntersectionObserver(ents => ents.forEach(en => { const t = this.tiles.find(x => x.canvas === en.target); if (t) { t.visible = en.isIntersecting; this.dirty = true; } }));
+        const heroEl = this.q('[data-hero]');
+    const copy = this.q('[data-hero-copy]');
+    const frames = [...this.qa('[data-frame]')];
+    const tick = this.q('[data-scroll-tick]');
+    this.qa('canvas[data-tile]').forEach(c => {
+      const kind = c.getAttribute('data-tile');
+      const scene = new T.Scene();
+      const camera = new T.PerspectiveCamera(kind === 'hero' ? 32 : 35, 1, 0.1, 100);
+      const root = kind === 'hero' ? this.buildHero(T, scene) : this.makeProp(T, kind);
+      if (kind !== 'hero') { scene.add(root); camera.position.set(0, 0.5, 4.6); camera.lookAt(0, 0, 0); }
+      const t = { canvas: c, ctx: c.getContext('2d'), kind, scene, camera, root, visible: false, hover: false, pw: 0, ph: 0, spin: 0.35 };
+      const card = c.parentElement;
+      card.addEventListener('pointerenter', () => t.hover = true);
+      card.addEventListener('pointerleave', () => t.hover = false);
+      this.tiles.push(t); this.ro.observe(c); this.io.observe(c);
+    });
+    const size = t => {
+      const b = t.canvas.getBoundingClientRect();
+      t.visible = b.bottom > 0 && b.top < innerHeight && b.width > 0;
+      let pw = Math.round(b.width * dpr), ph = Math.round(b.height * dpr);
+      const s = Math.min(1, MAXW / Math.max(1, pw), MAXH / Math.max(1, ph)); pw = Math.round(pw * s); ph = Math.round(ph * s);
+      if (pw !== t.pw || ph !== t.ph) { t.canvas.width = pw; t.canvas.height = ph; t.pw = pw; t.ph = ph; t.camera.aspect = pw / Math.max(1, ph); t.camera.updateProjectionMatrix(); this.dirty = true; }
+    };
+    let prev = performance.now(), sp = 0, lastFrame = -1;
+    const tmp = new T.Vector3();
+    const loop = now => {
+      if (!this.alive) return;
+      this.raf = requestAnimationFrame(loop); this.lastLoop = performance.now();
+      const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
+      const moving = this.motionOn();
+      this.boost *= Math.pow(0.04, dt);
+      this.U.uRim.value = (this.props.rim ?? 1) * (1 + this.boost);
+      if (heroEl) {
+        const b = heroEl.getBoundingClientRect();
+        const target = Math.min(1, Math.max(0, -b.top / Math.max(1, b.height - innerHeight)));
+        const ns = moving ? sp + (target - sp) * Math.min(1, dt * 5) : 0;
+        if (Math.abs(ns - sp) > 1e-4) this.dirty = true;
+        sp = ns;
+        if (copy) copy.style.clipPath = `inset(0 0 ${Math.min(100, Math.max(0, (sp - 0.08) / 0.2 * 100))}% 0)`;
+        const f = Math.min(3, Math.floor(sp * 4 + 0.15));
+        if (f !== lastFrame) { frames.forEach((el, i) => { el.style.color = i === f ? '#ffffff' : '#839cb5'; el.lastChild.style.width = i === f ? '24px' : '12px'; }); lastFrame = f; }
+        if (tick && moving) tick.style.transform = `translateY(${((now / 1400) % 1) * 54 - 14}px)`;
+      }
+      for (const t of this.tiles) { const was = t.visible; size(t); if (t.visible && !was) this.dirty = true; }
+      if (!moving && !this.dirty) return;
+      if (moving) this.U.uTime.value = now / 1000;
+      for (const t of this.tiles) {
+        if (!t.visible || !t.pw) continue;
+        if (t.kind === 'hero') {
+          const h = this.hero;
+          h.path.getPointAt(sp, t.camera.position); h.look.getPointAt(sp, tmp); t.camera.lookAt(tmp);
+          this.U.uFade.value = 1 - Math.max(0, (sp - 0.88) / 0.12) * 0.85;
+          if (moving) h.orbit.forEach((o, i) => {
+            const a = now / 1000 * 0.18 + i * (Math.PI * 2 / h.orbit.length);
+            o.position.set(Math.cos(a) * 2.7, 1.1 + Math.sin(now / 1000 * 0.8 + i) * 0.18 + (i % 2) * 0.5, Math.sin(a) * 1.6);
+            o.rotation.y += dt * 0.6; o.rotation.x += dt * 0.2;
+          });
+        } else {
+          this.U.uFade.value = 1;
+          if (moving) { t.spin += ((t.hover ? 1.8 : 0.35) - t.spin) * Math.min(1, dt * 4); t.root.rotation.y += dt * t.spin; t.root.rotation.x = Math.sin(now / 2500) * 0.12; }
+        }
+        r.setViewport(0, 0, t.pw, t.ph); r.setScissor(0, 0, t.pw, t.ph);
+        r.render(t.scene, t.camera);
+        t.ctx.drawImage(r.domElement, 0, MAXH - t.ph, t.pw, t.ph, 0, 0, t.pw, t.ph);
+      }
+      this.dirty = false;
+    };
+    this.raf = requestAnimationFrame(loop);
+    this.lastLoop = performance.now();
+    this.watch = setInterval(() => { if (performance.now() - this.lastLoop > 300) { cancelAnimationFrame(this.raf); loop(performance.now()); } }, 200);
+  }
+
+  flat(T, g) { const n = g.toNonIndexed(); n.computeVertexNormals(); return n; }
+
+  makeProp(T, kind) {
+    const M = g => new T.Mesh(g, this.mat);
+    const G = new T.Group();
+    if (kind === 'desk') {
+      const slab = M(this.flat(T, new T.BoxGeometry(2.2, 0.12, 1.0))); G.add(slab);
+      const l1 = M(this.flat(T, new T.BoxGeometry(0.16, 0.9, 0.9))); l1.position.set(-0.85, -0.51, 0); G.add(l1);
+      const l2 = M(this.flat(T, new T.BoxGeometry(0.7, 0.55, 0.9))); l2.position.set(0.62, -0.335, 0); G.add(l2);
+      const panel = M(this.flat(T, new T.BoxGeometry(1.3, 0.85, 0.06))); panel.position.set(-0.1, 0.52, -0.25); panel.rotation.x = -0.18; G.add(panel);
+      const block = M(this.flat(T, new T.BoxGeometry(0.28, 0.28, 0.28))); block.position.set(0.8, 0.2, 0.2); block.rotation.y = 0.5; G.add(block);
+    }
+    if (kind === 'node') {
+      const hex = M(this.flat(T, new T.CylinderGeometry(0.95, 0.95, 0.42, 6))); hex.rotation.x = Math.PI / 2; G.add(hex);
+      const inner = M(this.flat(T, new T.CylinderGeometry(0.5, 0.62, 0.62, 6, 1))); inner.rotation.x = Math.PI / 2; G.add(inner);
+    }
+    if (kind === 'python') {
+      const arc = Math.PI * 1.35;
+      const a = M(new T.TorusGeometry(0.5, 0.17, 24, 72, arc)); a.position.set(-0.22, 0.26, 0.08); a.rotation.z = Math.PI * 0.15; G.add(a);
+      const b = M(new T.TorusGeometry(0.5, 0.17, 24, 72, arc)); b.position.set(0.22, -0.26, -0.08); b.rotation.z = Math.PI * 1.15; G.add(b);
+    }
+    if (kind === 'react') {
+      G.add(M(new T.SphereGeometry(0.2, 32, 24)));
+      [0, 1, 2].forEach(i => { const w = new T.Group(); const ring = M(new T.TorusGeometry(1.0, 0.045, 16, 128)); ring.scale.set(1, 0.38, 1); w.add(ring); w.rotation.z = i * Math.PI / 3; G.add(w); });
+    }
+    if (kind === 'git') {
+      const p = [new T.Vector3(-0.55, -0.85, 0), new T.Vector3(-0.55, 0.85, 0), new T.Vector3(0.6, 0.15, 0)];
+      p.forEach(v => { const s = M(new T.SphereGeometry(0.21, 32, 24)); s.position.copy(v); G.add(s); });
+      G.add(M(new T.TubeGeometry(new T.LineCurve3(p[0], p[1]), 8, 0.075, 16)));
+      G.add(M(new T.TubeGeometry(new T.QuadraticBezierCurve3(new T.Vector3(-0.55, -0.45, 0), new T.Vector3(0.6, -0.45, 0), p[2]), 48, 0.075, 16)));
+    }
+    if (kind === 'three') {
+      const I = new T.Group(); const s = 0.5, o = (s + 0.03) / 2;
+      for (const x of [-1, 1]) for (const y of [-1, 1]) for (const z of [-1, 1]) {
+        const m = M(this.flat(T, new T.BoxGeometry(s, s, s))); m.position.set(x * o, y * o, z * o);
+        if (x > 0 && y > 0 && z > 0) { m.position.addScalar(0.32); m.rotation.set(0.4, 0.5, 0.2); }
+        I.add(m);
+      }
+      I.rotation.set(0.45, -0.6, 0); G.add(I);
+    }
+    return G;
+  }
+
+  buildHero(T, scene) {
+    const desk = this.makeProp(T, 'desk'); desk.scale.setScalar(1.15); desk.position.y = 0.4; scene.add(desk);
+    const plinth = new T.Mesh(this.flat(T, new T.CylinderGeometry(2.0, 2.1, 0.06, 7)), this.mat); plinth.position.y = -0.72; scene.add(plinth);
+    const orbit = ['node', 'python', 'react', 'git', 'three'].map(k => { const p = this.makeProp(T, k); p.scale.setScalar(0.32); scene.add(p); return p; });
+    const V = (x, y, z) => new T.Vector3(x, y, z);
+    this.hero = {
+      orbit,
+      path: new T.CatmullRomCurve3([V(1.2, 2.8, 13.0), V(-4.4, 1.9, 6.4), V(2.8, 1.2, 4.0), V(0.3, 9.0, 2.2)]),
+      look: new T.CatmullRomCurve3([V(-2.2, 1.0, 0), V(-0.6, 0.7, 0), V(0, 1.0, 0), V(0, -0.4, 0)]),
+    };
+    return scene;
+  }
+
+  renderVals() {
+    const pct = m => (Math.max(0, Math.min(NOWM, m)) / NOWM * 100).toFixed(2) + '%';
+    const roles2 = EXP.map((e, i) => {
+      const end = e.e ?? NOWM;
+      const over = EXP.filter((o, j) => j !== i && o.s < end && (o.e ?? NOWM) > e.s).length;
+      return { title: e.title, range: e.range, left: pct(e.s), width: pct(end - e.s), current: e.e == null, note: over ? `Concurrent with ${over} other role${over > 1 ? 's' : ''}` : 'Sole role' };
+    });
+    return {
+      roles: [
+        { title: 'Interactive Developer', tile: 'three', n: '01' },
+        { title: 'Backend Developer', tile: 'node', n: '02' },
+        { title: 'Python Developer', tile: 'python', n: '03' },
+        { title: 'React Developer', tile: 'react', n: '04' },
+        { title: 'Project Manager', tile: 'git', n: '05' },
+      ],
+      years: [2020, 2021, 2022, 2023, 2024, 2025, 2026].map(y => ({ label: String(y), left: pct(M0(y, 1)) })),
+      roles2,
+      projects: [
+        { n: '01 — Healthcare', title: 'Patient Health App', tagline: 'Comprehensive Health & Appointment Management', desc: 'An online app for managing patient records, scheduling physical and telehealth appointments, and tracking treatment progress in real time.', img: 'Cover · patient_health_app' },
+        { n: '02 — AI', title: 'RAG ChatBot', tagline: 'Next-Gen AI Retrieval & Conversational Intelligence', desc: 'A retrieval-augmented generation system using vector search and dynamic context to deliver concise, context-rich AI conversations.', img: 'Cover · rag_ai_chatbot' },
+        { n: '03 — BluePrime', title: 'Chrona AI Production Timer', tagline: 'Advanced AI-Driven Production Time Management by Blueprime', desc: 'Placeholder — production time tracking that learns how a team actually works and plans around it.', img: 'Cover · chrona_poster' },
+      ],
+      approach: [
+        { n: '01', title: 'Production-Ready Quality', desc: 'Delivering bullet-proof code with robust testing and CI/CD pipelines.' },
+        { n: '02', title: 'Cloud-Native Architecture', desc: 'Building resilient, auto-scaling systems on modern cloud platforms.' },
+        { n: '03', title: 'Enterprise-Grade Compliance', desc: 'Ensuring strict adherence to security standards and industry regulations.' },
+        { n: '04', title: 'AI-Driven Innovation', desc: 'Embedding advanced AI models to power smarter, adaptive solutions.' },
+        { n: '05', title: 'Punctual Delivery', desc: 'Hitting every milestone and deadline with unwavering reliability.' },
+      ],
+      stats: [
+        { v: '40+', label: 'Completed Projects' },
+        { v: '95%', label: 'Client Retention Rate' },
+        { v: '30+', label: 'Satisfied Clients' },
+      ],
+      testimonials: ['Akshay Saini', 'Amir Ali', 'Dhananjay Kumar Singh', 'Naven', 'Swati Srivastava'].map(name => ({ name })),
+      rootRef: this.rootRef,
+      sendLabel: this.state.sent ? 'Sent — thank you' : 'Send message',
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

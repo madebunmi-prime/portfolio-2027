@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#05041a;color:#d6d3f0;-webkit-font-smoothing:antialiased}
+a{color:#d6d3f0;text-decoration:none}
+a:hover{color:#ffffff}
+input,textarea,button{font:inherit}
+input::placeholder,textarea::placeholder{color:#7d78a8;opacity:1}
+@keyframes dotfall{0%{transform:translateY(0);opacity:1}80%{transform:translateY(22px);opacity:0}100%{transform:translateY(22px);opacity:0}}
+</style>
+</helmet>
+<div style="font-family:'Mona Sans',ui-sans-serif,system-ui,sans-serif;font-variation-settings:'wght' 420,'wdth' 100;background:#05041a;color:#d6d3f0;font-size:clamp(1rem,0.3vw + 0.9rem,1.125rem);line-height:1.55">
+
+<canvas data-cursor="1" style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:80"></canvas>
+
+<nav style="position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1240px,calc(100% - 32px));z-index:70;background:rgba(14,12,40,0.55);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(139,92,246,0.22);border-radius:999px;box-sizing:border-box">
+  <div style="padding:10px 12px 10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="#top" style="display:flex;align-items:center;gap:12px" aria-label="Miracle Adebunmi — home">
+      <svg viewBox="0 0 32 32" style="width:26px;height:26px"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"></stop><stop offset="1" stop-color="#22d3ee"></stop></linearGradient></defs><g fill="none" stroke="url(#mg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,27 16,5 28,27"></polyline><polyline points="10.5,27 10.5,18 16,23 21.5,18 21.5,27"></polyline></g></svg>
+      <span style="color:#ffffff;font-variation-settings:'wght' 640,'wdth' 96;white-space:nowrap">Miracle <span style="color:#9d98c7;font-variation-settings:'wght' 420,'wdth' 96">| Engineer</span></span>
+    </a>
+    <div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
+      <a href="#stack" style="padding:8px 14px;border-radius:999px;color:#c9c5ea;font-size:15px" style-hover="background:rgba(139,92,246,0.16);color:#ffffff">Stack</a>
+      <a href="#experience" style="padding:8px 14px;border-radius:999px;color:#c9c5ea;font-size:15px" style-hover="background:rgba(139,92,246,0.16);color:#ffffff">Experience</a>
+      <a href="#work" style="padding:8px 14px;border-radius:999px;color:#c9c5ea;font-size:15px" style-hover="background:rgba(139,92,246,0.16);color:#ffffff">Work</a>
+      <a href="#contact" style="padding:8px 16px;border-radius:999px;color:#05041a;background:#ffffff;font-size:15px;font-variation-settings:'wght' 600,'wdth' 100" style-hover="background:#e9e4ff;color:#05041a">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section id="top" data-hero="1" data-screen-label="01 Hero" style="position:relative;height:330vh">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;cursor:none">
+    <canvas data-room="1" style="position:absolute;inset:0;width:100%;height:100%;display:block;background:#05041a"></canvas>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,4,26,0.92) 0%,rgba(5,4,26,0.55) 38%,rgba(5,4,26,0) 62%);pointer-events:none"></div>
+    <div style="position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(0deg,rgba(5,4,26,0.9),rgba(5,4,26,0));pointer-events:none"></div>
+    <div data-hero-copy="1" style="position:absolute;left:0;right:0;top:0;bottom:0;max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:28px;pointer-events:none">
+      <div style="display:flex;gap:20px;align-items:stretch;max-width:760px">
+        <div style="display:flex;flex-direction:column;align-items:center;padding-top:14px;flex:none">
+          <span style="width:16px;height:16px;border-radius:50%;background:#a78bfa;box-shadow:0 0 18px 4px rgba(139,92,246,0.7)"></span>
+          <span style="width:3px;flex:1;min-height:180px;background:linear-gradient(180deg,#8b5cf6,rgba(139,92,246,0))"></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;pointer-events:auto">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.12em;color:#9d98c7">Full-stack · AI engineer · Portfolio 2027</span>
+          <h1 style="margin:0;display:flex;flex-direction:column;gap:18px">
+            <span style="font-size:clamp(3rem,5vw + 1rem,7rem);line-height:0.92;letter-spacing:-0.035em;color:#ffffff;font-variation-settings:'wght' 760,'wdth' 88">Hi, I'm <span style="background:linear-gradient(95deg,#c4b5fd 0%,#8b5cf6 45%,#22d3ee 100%);-webkit-background-clip:text;background-clip:text;color:transparent">Miracle</span><br>Adebunmi</span>
+            <span style="font-size:clamp(1.15rem,0.8vw + 0.9rem,1.6rem);line-height:1.35;color:#e4e1fa;font-variation-settings:'wght' 460,'wdth' 100;max-width:30ch;text-wrap:pretty">a full-stack engineer with a passion for building scalable and <span style="color:#ffffff;font-variation-settings:'wght' 640,'wdth' 100;text-decoration:underline;text-decoration-color:#22d3ee;text-decoration-thickness:2px;text-underline-offset:6px">AI-driven</span> applications.</span>
+          </h1>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+            <a href="#work" style="display:inline-flex;align-items:center;gap:12px;padding:15px 26px;border-radius:999px;background:linear-gradient(95deg,#8b5cf6,#6d5cf6 55%,#22d3ee);color:#ffffff;font-variation-settings:'wght' 620,'wdth' 100;box-shadow:0 10px 40px -10px rgba(139,92,246,0.8),inset 0 1px 0 rgba(255,255,255,0.25);cursor:none" style-hover="box-shadow:0 14px 50px -8px rgba(139,92,246,1),inset 0 1px 0 rgba(255,255,255,0.35);color:#ffffff">See my Works <span aria-hidden="true">→</span></a>
+            <a href="#contact" style="display:inline-flex;align-items:center;gap:12px;padding:15px 24px;border-radius:999px;border:1px solid rgba(214,211,240,0.28);background:rgba(14,12,40,0.5);color:#ffffff;cursor:none" style-hover="border-color:#d6d3f0;color:#ffffff">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none">
+      <span style="width:30px;height:52px;border-radius:999px;border:2px solid rgba(214,211,240,0.55);display:flex;justify-content:center;padding-top:8px;box-sizing:border-box"><span style="width:8px;height:8px;border-radius:50%;background:#ffffff;animation:dotfall 1.6s cubic-bezier(.6,0,.4,1) infinite"></span></span>
+    </div>
+    <div style="position:absolute;right:clamp(1.25rem,4vw,3rem);bottom:36px;display:flex;flex-direction:column;align-items:flex-end;gap:8px;pointer-events:none;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#9d98c7">
+      <span data-chapter="1" style="color:#ffffff">01 / The room</span>
+      <span style="width:160px;height:2px;background:rgba(214,211,240,0.15);position:relative;overflow:hidden;border-radius:2px"><span data-progress="1" style="position:absolute;left:0;top:0;bottom:0;width:0%;background:linear-gradient(90deg,#8b5cf6,#22d3ee)"></span></span>
+    </div>
+  </div>
+</section>
+
+<div style="position:relative;z-index:5;margin-top:-12vh;background:#05041a;border-radius:36px 36px 0 0;box-shadow:0 -40px 80px -20px rgba(5,4,26,0.9),0 -1px 0 rgba(139,92,246,0.35)">
+<div style="max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);box-sizing:border-box;display:flex;flex-direction:column">
+
+<section data-screen-label="02 Process" style="padding:56px 0 0">
+  <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;padding:12px;border-radius:24px;background:linear-gradient(180deg,rgba(22,19,57,0.9),rgba(14,12,40,0.9));border:1px solid #221e4e">
+    <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+      <div style="display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:16px;background:rgba(5,4,26,0.55)">
+        <span style="width:48px;height:48px;flex:none;border-radius:14px;display:grid;place-items:center;background:{{ s.bg }};box-shadow:0 8px 24px -8px {{ s.glow }}">
+          <svg viewBox="0 0 24 24" style="width:22px;height:22px"><path d="{{ s.icon }}" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </span>
+        <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#9d98c7">{{ s.n }}</span>
+          <span style="color:#ffffff;font-size:1.125rem;font-variation-settings:'wght' 640,'wdth' 96">{{ s.label }}</span>
+        </span>
+        <span style="margin-left:auto;color:#5d5890;font-family:'JetBrains Mono',monospace">{{ s.arrow }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="stack" data-screen-label="03 Skills" style="padding:clamp(96px,11vw,160px) 0 0;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.12em;color:#9d98c7">Introduction</span>
+      <h2 data-reveal="head" style="margin:0;font-size:clamp(2.25rem,2.6vw + 1.2rem,4.25rem);line-height:0.98;letter-spacing:-0.03em;color:#ffffff;font-variation-settings:'wght' 740,'wdth' 90">My preferred<br>tech <span style="background:linear-gradient(95deg,#c4b5fd,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent">stack</span>.</h2>
+    </div>
+    <p style="margin:0;max-width:44ch;color:#c9c5ea;text-wrap:pretty">Five roles, one engineer. Hover a card to spin its object — each is modeled, lit and rendered live.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:16px">
+    <sc-for list="{{ roles }}" as="r" hint-placeholder-count="5">
+      <div data-reveal="1" data-delay="{{ r.delay }}" style="padding:1px;border-radius:24px;background:linear-gradient(160deg,{{ r.c }},rgba(34,30,78,0.6) 45%,rgba(34,30,78,0.6))" style-hover="background:linear-gradient(160deg,{{ r.c }},{{ r.c }} 20%,rgba(34,30,78,0.6))">
+        <div style="height:100%;border-radius:23px;background:radial-gradient(120% 70% at 50% 30%,{{ r.wash }},rgba(14,12,40,1) 65%);display:flex;flex-direction:column;overflow:hidden">
+          <canvas data-tile="{{ r.tile }}" style="width:100%;aspect-ratio:1/0.95;display:block"></canvas>
+          <div style="display:flex;flex-direction:column;gap:6px;padding:0 22px 24px;text-align:center;align-items:center">
+            <span style="color:#ffffff;font-size:1.2rem;line-height:1.2;font-variation-settings:'wght' 680,'wdth' 94">{{ r.title }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#9d98c7">{{ r.tags }}</span>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="experience" data-screen-label="04 Experience" style="padding:clamp(96px,11vw,160px) 0 0;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.12em;color:#9d98c7">What I have done so far</span>
+    <h2 data-reveal="head" style="margin:0;font-size:clamp(2.25rem,2.6vw + 1.2rem,4.25rem);line-height:0.98;letter-spacing:-0.03em;color:#ffffff;font-variation-settings:'wght' 740,'wdth' 90">Work <span style="background:linear-gradient(95deg,#c4b5fd,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent">experience</span>.</h2>
+  </div>
+
+  <div data-reveal="1" style="border-radius:24px;background:#0e0c28;border:1px solid #221e4e;padding:24px clamp(16px,2.5vw,32px) 20px;display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#9d98c7"><span>Career ribbon · parallel tracks</span><span>Hover a track</span></div>
+    <div style="position:relative;height:{{ ribbonH }}">
+      <sc-for list="{{ years }}" as="y" hint-placeholder-count="7"><span style="position:absolute;left:{{ y.left }};top:0;bottom:22px;width:1px;background:#221e4e"></span><span style="position:absolute;left:{{ y.left }};bottom:0;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:11px;color:#7d78a8">{{ y.label }}</span></sc-for>
+      <sc-for list="{{ exp }}" as="e" hint-placeholder-count="6">
+        <button onMouseEnter="{{ e.enter }}" onFocus="{{ e.enter }}" onClick="{{ e.go }}" title="{{ e.title }}" style="position:absolute;left:{{ e.left }};width:{{ e.width }};top:{{ e.top }};height:26px;border:0;border-radius:8px;padding:0 10px;background:{{ e.barBg }};color:#ffffff;font-size:12px;font-variation-settings:'wght' 600,'wdth' 90;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;box-shadow:{{ e.barShadow }};transition:box-shadow .3s, opacity .3s;opacity:{{ e.barOp }}">{{ e.short }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="position:relative;display:flex;flex-direction:column;gap:20px;padding-left:40px">
+    <span style="position:absolute;left:11px;top:12px;bottom:12px;width:2px;background:linear-gradient(180deg,#8b5cf6,#22d3ee 50%,rgba(34,211,238,0))"></span>
+    <sc-for list="{{ exp }}" as="e" hint-placeholder-count="6">
+      <article id="{{ e.id }}" data-reveal="1" onMouseEnter="{{ e.enter }}" style="position:relative">
+        <span style="position:absolute;left:-40px;top:26px;width:24px;height:24px;border-radius:50%;background:#05041a;border:2px solid {{ e.c }};box-shadow:0 0 0 4px #05041a,0 0 16px {{ e.c }};display:grid;place-items:center"><span style="width:8px;height:8px;border-radius:50%;background:{{ e.c }}"></span></span>
+        <div style="border-radius:20px;background:#0e0c28;border:1px solid {{ e.border }};padding:clamp(20px,2.4vw,30px);display:flex;flex-direction:column;gap:18px;transition:border-color .3s, background .3s">
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+            <span style="width:52px;height:52px;flex:none;border-radius:14px;background:repeating-linear-gradient(135deg,#1c1946 0 5px,#17143a 5px 10px);border:1px solid #2a2558;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#9d98c7">{{ e.init }}</span>
+            <div style="display:flex;flex-direction:column;gap:2px;flex:1 1 240px;min-width:0">
+              <span style="color:#ffffff;font-size:clamp(1.2rem,0.6vw + 1rem,1.5rem);line-height:1.2;font-variation-settings:'wght' 680,'wdth' 94">{{ e.title }}</span>
+              <span style="color:#9d98c7">{{ e.company }}</span>
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;padding:6px 12px;border-radius:999px;background:rgba(5,4,26,0.7);border:1px solid #2a2558;white-space:nowrap">{{ e.range }}</span>
+          </div>
+          <ul style="margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px;color:#c9c5ea">
+            <li>Placeholder — headline achievement, framed as outcome and scale.</li>
+            <li>Placeholder — system or product owned end-to-end and the stack behind it.</li>
+            <li>Placeholder — measurable impact (latency, cost, users, revenue).</li>
+          </ul>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#d6d3f0;padding:5px 10px;border-radius:999px;background:{{ e.chipBg }}"><span style="width:6px;height:6px;border-radius:50%;background:{{ e.c }}"></span>{{ e.note }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7d78a8">{{ e.dur }}</span>
+          </div>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section id="work" data-screen-label="05 Projects" style="padding:clamp(96px,11vw,160px) 0 0;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.12em;color:#9d98c7">My work</span>
+      <h2 data-reveal="head" style="margin:0;font-size:clamp(2.25rem,2.6vw + 1.2rem,4.25rem);line-height:0.98;letter-spacing:-0.03em;color:#ffffff;font-variation-settings:'wght' 740,'wdth' 90">Selected <span style="background:linear-gradient(95deg,#c4b5fd,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent">projects</span>.</h2>
+    </div>
+    <p style="margin:0;max-width:46ch;color:#c9c5ea;text-wrap:pretty">Real-world builds with live demos and source — from healthcare scheduling to retrieval-augmented AI.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:20px">
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+      <article data-reveal="1" data-delay="{{ p.delay }}" style="padding:1px;border-radius:26px;background:linear-gradient(170deg,{{ p.c }},rgba(34,30,78,0.7) 40%)" style-hover="box-shadow:0 30px 80px -30px {{ p.c }}">
+        <div style="height:100%;border-radius:25px;background:#0e0c28;padding:14px;display:flex;flex-direction:column;gap:20px;box-sizing:border-box">
+          <div style="position:relative;aspect-ratio:16/10;border-radius:16px;overflow:hidden;background:radial-gradient(90% 90% at 70% 10%,{{ p.wash }},rgba(14,12,40,0) 60%),repeating-linear-gradient(135deg,#17143a 0 10px,#141136 10px 20px);border:1px solid #221e4e;display:flex;align-items:flex-end;padding:16px;box-sizing:border-box">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#9d98c7">{{ p.img }}</span>
+            <a href="#work" aria-label="Source on GitHub" style="position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:rgba(5,4,26,0.85);border:1px solid #2a2558;display:grid;place-items:center" style-hover="border-color:#ffffff"><svg viewBox="0 0 24 24" style="width:18px;height:18px"><path fill="#ffffff" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"></path></svg></a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding:0 8px">
+            <h3 style="margin:0;font-size:clamp(1.4rem,0.8vw + 1.1rem,1.75rem);line-height:1.1;color:#ffffff;font-variation-settings:'wght' 720,'wdth' 92">{{ p.title }}</h3>
+            <span style="color:{{ p.tc }};font-variation-settings:'wght' 560,'wdth' 100;line-height:1.35">{{ p.tagline }}</span>
+            <p style="margin:0;color:#c9c5ea;font-size:1rem;text-wrap:pretty">{{ p.desc }}</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;padding:0 8px 10px;margin-top:auto">
+            <sc-for list="{{ p.tags }}" as="t" hint-placeholder-count="3"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:{{ t.c }}">#{{ t.t }}</span></sc-for>
+          </div>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="06 Approach" style="padding:clamp(96px,11vw,160px) 0 0;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.12em;color:#9d98c7">Why work with me</span>
+    <h2 data-reveal="head" style="margin:0;font-size:clamp(2.25rem,2.6vw + 1.2rem,4.25rem);line-height:0.98;letter-spacing:-0.03em;color:#ffffff;font-variation-settings:'wght' 740,'wdth' 90">How I <span style="background:linear-gradient(95deg,#c4b5fd,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent">build</span>.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:16px">
+    <sc-for list="{{ approach }}" as="a" hint-placeholder-count="5">
+      <div data-reveal="1" data-delay="{{ a.delay }}" style="border-radius:22px;background:linear-gradient(180deg,#120f33,#0b0a24);border:1px solid #221e4e;padding:26px 24px 28px;display:flex;flex-direction:column;gap:28px" style-hover="border-color:#3a3478">
+        <span style="width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:{{ a.bg }};box-shadow:0 10px 30px -10px {{ a.c }}"><svg viewBox="0 0 24 24" style="width:24px;height:24px"><path d="{{ a.icon }}" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="color:#ffffff;font-size:1.2rem;line-height:1.2;font-variation-settings:'wght' 680,'wdth' 94">{{ a.title }}</span>
+          <span style="color:#c9c5ea;font-size:1rem;text-wrap:pretty">{{ a.desc }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));border-radius:24px;background:radial-gradient(80% 140% at 50% 0%,rgba(139,92,246,0.22),rgba(14,12,40,1) 70%);border:1px solid #2a2558;overflow:hidden">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
+      <div data-count="{{ s.num }}" style="display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;padding:40px 24px">
+        <span style="font-size:clamp(3rem,3vw + 2rem,5.25rem);line-height:1;letter-spacing:-0.04em;font-variation-settings:'wght' 760,'wdth' 88;background:linear-gradient(180deg,#ffffff,#b9b0f5);-webkit-background-clip:text;background-clip:text;color:transparent"><span data-num="1">{{ s.num }}</span>{{ s.suf }}</span>
+        <span style="display:flex;gap:10px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#c9c5ea">{{ s.label }}<span style="padding:2px 6px;border-radius:6px;border:1px solid #3a3478;font-size:10px;color:#9d98c7">TBD</span></span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="07 Testimonials" style="padding:clamp(96px,11vw,160px) 0 0;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.12em;color:#9d98c7">What others say</span>
+      <h2 data-reveal="head" style="margin:0;font-size:clamp(2.25rem,2.6vw + 1.2rem,4.25rem);line-height:0.98;letter-spacing:-0.03em;color:#ffffff;font-variation-settings:'wght' 740,'wdth' 90"><span style="background:linear-gradient(95deg,#c4b5fd,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent">Testimonials</span>.</h2>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button onClick="{{ prevT }}" aria-label="Previous" style="width:52px;height:52px;border-radius:50%;border:1px solid #3a3478;background:#0e0c28;color:#ffffff;cursor:pointer;font-size:18px" style-hover="border-color:#ffffff">←</button>
+      <button onClick="{{ nextT }}" aria-label="Next" style="width:52px;height:52px;border-radius:50%;border:1px solid #3a3478;background:#0e0c28;color:#ffffff;cursor:pointer;font-size:18px" style-hover="border-color:#ffffff">→</button>
+    </div>
+  </div>
+  <div ref="{{ tRef }}" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:8px;margin:0 calc(-1 * clamp(1.25rem,4vw,3rem));padding-left:clamp(1.25rem,4vw,3rem);padding-right:clamp(1.25rem,4vw,3rem);scroll-padding-left:clamp(1.25rem,4vw,3rem)">
+    <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="5">
+      <figure data-reveal="1" data-delay="{{ t.delay }}" style="margin:0;flex:0 0 min(400px,84%);scroll-snap-align:start;border-radius:24px;background:#0e0c28;border:1px solid #221e4e;padding:32px;display:flex;flex-direction:column;gap:28px;box-sizing:border-box">
+        <span style="font-size:72px;line-height:0.6;height:36px;font-variation-settings:'wght' 800,'wdth' 100;background:linear-gradient(95deg,#8b5cf6,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent">“</span>
+        <blockquote style="margin:0;color:#e4e1fa;font-size:1.125rem;line-height:1.5;text-wrap:pretty">Placeholder quote — two or three sentences on what it was like to work with Miracle, and the result he delivered.</blockquote>
+        <figcaption style="display:flex;align-items:center;gap:14px;margin-top:auto">
+          <span style="width:52px;height:52px;border-radius:50%;flex:none;background:repeating-linear-gradient(135deg,#221e4e 0 4px,#1a1745 4px 8px);border:2px solid {{ t.c }}"></span>
+          <span style="display:flex;flex-direction:column;gap:2px">
+            <span style="color:#ffffff;font-variation-settings:'wght' 640,'wdth' 100">{{ t.name }}</span>
+            <span style="font-size:14px;color:#9d98c7">Role · Company TBD</span>
+          </span>
+        </figcaption>
+      </figure>
+    </sc-for>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="08 Contact" style="padding:clamp(96px,11vw,160px) 0 clamp(64px,8vw,112px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px;align-items:stretch">
+    <div data-reveal="1" style="border-radius:28px;background:#0e0c28;border:1px solid #221e4e;padding:clamp(24px,3.5vw,48px);display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.12em;color:#9d98c7">Contact</span>
+        <h2 style="margin:0;font-size:clamp(2.5rem,3vw + 1.4rem,5rem);line-height:0.95;letter-spacing:-0.035em;color:#ffffff;font-variation-settings:'wght' 760,'wdth' 88">Get In <span style="background:linear-gradient(95deg,#c4b5fd,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent">Touch</span>.</h2>
+        <p style="margin:0;max-width:46ch;color:#c9c5ea;text-wrap:pretty">Have a project in mind or want to discuss potential opportunities? Feel free to reach out through any of the channels below.</p>
+      </div>
+      <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:18px">
+        <label style="display:flex;flex-direction:column;gap:8px"><span style="color:#ffffff;font-size:15px;font-variation-settings:'wght' 560,'wdth' 100">Your name</span><input required="" name="name" placeholder="What's your good name?" style="background:#151236;border:1px solid #2a2558;border-radius:14px;color:#ffffff;padding:16px 18px;outline:none" style-focus="border-color:#8b5cf6;box-shadow:0 0 0 4px rgba(139,92,246,0.2)"></input></label>
+        <label style="display:flex;flex-direction:column;gap:8px"><span style="color:#ffffff;font-size:15px;font-variation-settings:'wght' 560,'wdth' 100">Your email</span><input required="" type="email" name="email" placeholder="What's your email address?" style="background:#151236;border:1px solid #2a2558;border-radius:14px;color:#ffffff;padding:16px 18px;outline:none" style-focus="border-color:#8b5cf6;box-shadow:0 0 0 4px rgba(139,92,246,0.2)"></input></label>
+        <label style="display:flex;flex-direction:column;gap:8px"><span style="color:#ffffff;font-size:15px;font-variation-settings:'wght' 560,'wdth' 100">Your message</span><textarea required="" name="message" rows="5" placeholder="What would you like to build?" style="background:#151236;border:1px solid #2a2558;border-radius:14px;color:#ffffff;padding:16px 18px;outline:none;resize:vertical" style-focus="border-color:#8b5cf6;box-shadow:0 0 0 4px rgba(139,92,246,0.2)"></textarea></label>
+        <button type="submit" style="align-self:flex-start;display:inline-flex;gap:12px;align-items:center;padding:15px 28px;border-radius:999px;border:0;background:linear-gradient(95deg,#8b5cf6,#6d5cf6 55%,#22d3ee);color:#ffffff;cursor:pointer;font-variation-settings:'wght' 620,'wdth' 100;box-shadow:0 10px 40px -10px rgba(139,92,246,0.8)">{{ sendLabel }} <span aria-hidden="true">→</span></button>
+      </form>
+    </div>
+    <div data-reveal="1" data-delay="120" style="border-radius:28px;background:radial-gradient(70% 60% at 50% 45%,rgba(139,92,246,0.28),rgba(5,4,26,0) 70%),#0a0920;border:1px solid #221e4e;display:flex;flex-direction:column;overflow:hidden;min-height:420px">
+      <canvas data-tile="orb" style="width:100%;flex:1;min-height:320px;display:block"></canvas>
+      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #221e4e">
+        <a href="https://github.com/miracle5284" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:22px 24px;color:#ffffff;border-right:1px solid #221e4e" style-hover="background:rgba(139,92,246,0.12);color:#ffffff">
+          <svg viewBox="0 0 24 24" style="width:22px;height:22px;flex:none"><path fill="#ffffff" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"></path></svg>
+          <span style="display:flex;flex-direction:column;min-width:0"><span style="font-variation-settings:'wght' 600,'wdth' 100">GitHub</span><span style="font-size:13px;color:#9d98c7;overflow:hidden;text-overflow:ellipsis">miracle5284</span></span>
+        </a>
+        <a href="https://linkedin.com/in/blueprime1" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:22px 24px;color:#ffffff" style-hover="background:rgba(139,92,246,0.12);color:#ffffff">
+          <svg viewBox="0 0 24 24" style="width:22px;height:22px;flex:none"><path fill="#ffffff" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11Z"></path></svg>
+          <span style="display:flex;flex-direction:column;min-width:0"><span style="font-variation-settings:'wght' 600,'wdth' 100">LinkedIn</span><span style="font-size:13px;color:#9d98c7;overflow:hidden;text-overflow:ellipsis">blueprime1</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top:1px solid #221e4e;padding:24px 0 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#7d78a8">
+  <span>© 2027 Miracle Adebunmi</span><span>Built with React · Three.js · GSAP</span>
+</footer>
+
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;bloom&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.85,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Room&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const B = 'https://esm.sh/three@0.170.0';
+const C = { violet: '#8b5cf6', cyan: '#22d3ee', pink: '#f472b6', amber: '#fbbf24', green: '#34d399', blue: '#60a5fa' };
+const M0 = (y, m) => (y - 2019) * 12 + (m - 10);
+const NOWM = M0(2026, 11);
+const EXP = [
+  { title: 'Chief Software Architect & Founder', short: 'Founder · BluePrime', company: 'BluePrime Technologies', init: 'BP', range: 'Dec 2024 — Present', s: M0(2024, 12), e: null, c: C.violet },
+  { title: 'Data Scientist', short: 'Data Scientist', company: 'Company TBD', init: 'DS', range: 'Feb 2025 — Present', s: M0(2025, 2), e: null, c: C.cyan },
+  { title: 'AI Trainer', short: 'AI Trainer', company: 'Company TBD', init: 'AT', range: 'Sep 2024 — Mar 2025', s: M0(2024, 9), e: M0(2025, 3), c: C.amber },
+  { title: 'AI Software Engineer', short: 'AI Software Engineer', company: 'Company TBD', init: 'AI', range: 'Sep 2022 — Present', s: M0(2022, 9), e: null, c: C.pink },
+  { title: 'Backend Engineer', short: 'Backend Engineer', company: 'Company TBD', init: 'BE', range: 'Aug 2021 — Dec 2022', s: M0(2021, 8), e: M0(2022, 12), c: C.green },
+  { title: 'Freelance Python & Django Engineer', short: 'Freelance · Python & Django', company: 'Independent', init: 'FL', range: 'Oct 2019 — Sep 2021', s: M0(2019, 10), e: M0(2021, 9), c: C.blue },
+];
+(() => { const byStart = [...EXP].sort((a, b) => a.s - b.s); const ends = []; byStart.forEach(e => { let l = ends.findIndex(x => x <= e.s); if (l < 0) { l = ends.length; ends.push(0); } ends[l] = e.e ?? 1e9; e.lane = l; }); })();
+const LANES = Math.max(...EXP.map(e => e.lane)) + 1;
+const hexA = (h, a) => { const n = parseInt(h.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
+const rnd = s => () => (s = (s * 16807) % 2147483647) / 2147483647;
+
+class Component extends DCLogic {
+  state = { sent: false, active: -1 };
+  tRef = React.createRef();
+
+  componentDidMount() {
+    this.alive = true;
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.setupReveals();
+    this.setupCursor();
+    Promise.all([
+      import(B), import(B + '/examples/jsm/postprocessing/EffectComposer.js'), import(B + '/examples/jsm/postprocessing/RenderPass.js'),
+      import(B + '/examples/jsm/postprocessing/UnrealBloomPass.js'), import(B + '/examples/jsm/postprocessing/OutputPass.js'), import(B + '/examples/jsm/environments/RoomEnvironment.js'),
+    ]).then(([T, EC, RP, UB, OP, RE]) => { if (!this.alive) return; this.T = T; this.RE = RE.RoomEnvironment;
+      try { this.setupRoom(T, EC.EffectComposer, RP.RenderPass, UB.UnrealBloomPass, OP.OutputPass); } catch (err) { console.error('room failed', err); }
+      try { this.setupTiles(T); } catch (err) { console.error('tiles failed', err); } })
+      .catch(err => console.error('3D load failed', err));
+  }
+  componentWillUnmount() {
+    this.alive = false;
+    cancelAnimationFrame(this.raf); cancelAnimationFrame(this.craf); cancelAnimationFrame(this.traf);
+    clearInterval(this.revealTimer);
+    window.removeEventListener('scroll', this.onScroll); window.removeEventListener('pointermove', this.onMove); window.removeEventListener('resize', this.onResize);
+    [this.ro, this.io].forEach(o => o && o.disconnect());
+    this.renderer && this.renderer.dispose(); this.tr && this.tr.dispose();
+  }
+  frame(fn) {
+    let done = false;
+    const run = t => { if (done) return; done = true; cancelAnimationFrame(a); clearTimeout(b); fn(typeof t === 'number' && t > 1 ? t : performance.now()); };
+    const a = requestAnimationFrame(run); const b = setTimeout(() => run(performance.now()), 60);
+    return a;
+  }
+  motionOn() { return (this.props.motion ?? true) && !this.reduced; }
+
+  setupReveals() {
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    const arm = () => document.querySelectorAll('[data-reveal]:not([data-armed])').forEach(el => {
+      if (this.reduced) { el.setAttribute('data-armed', '2'); return; }
+      const b = el.getBoundingClientRect();
+      if (b.top < innerHeight * 0.92) { el.setAttribute('data-armed', '2'); return; }
+      el.setAttribute('data-armed', '1');
+      el.style.clipPath = el.dataset.reveal === 'head' ? 'inset(0 100% 0 0)' : 'inset(100% 0 0 0 round 24px)';
+      el.style.transition = `clip-path 1000ms ${ease}`;
+      el.style.transitionDelay = (el.dataset.delay || 0) + 'ms';
+    });
+    const check = () => document.querySelectorAll('[data-armed="1"]').forEach(el => {
+      if (el.getBoundingClientRect().top < innerHeight * 0.92) {
+        el.setAttribute('data-armed', '2');
+        el.style.clipPath = el.dataset.reveal === 'head' ? 'inset(0 0% 0 0)' : 'inset(0% 0 0 0 round 24px)';
+        setTimeout(() => { el.style.clipPath = 'none'; el.style.transition = ''; }, 1300 + (+el.dataset.delay || 0));
+        this.countUp(el);
+      }
+    });
+    arm();
+    this.revealTick = () => { arm(); check(); };
+    this.revealTimer = setInterval(this.revealTick, 150);
+    this.onScroll = () => { arm(); check(); };
+    const rv = () => { if (!this.alive) return; arm(); check(); this.rvT = setTimeout(() => this.frame(rv), 150); };
+    this.frame(rv);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    setTimeout(() => document.querySelectorAll('[data-count]').forEach(el => { if (el.getBoundingClientRect().top < innerHeight) this.countUp(el.closest('[data-reveal]') || el); }), 600);
+  }
+  countUp(root) {
+    root.querySelectorAll('[data-count]').forEach(el => {
+      if (el.dataset.counted) return; el.dataset.counted = '1';
+      const tgt = +el.dataset.count, num = el.querySelector('[data-num]'); if (!num || this.reduced) return;
+      const t0 = performance.now();
+      const step = now => { const k = Math.min(1, (now - t0) / 1600); num.textContent = Math.round(tgt * (1 - Math.pow(1 - k, 3))); if (k < 1 && this.alive) this.frame(step); };
+      this.frame(step);
+    });
+  }
+
+  setupCursor() {
+    const c = document.querySelector('canvas[data-cursor]'); if (!c) return;
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+    const ctx = c.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const fit = () => { c.width = innerWidth * dpr; c.height = innerHeight * dpr; };
+    fit(); window.addEventListener('resize', fit);
+    const pts = []; let cur = null, inHero = false;
+    this.mouse = { x: 0, y: 0 };
+    this.onMove = e => {
+      this.mouse.x = e.clientX / innerWidth * 2 - 1; this.mouse.y = e.clientY / innerHeight * 2 - 1;
+      cur = { x: e.clientX * dpr, y: e.clientY * dpr };
+      inHero = !!(e.target && e.target.closest && e.target.closest('[data-hero]'));
+      if (this.motionOn()) pts.push({ x: cur.x, y: cur.y, t: performance.now() });
+    };
+    window.addEventListener('pointermove', this.onMove);
+    const head = new Path2D('M0 -7 L5 0 L0 7 L-5 0 Z');
+    const LIFE = 480;
+    const draw = () => {
+      if (!this.alive) return;
+      this.craf = this.frame(draw);
+      const now = performance.now();
+      if (!this._rv || now - this._rv > 120) { this._rv = now; this.revealTick && this.revealTick(); }
+      while (pts.length && now - pts[0].t > LIFE) pts.shift();
+      ctx.clearRect(0, 0, c.width, c.height);
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = 1; i < pts.length; i++) {
+        const a = pts[i - 1], b = pts[i];
+        const life = 1 - (now - b.t) / LIFE, k = i / pts.length;
+        ctx.strokeStyle = `hsla(${190 + (1 - k) * 80},95%,${60 + k * 10}%,${life * 0.9})`;
+        ctx.lineWidth = (1 + 5 * life * k) * dpr; ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      if (cur && inHero) {
+        ctx.save(); ctx.translate(cur.x, cur.y); ctx.scale(dpr * 1.4, dpr * 1.4);
+        ctx.shadowColor = '#22d3ee'; ctx.shadowBlur = 14; ctx.fillStyle = '#ffffff'; ctx.fill(head); ctx.restore();
+      }
+    };
+    draw();
+  }
+
+  tex(T, w, h, fn) { const c = document.createElement('canvas'); c.width = w; c.height = h; fn(c.getContext('2d'), w, h); const t = new T.CanvasTexture(c); t.colorSpace = T.SRGBColorSpace; t.anisotropy = 8; return t; }
+  codeTex(T) {
+    return this.tex(T, 1024, 576, (x, w, h) => {
+      const r = rnd(7); x.fillStyle = '#0b0a22'; x.fillRect(0, 0, w, h);
+      x.fillStyle = '#16133a'; x.fillRect(0, 0, w, 34);
+      [C.pink, C.amber, C.green].forEach((c, i) => { x.fillStyle = c; x.beginPath(); x.arc(22 + i * 22, 17, 6, 0, 7); x.fill(); });
+      x.fillStyle = '#211d4e'; x.fillRect(200, 0, 180, 34); x.fillStyle = '#a78bfa'; x.fillRect(220, 14, 120, 6);
+      x.fillStyle = '#100e2c'; x.fillRect(0, 34, 180, h);
+      for (let i = 0; i < 16; i++) { x.fillStyle = i === 3 ? '#8b5cf6' : '#3b3670'; x.fillRect(22 + (i % 4 ? 14 : 0), 56 + i * 28, 50 + r() * 80, 8); }
+      const cols = [C.violet, C.cyan, C.pink, C.amber, '#d6d3f0', C.green, '#6b66a3'];
+      let ind = 0;
+      for (let l = 0; l < 19; l++) {
+        const y = 56 + l * 26; x.fillStyle = '#3b3670'; x.fillRect(196, y, 18, 8);
+        if (r() < 0.12) { ind = Math.max(0, ind - 1); continue; }
+        let px = 240 + ind * 30; const n = 2 + Math.floor(r() * 5);
+        for (let k = 0; k < n; k++) { const wd = 20 + r() * 90; x.fillStyle = cols[Math.floor(r() * cols.length)]; x.fillRect(px, y, wd, 9); px += wd + 12; }
+        if (r() < 0.3) ind = Math.min(4, ind + 1);
+      }
+      x.fillStyle = 'rgba(139,92,246,0.18)'; x.fillRect(180, 56 + 7 * 26 - 8, w, 26);
+      x.fillStyle = '#ffffff'; x.fillRect(560, 56 + 7 * 26 - 4, 3, 18);
+    });
+  }
+  dashTex(T) {
+    return this.tex(T, 512, 820, (x, w, h) => {
+      const r = rnd(11); x.fillStyle = '#0b0a22'; x.fillRect(0, 0, w, h);
+      x.fillStyle = '#d6d3f0'; x.fillRect(28, 30, 160, 12); x.fillStyle = '#6b66a3'; x.fillRect(28, 54, 220, 8);
+      [[28, 90, C.violet], [190, 90, C.cyan], [352, 90, C.pink]].forEach(([px, py, c]) => { x.fillStyle = '#16133a'; x.fillRect(px, py, 140, 90); x.fillStyle = c; x.fillRect(px + 14, py + 18, 70, 22); x.fillStyle = '#6b66a3'; x.fillRect(px + 14, py + 56, 100, 8); });
+      x.fillStyle = '#16133a'; x.fillRect(28, 210, 464, 250);
+      x.strokeStyle = C.cyan; x.lineWidth = 4; x.beginPath(); for (let i = 0; i <= 20; i++) { const px = 44 + i * 21.6, py = 420 - (Math.sin(i * 0.6) * 0.4 + 0.5 + i * 0.02) * 150 - r() * 30; i ? x.lineTo(px, py) : x.moveTo(px, py); } x.stroke();
+      x.fillStyle = '#16133a'; x.fillRect(28, 480, 464, 300);
+      for (let i = 0; i < 12; i++) { const bh = 40 + r() * 200; x.fillStyle = i % 3 ? C.violet : C.pink; x.fillRect(48 + i * 36, 760 - bh, 22, bh); }
+    });
+  }
+  termTex(T) {
+    return this.tex(T, 512, 340, (x, w, h) => {
+      const r = rnd(3); x.fillStyle = '#07061a'; x.fillRect(0, 0, w, h);
+      for (let l = 0; l < 12; l++) { x.fillStyle = C.green; x.fillRect(16, 20 + l * 26, 10, 9); x.fillStyle = l % 4 === 3 ? C.cyan : '#b9b5dd'; x.fillRect(36, 20 + l * 26, 60 + r() * 300, 9); }
+    });
+  }
+  skyTex(T) {
+    return this.tex(T, 1024, 800, (x, w, h) => {
+      const r = rnd(19); const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#0a0830'); g.addColorStop(0.65, '#2b1670'); g.addColorStop(1, '#6a2a8f'); x.fillStyle = g; x.fillRect(0, 0, w, h);
+      for (let i = 0; i < 260; i++) { x.fillStyle = `rgba(255,255,255,${0.3 + r() * 0.7})`; const s = r() * 2.2; x.fillRect(r() * w, r() * h * 0.6, s, s); }
+      const mg = x.createRadialGradient(760, 170, 10, 760, 170, 160); mg.addColorStop(0, 'rgba(230,225,255,1)'); mg.addColorStop(0.28, 'rgba(200,190,255,0.9)'); mg.addColorStop(0.3, 'rgba(160,140,255,0.35)'); mg.addColorStop(1, 'rgba(120,90,255,0)'); x.fillStyle = mg; x.fillRect(560, 0, 400, 360);
+      for (let i = 0; i < 26; i++) {
+        const bw = 30 + r() * 70, bh = 120 + r() * 300, bx = i * 40 - 20, by = h - bh;
+        x.fillStyle = i % 2 ? '#0b0924' : '#100c30'; x.fillRect(bx, by, bw, bh);
+        for (let yy = by + 12; yy < h - 8; yy += 16) for (let xx = bx + 6; xx < bx + bw - 6; xx += 12) if (r() < 0.22) { x.fillStyle = r() < 0.5 ? '#fbbf24' : '#a5f3fc'; x.fillRect(xx, yy, 5, 7); }
+      }
+    });
+  }
+
+  setupRoom(T, EffectComposer, RenderPass, UnrealBloomPass, OutputPass) {
+    const canvas = document.querySelector('canvas[data-room]'); if (!canvas) return;
+    const r = new T.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance', preserveDrawingBuffer: true });
+    r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+    r.toneMapping = T.ACESFilmicToneMapping; r.toneMappingExposure = 1.15;
+    r.shadowMap.enabled = true; r.shadowMap.type = T.PCFSoftShadowMap;
+    this.renderer = r;
+    const s = new T.Scene(); s.background = new T.Color(0x05041a); s.fog = new T.FogExp2(0x05041a, 0.05);
+    const pm = new T.PMREMGenerator(r); s.environment = pm.fromScene(new this.RE(), 0.04).texture; s.environmentIntensity = 0.18;
+    const cam = new T.PerspectiveCamera(38, 1, 0.05, 60);
+    this.buildRoom(T, s);
+    const comp = new EffectComposer(r); comp.addPass(new RenderPass(s, cam));
+    const bloom = new UnrealBloomPass(new T.Vector2(512, 512), this.props.bloom ?? 0.85, 0.55, 0.78); comp.addPass(bloom); comp.addPass(new OutputPass());
+    const V = (a, b, c) => new T.Vector3(a, b, c);
+    const path = new T.CatmullRomCurve3([V(5.6, 3.1, 6.6), V(3.2, 2.2, 3.6), V(-1.6, 1.8, 2.0), V(0.35, 1.32, -1.05)]);
+    const look = new T.CatmullRomCurve3([V(-0.6, 1.3, -1.6), V(0.0, 1.2, -2.0), V(0.4, 1.25, -2.4), V(0.25, 1.28, -2.72)]);
+    const resize = () => { const w = canvas.clientWidth, h = canvas.clientHeight; r.setSize(w, h, false); comp.setSize(w, h); cam.aspect = w / h; cam.fov = w / h < 1 ? 52 : 38; cam.updateProjectionMatrix(); };
+    resize(); this.onResize = resize; window.addEventListener('resize', resize);
+    const hero = document.querySelector('[data-hero]'), copy = document.querySelector('[data-hero-copy]'), prog = document.querySelector('[data-progress]'), chap = document.querySelector('[data-chapter]');
+    const chapters = ['01 / The room', '02 / The desk', '03 / The shelf', '04 / The code'];
+    let sp = 0, prev = performance.now(), px = 0, py = 0, lastChap = 0;
+    const tp = new T.Vector3(), tl = new T.Vector3();
+    const loop = now => {
+      if (!this.alive) return;
+      this.raf = this.frame(loop);
+      const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
+      const b = hero.getBoundingClientRect();
+      if (b.bottom < 0) return;
+      this.revealTick && this.revealTick();
+      const target = Math.min(1, Math.max(0, -b.top / Math.max(1, b.height - innerHeight)));
+      const mv = this.motionOn();
+      sp += (target - sp) * (mv ? Math.min(1, dt * 4) : 1);
+      const m = this.mouse || { x: 0, y: 0 };
+      px += ((mv ? m.x : 0) - px) * Math.min(1, dt * 3); py += ((mv ? m.y : 0) - py) * Math.min(1, dt * 3);
+      path.getPointAt(sp, tp); look.getPointAt(sp, tl);
+      const damp = 1 - sp * 0.8;
+      cam.position.set(tp.x + px * 0.35 * damp, tp.y - py * 0.2 * damp, tp.z); cam.lookAt(tl);
+      bloom.strength = this.props.bloom ?? 0.85;
+      if (copy) { const k = Math.min(1, Math.max(0, (sp - 0.04) / 0.22)); copy.style.clipPath = `inset(0 0 ${k * 100}% 0)`; copy.style.transform = `translateY(${-k * 60}px)`; }
+      if (prog) prog.style.width = (sp * 100).toFixed(1) + '%';
+      const ci = Math.min(3, Math.floor(sp * 4 + 0.1)); if (chap && ci !== lastChap) { chap.textContent = chapters[ci]; lastChap = ci; }
+      if (mv) this.animRoom(now / 1000, dt);
+      try { comp.render(); } catch (err) { if (!this._e1) { this._e1 = 1; console.error('room render', err && err.message, err && err.stack); } }
+    };
+    this.raf = this.frame(loop);
+  }
+
+  buildRoom(T, s) {
+    const std = (c, rg = 0.7, mt = 0, o = {}) => new T.MeshStandardMaterial({ color: c, roughness: rg, metalness: mt, ...o });
+    const neon = (c, i = 3) => new T.MeshStandardMaterial({ color: 0x000000, emissive: c, emissiveIntensity: i });
+    const add = (geo, mat, x, y, z, p = s) => { const m = new T.Mesh(geo, mat); m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true; p.add(m); return m; };
+    const box = (w, h, d, mat, x, y, z, p) => add(new T.BoxGeometry(w, h, d), mat, x, y, z, p);
+    const cyl = (a, b, h, seg, mat, x, y, z, p) => add(new T.CylinderGeometry(a, b, h, seg), mat, x, y, z, p);
+    const pl = (c, i, d, x, y, z, shadow) => { const l = new T.PointLight(c, i, d, 1.4); l.position.set(x, y, z); if (shadow) { l.castShadow = true; l.shadow.mapSize.set(512, 512); l.shadow.bias = -0.002; } s.add(l); return l; };
+
+    const floorM = std(0x1b1742, 0.42, 0.15), wallM = std(0x1c1948, 0.92), trimM = std(0x100e2c, 0.6);
+    box(9, 0.1, 7.4, floorM, 0, -0.05, 0.2);
+    for (let i = 0; i < 12; i++) box(0.01, 0.002, 7.4, std(0x120f33, 0.5), -4.5 + i * 0.75, 0.001, 0.2);
+    box(9, 3.6, 0.14, wallM, 0, 1.8, -3.07);
+    box(0.14, 3.6, 7.4, wallM, -4.57, 1.8, 0.2);
+    box(9, 0.1, 0.04, trimM, 0, 0.05, -2.99); box(0.04, 0.1, 7.4, trimM, -4.49, 0.05, 0.2);
+    box(9, 0.025, 0.025, neon(0x8b5cf6, 5), 0, 3.55, -2.98);
+    box(0.025, 0.025, 7.4, neon(0x6d5cf6, 4), -4.48, 3.55, 0.2);
+    pl(0x8b5cf6, 6, 7, 0.5, 3.2, -2.6);
+
+    const sky = new T.Mesh(new T.PlaneGeometry(2.4, 1.9), new T.MeshBasicMaterial({ map: this.skyTex(T), toneMapped: false, fog: false }));
+    sky.position.set(-4.49, 1.85, -0.6); sky.rotation.y = Math.PI / 2; s.add(sky);
+    const frameM = std(0x0d0b26, 0.5, 0.4);
+    box(0.1, 0.07, 2.56, frameM, -4.46, 0.88, -0.6); box(0.1, 0.07, 2.56, frameM, -4.46, 2.82, -0.6);
+    box(0.1, 2.0, 0.07, frameM, -4.46, 1.85, -1.85); box(0.1, 2.0, 0.07, frameM, -4.46, 1.85, 0.65);
+    box(0.06, 1.9, 0.035, frameM, -4.46, 1.85, -0.6); box(0.06, 0.035, 2.4, frameM, -4.46, 1.85, -0.6);
+    box(0.26, 0.04, 2.7, std(0x221d52, 0.5), -4.38, 0.84, -0.6);
+    const moon = new T.DirectionalLight(0x9aa6ff, 1.6); moon.position.set(-9, 4.5, -0.8); moon.target.position.set(0, 0, -1.2);
+    moon.castShadow = true; moon.shadow.mapSize.set(1536, 1536); Object.assign(moon.shadow.camera, { left: -5, right: 5, top: 5, bottom: -5, near: 1, far: 20 }); moon.shadow.bias = -0.0008;
+    s.add(moon, moon.target);
+    s.add(new T.HemisphereLight(0x6b5cff, 0x0b0820, 0.5));
+
+    const deskM = std(0x2a2160, 0.38, 0.05), metal = std(0x1b1840, 0.3, 0.85), black = std(0x07061a, 0.35, 0.4);
+    box(2.7, 0.06, 0.86, deskM, 0.4, 0.76, -2.55);
+    [-0.88, 1.68].forEach(x => { box(0.06, 0.73, 0.06, metal, x, 0.37, -2.2); box(0.06, 0.73, 0.06, metal, x, 0.37, -2.9); box(0.06, 0.06, 0.76, metal, x, 0.04, -2.55); });
+    box(2.5, 0.05, 0.04, metal, 0.4, 0.7, -2.92);
+    box(0.5, 0.52, 0.74, std(0x221b52, 0.5), -0.5, 0.47, -2.55);
+    [0.6, 0.38].forEach(y => box(0.42, 0.006, 0.004, neon(0x22d3ee, 1.5), -0.5, y, -2.18));
+    box(2.55, 0.018, 0.018, neon(0xf472b6, 5), 0.4, 0.715, -2.13);
+    pl(0xf472b6, 4, 3, 0.4, 0.45, -2.0);
+
+    const screenM = t => new T.MeshStandardMaterial({ color: 0x000000, emissive: 0xffffff, emissiveMap: t, emissiveIntensity: 1.25 });
+    const mon = new T.Group(); mon.position.set(0.25, 0, -2.74); s.add(mon);
+    box(1.16, 0.68, 0.035, black, 0, 1.3, 0, mon);
+    const scr = new T.Mesh(new T.PlaneGeometry(1.12, 0.63), screenM(this.codeTex(T))); scr.position.set(0, 1.3, 0.019); mon.add(scr);
+    box(0.06, 0.42, 0.04, metal, 0, 0.98, -0.04, mon); box(0.32, 0.015, 0.2, metal, 0, 0.797, 0, mon);
+    const mon2 = new T.Group(); mon2.position.set(1.3, 0, -2.6); mon2.rotation.y = -0.45; s.add(mon2);
+    box(0.5, 0.82, 0.035, black, 0, 1.33, 0, mon2);
+    const scr2 = new T.Mesh(new T.PlaneGeometry(0.47, 0.78), screenM(this.dashTex(T))); scr2.position.set(0, 1.33, 0.019); mon2.add(scr2);
+    box(0.05, 0.32, 0.04, metal, 0, 0.95, -0.04, mon2); box(0.24, 0.015, 0.18, metal, 0, 0.797, 0, mon2);
+    pl(0x7dd3fc, 3.5, 3.2, 0.45, 1.3, -2.25);
+    const lap = new T.Group(); lap.position.set(-0.62, 0.795, -2.42); lap.rotation.y = 0.35; s.add(lap);
+    box(0.52, 0.018, 0.35, metal, 0, 0, 0, lap);
+    const lid = new T.Group(); lid.position.set(0, 0.01, -0.17); lid.rotation.x = -0.32; lap.add(lid);
+    box(0.52, 0.34, 0.012, metal, 0, 0.17, 0, lid);
+    const ls = new T.Mesh(new T.PlaneGeometry(0.48, 0.3), screenM(this.termTex(T))); ls.position.set(0, 0.17, 0.007); lid.add(ls);
+
+    box(0.66, 0.022, 0.22, std(0x110f2e, 0.5, 0.3), 0.25, 0.8, -2.27);
+    box(0.67, 0.004, 0.23, neon(0x8b5cf6, 2.5), 0.25, 0.788, -2.27);
+    const keys = new T.InstancedMesh(new T.BoxGeometry(0.032, 0.012, 0.032), std(0x2a2560, 0.45), 15 * 5);
+    const d = new T.Object3D(); let ki = 0;
+    for (let row = 0; row < 5; row++) for (let col = 0; col < 15; col++) { d.position.set(0.25 - 0.28 + col * 0.04, 0.817, -2.35 + row * 0.04); d.updateMatrix(); keys.setMatrixAt(ki++, d.matrix); }
+    keys.castShadow = true; s.add(keys);
+    box(0.32, 0.004, 0.26, std(0x14113a, 0.9), 0.82, 0.792, -2.28);
+    const mouse = add(new T.SphereGeometry(0.05, 24, 16), std(0x2a2560, 0.35, 0.2), 0.82, 0.805, -2.28); mouse.scale.set(0.65, 0.35, 1);
+    cyl(0.045, 0.04, 0.11, 24, std(0xf4f1ff, 0.3), -0.12, 0.845, -2.2);
+    const handle = add(new T.TorusGeometry(0.03, 0.008, 8, 20), std(0xf4f1ff, 0.3), -0.07, 0.85, -2.2); handle.rotation.y = Math.PI / 2;
+
+    const lampM = std(0x16133a, 0.3, 0.8);
+    cyl(0.09, 0.1, 0.025, 24, lampM, 1.52, 0.8, -2.8);
+    const arm1 = box(0.022, 0.55, 0.022, lampM, 1.52, 1.06, -2.72); arm1.rotation.x = 0.35;
+    const arm2 = box(0.022, 0.45, 0.022, lampM, 1.42, 1.38, -2.42); arm2.rotation.set(1.15, 0, 0.3);
+    const hd = add(new T.ConeGeometry(0.09, 0.16, 24, 1, true), std(0x16133a, 0.3, 0.8, { side: T.DoubleSide }), 1.32, 1.5, -2.25); hd.rotation.x = 0.4;
+    add(new T.SphereGeometry(0.035, 16, 12), neon(0xffd29a, 6), 1.32, 1.46, -2.24);
+    pl(0xffb86b, 5, 3.2, 1.32, 1.4, -2.2, true);
+
+    const neonG = new T.Group(); neonG.position.set(0.3, 2.45, -2.97); s.add(neonG);
+    const tubeM = neon(0x22d3ee, 4.5);
+    const seg = pts => { const cp = new T.CurvePath(); for (let i = 1; i < pts.length; i++) cp.add(new T.LineCurve3(new T.Vector3(...pts[i - 1]), new T.Vector3(...pts[i]))); return new T.Mesh(new T.TubeGeometry(cp, 24, 0.022, 8), tubeM); };
+    neonG.add(seg([[-0.42, 0.24, 0], [-0.72, 0, 0], [-0.42, -0.24, 0]]), seg([[-0.14, -0.3, 0], [0.14, 0.3, 0]]), seg([[0.42, 0.24, 0], [0.72, 0, 0], [0.42, -0.24, 0]]));
+    box(1.7, 0.85, 0.02, std(0x0d0b26, 0.4, 0.2), 0, 0, -0.02, neonG);
+    pl(0x22d3ee, 4, 3.5, 0.3, 2.45, -2.6);
+
+    const shelfM = std(0x2a2160, 0.45);
+    [1.55, 2.12].forEach((y, si) => {
+      box(1.4, 0.04, 0.3, shelfM, -2.7, y, -2.88);
+      let x = -3.35; const rr = rnd(5 + si);
+      const bc = [0x8b5cf6, 0x22d3ee, 0xf472b6, 0x2a2366, 0x3b2f8a, 0xe9e4ff, 0x1e1a4f];
+      while (x < (si ? -2.6 : -2.2)) { const w = 0.04 + rr() * 0.04, h = 0.22 + rr() * 0.12; const bk = box(w, h, 0.2, std(bc[Math.floor(rr() * bc.length)], 0.7), x + w / 2, y + 0.02 + h / 2, -2.86); if (rr() < 0.15) bk.rotation.z = 0.25; x += w + 0.008; }
+      if (si) { add(new T.IcosahedronGeometry(0.11, 0), std(0xe9e4ff, 0.2, 0.6, { flatShading: true }), -2.25, y + 0.13, -2.86); }
+      else { cyl(0.06, 0.05, 0.1, 6, std(0xfbbf24, 0.25, 0.9), -2.15, y + 0.07, -2.86); add(new T.SphereGeometry(0.05, 16, 12), std(0xfbbf24, 0.25, 0.9), -2.15, y + 0.16, -2.86); }
+    });
+
+    const pot = cyl(0.24, 0.18, 0.44, 7, std(0x2a2160, 0.6, 0, { flatShading: true }), -3.7, 0.22, -2.45);
+    const leafM = std(0x2fa37a, 0.6, 0, { flatShading: true });
+    const lr = rnd(23);
+    for (let i = 0; i < 9; i++) { const a = i / 9 * Math.PI * 2; const l = add(new T.IcosahedronGeometry(0.17 + lr() * 0.12, 0), leafM, -3.7 + Math.cos(a) * 0.18, 0.62 + lr() * 0.65, -2.45 + Math.sin(a) * 0.18); l.scale.set(0.7, 1.4, 0.7); l.rotation.set(lr(), lr(), lr()); }
+
+    add(new T.CylinderGeometry(1.7, 1.7, 0.012, 64), std(0x2c2470, 0.95), 0.35, 0.006, -1.35);
+    add(new T.TorusGeometry(1.5, 0.012, 6, 96), std(0x8b5cf6, 0.8), 0.35, 0.014, -1.35).rotation.x = Math.PI / 2;
+    const chair = new T.Group(); chair.position.set(0.4, 0, -1.45); chair.rotation.y = 0.5; s.add(chair);
+    const fab = std(0x2b245e, 0.85);
+    box(0.56, 0.09, 0.52, fab, 0, 0.52, 0, chair);
+    const back = box(0.52, 0.7, 0.07, fab, 0, 0.97, 0.27, chair); back.rotation.x = -0.1;
+    box(0.04, 0.5, 0.012, neon(0x8b5cf6, 2), 0, 0.97, 0.31, chair).rotation.x = -0.1;
+    cyl(0.03, 0.03, 0.4, 12, metal, 0, 0.29, 0, chair);
+    for (let i = 0; i < 5; i++) { const a = i / 5 * Math.PI * 2; const leg = box(0.32, 0.03, 0.04, metal, Math.cos(a) * 0.16, 0.07, Math.sin(a) * 0.16, chair); leg.rotation.y = -a; add(new T.SphereGeometry(0.03, 12, 8), black, Math.cos(a) * 0.31, 0.03, Math.sin(a) * 0.31, chair); }
+
+    const glossy = c => new T.MeshPhysicalMaterial({ color: c, roughness: 0.15, metalness: 0.2, clearcoat: 1, clearcoatRoughness: 0.08, emissive: c, emissiveIntensity: 0.35 });
+    const floaters = [];
+    const fdefs = [[C.violet, new T.OctahedronGeometry(0.13, 0), -1.4, 2.5, -2.2], [C.cyan, new T.TorusGeometry(0.11, 0.035, 16, 48), 2.1, 2.2, -2.0], [C.pink, new T.IcosahedronGeometry(0.11, 0), 2.5, 1.6, -1.2], [C.amber, new T.TorusKnotGeometry(0.08, 0.025, 96, 12), -1.9, 1.6, -1.4], [C.green, new T.DodecahedronGeometry(0.1, 0), 1.2, 2.75, -2.4]];
+    fdefs.forEach(([c, g, x, y, z], i) => { const m = add(g, glossy(c), x, y, z); m.userData = { y, ph: i * 1.3 }; floaters.push(m); });
+    const N = 500, pos = new Float32Array(N * 3), dr = rnd(31);
+    for (let i = 0; i < N; i++) { pos[i * 3] = -4.4 + dr() * 8.8; pos[i * 3 + 1] = dr() * 3.4; pos[i * 3 + 2] = -2.9 + dr() * 6; }
+    const pg = new T.BufferGeometry(); pg.setAttribute('position', new T.BufferAttribute(pos, 3));
+    const dust = new T.Points(pg, new T.PointsMaterial({ color: 0xc4b5fd, size: 0.012, transparent: true, opacity: 0.55, blending: T.AdditiveBlending, depthWrite: false }));
+    s.add(dust);
+    this.room = { floaters, dust, scr };
+  }
+  animRoom(t, dt) {
+    const R = this.room; if (!R) return;
+    R.floaters.forEach(m => { m.position.y = m.userData.y + Math.sin(t * 1.1 + m.userData.ph) * 0.06; m.rotation.y += dt * 0.7; m.rotation.x += dt * 0.3; });
+    R.dust.rotation.y = Math.sin(t * 0.05) * 0.05; R.dust.position.y = Math.sin(t * 0.2) * 0.04;
+    R.scr.material.emissiveIntensity = 1.2 + Math.sin(t * 2.3) * 0.03;
+  }
+
+  setupTiles(T) {
+    const MAX = 1024;
+    const r = new T.WebGLRenderer({ antialias: true, alpha: true });
+    r.setPixelRatio(1); r.setSize(MAX, MAX, false); r.setClearColor(0x000000, 0); r.setScissorTest(true);
+    r.toneMapping = T.ACESFilmicToneMapping; r.toneMappingExposure = 1.1;
+    this.tr = r;
+    const env = new T.PMREMGenerator(r).fromScene(new this.RE(), 0.04).texture;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const tiles = [];
+    this.ro = new ResizeObserver(ents => ents.forEach(en => {
+      const t = tiles.find(x => x.canvas === en.target); if (!t) return;
+      let pw = Math.round(en.contentRect.width * dpr), ph = Math.round(en.contentRect.height * dpr);
+      const k = Math.min(1, MAX / pw, MAX / ph); pw = Math.max(1, Math.round(pw * k)); ph = Math.max(1, Math.round(ph * k));
+      t.canvas.width = pw; t.canvas.height = ph; t.pw = pw; t.ph = ph; t.cam.aspect = pw / ph; t.cam.updateProjectionMatrix(); t.dirty = true;
+    }));
+    this.io = new IntersectionObserver(ents => ents.forEach(en => { const t = tiles.find(x => x.canvas === en.target); if (t) { t.vis = en.isIntersecting; t.dirty = true; } }));
+    document.querySelectorAll('canvas[data-tile]').forEach(c => {
+      const kind = c.getAttribute('data-tile');
+      const sc = new T.Scene(); sc.environment = env; sc.environmentIntensity = 0.9;
+      const key = new T.DirectionalLight(0xffffff, 1.4); key.position.set(2, 3, 4); sc.add(key);
+      const tint = { three: C.violet, node: C.green, python: C.blue, react: C.cyan, git: C.pink, orb: C.violet }[kind] || C.violet;
+      const rim = new T.PointLight(tint, 30, 10, 2); rim.position.set(-2, 1, -2.5); sc.add(rim);
+      const rim2 = new T.PointLight(0x22d3ee, 14, 10, 2); rim2.position.set(2.5, -1, -2); sc.add(rim2);
+      const root = this.makeProp(T, kind); sc.add(root);
+      const cam = new T.PerspectiveCamera(kind === 'orb' ? 30 : 33, 1, 0.1, 50); cam.position.set(0, 0.3, kind === 'orb' ? 6 : 4.8); cam.lookAt(0, 0, 0);
+      const t = { canvas: c, ctx: c.getContext('2d'), kind, sc, cam, root, vis: false, hover: false, spin: 0.4, pw: 0, ph: 0, cw: 0, ch: 0, dirty: true };
+      const card = c.closest('[data-reveal]') || c.parentElement;
+      card.addEventListener('pointerenter', () => t.hover = true); card.addEventListener('pointerleave', () => t.hover = false);
+      tiles.push(t);
+    });
+    let prev = performance.now();
+    const loop = now => {
+      if (!this.alive) return;
+      this.traf = this.frame(loop);
+      const dt = Math.min(0.05, (now - prev) / 1000); prev = now; const mv = this.motionOn();
+      this.revealTick && this.revealTick();
+      for (const t of tiles) {
+        const bx = t.canvas.getBoundingClientRect();
+        t.vis = bx.bottom > -50 && bx.top < innerHeight + 50 && bx.width > 0;
+        if (t.vis && (Math.abs(bx.width - t.cw) > 0.5 || Math.abs(bx.height - t.ch) > 0.5)) {
+          t.cw = bx.width; t.ch = bx.height;
+          let pw = Math.round(bx.width * dpr), ph = Math.round(bx.height * dpr);
+          const k = Math.min(1, MAX / pw, MAX / ph); pw = Math.max(1, Math.round(pw * k)); ph = Math.max(1, Math.round(ph * k));
+          t.canvas.width = pw; t.canvas.height = ph; t.pw = pw; t.ph = ph; t.cam.aspect = pw / ph; t.cam.updateProjectionMatrix(); t.dirty = true;
+        }
+        if (!t.vis || !t.pw || (!mv && !t.dirty)) continue;
+        if (mv) {
+          t.spin += ((t.hover ? 2.2 : 0.45) - t.spin) * Math.min(1, dt * 4);
+          t.root.rotation.y += dt * t.spin; t.root.position.y = Math.sin(now / 900 + t.pw) * 0.06;
+          if (t.kind === 'orb') { t.root.children[1].rotation.x += dt * 0.3; t.root.children[2].rotation.z += dt * 0.5; }
+        }
+        r.setViewport(0, 0, t.pw, t.ph); r.setScissor(0, 0, t.pw, t.ph); r.clear(); r.render(t.sc, t.cam);
+        t.ctx.clearRect(0, 0, t.pw, t.ph); t.ctx.drawImage(r.domElement, 0, MAX - t.ph, t.pw, t.ph, 0, 0, t.pw, t.ph);
+        t.dirty = false;
+      }
+    };
+    this.traf = this.frame(loop);
+  }
+
+  makeProp(T, kind) {
+    const P = (c, o = {}) => new T.MeshPhysicalMaterial({ color: c, roughness: 0.16, metalness: 0.15, clearcoat: 1, clearcoatRoughness: 0.06, iridescence: 0.25, ...o });
+    const M = (g, m) => new T.Mesh(g, m);
+    const fl = g => { const n = g.toNonIndexed(); n.computeVertexNormals(); return n; };
+    const G = new T.Group();
+    if (kind === 'three') {
+      const s = 0.5, o = (s + 0.04) / 2; const I = new T.Group();
+      for (const x of [-1, 1]) for (const y of [-1, 1]) for (const z of [-1, 1]) {
+        const hot = x > 0 && y > 0 && z > 0;
+        const m = M(fl(new T.BoxGeometry(s, s, s)), P(hot ? C.cyan : C.violet, hot ? { emissive: C.cyan, emissiveIntensity: 0.4 } : {}));
+        m.position.set(x * o, y * o, z * o); if (hot) { m.position.addScalar(0.34); m.rotation.set(0.4, 0.5, 0.2); } I.add(m);
+      }
+      I.rotation.set(0.5, -0.6, 0); G.add(I);
+    }
+    if (kind === 'node') {
+      const h = M(fl(new T.CylinderGeometry(0.95, 0.95, 0.4, 6)), P(C.green)); h.rotation.x = Math.PI / 2; G.add(h);
+      const i = M(fl(new T.CylinderGeometry(0.48, 0.6, 0.62, 6)), P('#0f3b2c', { metalness: 0.6 })); i.rotation.x = Math.PI / 2; G.add(i);
+    }
+    if (kind === 'python') {
+      const arc = Math.PI * 1.4;
+      const a = M(new T.TorusGeometry(0.5, 0.18, 32, 96, arc), P(C.blue)); a.position.set(-0.22, 0.27, 0.08); a.rotation.z = Math.PI * 0.15; G.add(a);
+      const b = M(new T.TorusGeometry(0.5, 0.18, 32, 96, arc), P(C.amber)); b.position.set(0.22, -0.27, -0.08); b.rotation.z = Math.PI * 1.15; G.add(b);
+    }
+    if (kind === 'react') {
+      G.add(M(new T.SphereGeometry(0.22, 48, 32), P(C.cyan, { emissive: C.cyan, emissiveIntensity: 0.5 })));
+      [0, 1, 2].forEach(i => { const w = new T.Group(); const ring = M(new T.TorusGeometry(1.0, 0.055, 24, 160), P(C.cyan)); ring.scale.set(1, 0.38, 1); w.add(ring); w.rotation.z = i * Math.PI / 3; G.add(w); });
+    }
+    if (kind === 'git') {
+      const p = [new T.Vector3(-0.55, -0.85, 0), new T.Vector3(-0.55, 0.85, 0), new T.Vector3(0.6, 0.15, 0)];
+      p.forEach((v, i) => { const s = M(new T.SphereGeometry(0.22, 48, 32), P(i === 2 ? C.pink : '#e9e4ff', i === 2 ? { emissive: C.pink, emissiveIntensity: 0.4 } : {})); s.position.copy(v); G.add(s); });
+      G.add(M(new T.TubeGeometry(new T.LineCurve3(p[0], p[1]), 8, 0.08, 20), P(C.pink)));
+      G.add(M(new T.TubeGeometry(new T.QuadraticBezierCurve3(new T.Vector3(-0.55, -0.45, 0), new T.Vector3(0.6, -0.45, 0), p[2]), 48, 0.08, 20), P(C.pink)));
+    }
+    if (kind === 'orb') {
+      G.add(M(new T.SphereGeometry(0.95, 96, 64), P(C.violet, { roughness: 0.08, iridescence: 0.6, emissive: '#2a1670', emissiveIntensity: 0.4 })));
+      G.add(new T.LineSegments(new T.EdgesGeometry(new T.IcosahedronGeometry(1.25, 1)), new T.LineBasicMaterial({ color: C.cyan, transparent: true, opacity: 0.55 })));
+      const ring = M(new T.TorusGeometry(1.6, 0.03, 16, 200), P(C.pink, { emissive: C.pink, emissiveIntensity: 0.6 })); ring.rotation.x = 1.25; G.add(ring);
+    }
+    return G;
+  }
+
+  renderVals() {
+    const pct = m => (Math.max(0, Math.min(NOWM, m)) / NOWM * 100).toFixed(2) + '%';
+    const scrollToId = id => { const el = document.getElementById(id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' }); };
+    const A = this.state.active;
+    const dur = (s, e) => { const m = (e ?? NOWM) - s, y = Math.floor(m / 12), mo = m % 12; return [y ? `${y} yr${y > 1 ? 's' : ''}` : '', mo ? `${mo} mo` : ''].filter(Boolean).join(' '); };
+    const exp = EXP.map((e, i) => {
+      const end = e.e ?? NOWM;
+      const over = EXP.filter((o, j) => j !== i && o.s < end && (o.e ?? NOWM) > e.s).length;
+      const on = A === i, dim = A >= 0 && !on;
+      return {
+        ...e, id: 'exp-' + i, left: pct(e.s), width: pct(end - e.s), top: (e.lane * 32) + 'px',
+        barBg: `linear-gradient(90deg,${e.c},${hexA(e.c, 0.55)})`, barShadow: on ? `0 0 0 2px #ffffff, 0 0 24px ${e.c}` : 'none', barOp: dim ? 0.4 : 1,
+        border: on ? e.c : '#221e4e', chipBg: hexA(e.c, 0.14),
+        note: over ? `Ran in parallel with ${over} role${over > 1 ? 's' : ''}` : 'Sole role at the time',
+        dur: dur(e.s, e.e) + (e.e == null ? ' · ongoing' : ''),
+        enter: () => this.state.active !== i && this.setState({ active: i }),
+        go: () => scrollToId('exp-' + i),
+      };
+    });
+    const gradBg = (a, b) => `linear-gradient(135deg,${a},${b})`;
+    const scrollT = d => { const el = this.tRef.current; if (el) el.scrollBy({ left: d * Math.min(420, el.clientWidth * 0.86), behavior: 'smooth' }); };
+    return {
+      steps: [
+        { n: '01', label: 'Ideas', icon: 'M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3Z', bg: gradBg(C.amber, '#f97316'), glow: C.amber, arrow: '→' },
+        { n: '02', label: 'Concepts', icon: 'M12 3l9 9-9 9-9-9 9-9Z M12 8v8 M8 12h8', bg: gradBg(C.pink, C.violet), glow: C.pink, arrow: '→' },
+        { n: '03', label: 'Designs', icon: 'M4 4h16v16H4z M4 10h16 M10 10v10', bg: gradBg(C.violet, '#6366f1'), glow: C.violet, arrow: '→' },
+        { n: '04', label: 'Code', icon: 'M8 6l-6 6 6 6 M16 6l6 6-6 6 M14 4l-4 16', bg: gradBg(C.cyan, '#3b82f6'), glow: C.cyan, arrow: '' },
+      ],
+      roles: [
+        { title: 'Interactive Developer', tile: 'three', tags: 'Three.js · GSAP · WebGL', c: C.violet },
+        { title: 'Backend Developer', tile: 'node', tags: 'Node · Django · Postgres', c: C.green },
+        { title: 'Python Developer', tile: 'python', tags: 'Python · FastAPI · ML', c: C.blue },
+        { title: 'React Developer', tile: 'react', tags: 'React · Next.js · TS', c: C.cyan },
+        { title: 'Project Manager', tile: 'git', tags: 'Delivery · Agile · Git', c: C.pink },
+      ].map((r, i) => ({ ...r, wash: hexA(r.c, 0.3), delay: i * 80 })),
+      years: [2020, 2021, 2022, 2023, 2024, 2025, 2026].map(y => ({ label: String(y), left: pct(M0(y, 1)) })),
+      ribbonH: (LANES * 32 + 26) + 'px',
+      exp,
+      projects: [
+        { title: 'Patient Health App', tagline: 'Comprehensive Health & Appointment Management', desc: 'Manage patient records, book in-person and telehealth appointments, and track treatment progress in real time.', img: 'Cover · patient_health_app', c: C.violet, tc: '#c4b5fd', tags: [{ t: 'react', c: C.cyan }, { t: 'django', c: C.green }, { t: 'postgres', c: C.pink }] },
+        { title: 'RAG ChatBot', tagline: 'Next-Gen AI Retrieval & Conversational Intelligence', desc: 'Retrieval-augmented generation with vector search and dynamic context for concise, grounded AI conversations.', img: 'Cover · rag_ai_chatbot', c: C.cyan, tc: '#a5f3fc', tags: [{ t: 'python', c: C.blue }, { t: 'langchain', c: C.green }, { t: 'vectordb', c: C.pink }] },
+        { title: 'Chrona AI Production Timer', tagline: 'Advanced AI-Driven Production Time Management by Blueprime', desc: 'Placeholder — production time tracking that learns how a team actually works and plans around it.', img: 'Cover · chrona_poster', c: C.pink, tc: '#fbcfe8', tags: [{ t: 'nextjs', c: C.cyan }, { t: 'ai', c: C.violet }, { t: 'blueprime', c: C.amber }] },
+      ].map((p, i) => ({ ...p, wash: hexA(p.c, 0.35), delay: i * 100 })),
+      approach: [
+        { title: 'Production-Ready Quality', desc: 'Bullet-proof code with robust testing and CI/CD pipelines.', c: C.violet, icon: 'M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z M9 12l2 2 4-4' },
+        { title: 'Cloud-Native Architecture', desc: 'Resilient, auto-scaling systems on modern cloud platforms.', c: C.cyan, icon: 'M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7Z' },
+        { title: 'Enterprise-Grade Compliance', desc: 'Strict adherence to security standards and regulation.', c: C.green, icon: 'M5 11h14v10H5z M8 11V7a4 4 0 0 1 8 0v4' },
+        { title: 'AI-Driven Innovation', desc: 'Advanced models embedded to power adaptive products.', c: C.pink, icon: 'M12 3v3 M12 18v3 M3 12h3 M18 12h3 M8 8h8v8H8z' },
+        { title: 'Punctual Delivery', desc: 'Every milestone and deadline met with reliability.', c: C.amber, icon: 'M12 7v5l3 2 M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z' },
+      ].map((a, i) => ({ ...a, bg: gradBg(a.c, hexA(a.c, 0.45)), delay: i * 70 })),
+      stats: [{ num: 40, suf: '+', label: 'Completed Projects' }, { num: 95, suf: '%', label: 'Client Retention Rate' }, { num: 30, suf: '+', label: 'Satisfied Clients' }],
+      testimonials: ['Akshay Saini', 'Amir Ali', 'Dhananjay Kumar Singh', 'Naven', 'Swati Srivastava'].map((name, i) => ({ name, c: [C.violet, C.cyan, C.pink, C.amber, C.green][i], delay: i * 70 })),
+      tRef: this.tRef, prevT: () => scrollT(-1), nextT: () => scrollT(1),
+      sendLabel: this.state.sent ? 'Sent — thank you' : 'Send message',
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

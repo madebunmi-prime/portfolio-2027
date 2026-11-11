@@ -1,17 +1,27 @@
 # 02 — Technical Architecture
 
-## 1. Stack (locked)
+## 1. Stack
+
+> **Revised after the build.** Originally locked as Vite + npm (below, struck through for the record).
+> The implementation that actually got built — via Claude Design's full-mockup pass — shipped on
+> **Next.js 15 (App Router, static export) + pnpm** instead. Accepted as-is rather than forced back
+> to Vite: the reasoning for Vite was "no SSR overhead you don't need for a mostly-static site," and
+> Next's static export (`output: 'export'`, see `next.config.ts`) gets the same outcome — a fully
+> static build with no server — while picking up Next's image/font tooling for free. Every other
+> locked decision (React 19, R3F v9, Three r17x, GSAP, Tailwind v4) held exactly as planned.
 
 | Layer | Choice | Why |
 |---|---|---|
-| Build tool | Vite 6+ | Confirmed current-gen; template genre is stuck on Vite 4. |
-| Framework | React 19 | Current stable. |
-| 3D | Three.js r17x+ (`WebGPURenderer` + TSL), `@react-three/fiber` v9, `@react-three/drei` latest | WebGPU/TSL confirmed production-viable 2026 (see `00-overview.md` § 2.3). WebGL2 fallback is automatic — R3F's `Canvas` auto-detects and falls back; no manual branching needed for the common case. |
-| Animation | GSAP (`ScrollTrigger`, `Observer`) | Already proven on the live site; more capable than framer-motion for scroll-scrubbed work, which this design leans on heavily (camera path, kinetic type). |
-| Styling | Tailwind CSS v4 | Current major version; CSS-first config (`@theme`) maps directly onto the design tokens in `01-design-system.md`. |
-| Forms/contact | EmailJS | Already proven on the live site, no reason to replace a working, free integration. |
-| Hosting | Cloudflare Pages | Matches current deployment; free, fast, already familiar. |
-| Package manager | npm | No strong reason to switch; keep friction low for anyone cloning the repo. |
+| Build tool | ~~Vite 6+~~ **Next.js 15 (static export)** | Static export matches the original "no SSR overhead" reasoning; Next's tooling (fonts, images, App Router) came along for free. |
+| Framework | React 19 | Current stable — as planned. |
+| 3D | Three.js r170, `@react-three/fiber` v9, `@react-three/drei` v10, `@react-three/postprocessing` | WebGPU/TSL path not yet wired into this pass — current build renders via the standard WebGL pipeline; see § 8 for the follow-up. |
+| Animation | GSAP (`ScrollTrigger`) + Lenis (smooth scroll) | As planned, plus Lenis for scroll smoothing, which wasn't in the original spec but pairs naturally with scroll-scrubbed `ScrollTrigger` work. |
+| Styling | Tailwind CSS v4 | As planned. |
+| Forms/contact | Pluggable JSON POST endpoint (Formspree/Getform/Basin/custom), falls back to `mailto:` if unset | Deviates from the planned EmailJS integration — no vendor lock-in, no API key shipped in a public repo. Reasonable call for a repo meant to be cloned by others who'd each need their own EmailJS account otherwise. |
+| Hosting | Cloudflare Pages | As planned — static export output (`out/`) deploys there directly. |
+| Package manager | **pnpm** (not npm) | Deviates from "keep friction low with npm" — pnpm is now the more common default for new Next.js projects; `corepack enable` makes the friction difference negligible. |
+| Validation | **Zod**, validating `content/portfolio.json` at build time | Not in the original plan — a typo in content now fails the build with a clear message instead of shipping a broken page. Directly reinforces the "content lives in data, never hardcoded" architecture principle from the template audit (`00-overview.md` § 2.2). |
+| Testing | **Vitest** (unit) + **Playwright** (e2e smoke) | Not in the original plan — ships test coverage from day one rather than as a later addition. |
 
 ## 2. Repo structure
 
@@ -121,3 +131,21 @@ Two asset classes, two different pipelines:
 - Lighthouse CI on preview deploys (Cloudflare Pages already generates preview URLs per PR for free).
 - README documents the asset pipeline in § 6 explicitly — since this repo is meant to be cloned and
   studied, "how do I regenerate/replace the 3D assets" has to be answerable from the README alone.
+
+## 8. Known follow-ups (not yet done, tracked honestly rather than implied-complete)
+
+- **WebGPU/TSL migration.** The shipped build renders through the standard `@react-three/fiber`
+  WebGL pipeline, not `WebGPURenderer`/TSL as originally planned in § 1. The shader-signature proof in
+  `design/asset-sheet/` validated the *look* using hand-written GLSL (not TSL) — the production
+  renderer swap is still open work, not a silent scope cut.
+  **Why this is still worth revisiting even though WebGL works fine today:** the shader signature
+  (gooch shading, grain, rim-light) is currently one `ShaderMaterial` per mesh, each paying its own
+  GPU driver overhead. A TSL node-material version compiles to WGSL on WebGPU and gets the 30-50%
+  dense-scene gain cited in `00-overview.md` § 2.3 — more mesh instances (tech-icon props, testimonial
+  cards, etc.) before frame time becomes a problem. Not urgent at the current scene complexity; becomes
+  worth doing the moment the scene grows denser than what's in this first build.
+- **Real project/testimonial images.** `public/images/` currently holds only a placeholder README —
+  `content/portfolio.json` references paths that don't exist yet. Needs real assets before launch.
+- **Content gaps from `00-overview.md` § 5** (real stats figures, testimonial quotes, responsibility-
+  bullet-to-role mapping, client-logo approval) are still open — the shipped `content/portfolio.json`
+  has placeholder copy in these spots, consistent with how the mockup prompt was written.
