@@ -5,7 +5,8 @@ import { useState, type FormEvent } from 'react';
 import { z } from 'zod';
 import type { Portfolio } from '@/content/schema';
 import { Reveal } from '@/components/motion/Reveal';
-import { buttonClass } from '@/components/ui/Button';
+import { ActionButton } from '@/components/ui/Button';
+import { Glow } from '@/components/ui/Glow';
 import { Highlight } from '@/components/ui/Highlight';
 import { Icon } from '@/components/ui/Icon';
 
@@ -57,15 +58,23 @@ export function Contact({ data, socials }: Props) {
   const f = data.fields;
 
   return (
-    <section id={data.id ?? 'contact'} className="pt-24 pb-16 md:pt-40 md:pb-28">
+    <section id={data.id ?? 'contact'} className="pt-[clamp(96px,11vw,160px)] pb-[clamp(64px,8vw,112px)]">
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-5">
-        <Reveal className="flex flex-col gap-7 rounded-[28px] border border-ink-700 bg-ink-900 p-6 md:p-12">
+        <Reveal>
+        <Glow lift={false} className="glass flex h-full flex-col gap-7 rounded-[28px] p-[clamp(24px,3.5vw,48px)]">
           <div className="flex flex-col gap-3.5">
             <p className="eyebrow">{data.eyebrow}</p>
-            <h2 className="text-[clamp(2.5rem,3vw+1.4rem,5rem)] leading-[0.95] font-extrabold tracking-[-0.035em] text-fg [font-stretch:88%]">
+            <h2 className="font-display text-[clamp(2.5rem,3vw+1.4rem,5rem)] leading-[0.95] font-semibold tracking-[-0.015em] text-fg">
               <Highlight text={data.title} />
             </h2>
-            <p className="max-w-[46ch] text-pretty text-soft">{data.body}</p>
+            <p className="max-w-[46ch] text-pretty text-body">{data.body}</p>
+            {data.tags.length ? (
+              <div className="flex flex-wrap gap-2 pt-1">
+                {data.tags.map((t) => (
+                  <span key={t} className="rounded-full border border-ink-500 px-3 py-1.5 text-[13.5px] text-fg">{t}</span>
+                ))}
+              </div>
+            ) : null}
           </div>
 
           <form onSubmit={onSubmit} noValidate className="flex flex-col gap-[18px]">
@@ -82,14 +91,15 @@ export function Contact({ data, socials }: Props) {
               <textarea required name="message" rows={5} placeholder={f.message.placeholder} className={`${inputClass} resize-y`} />
             </label>
             <div className="flex flex-wrap items-center gap-4">
-              <button type="submit" disabled={status === 'sending'} className={buttonClass('primary', 'cursor-pointer border-0 disabled:opacity-70')}>
+              <ActionButton type="submit" disabled={status === 'sending'} className="disabled:opacity-70">
                 {label} <span aria-hidden="true">→</span>
-              </button>
+              </ActionButton>
               <p role="status" aria-live="polite" className="text-sm text-pink">
                 {status === 'error' ? data.labels.error : ''}
               </p>
             </div>
           </form>
+        </Glow>
         </Reveal>
 
         <Reveal delay={0.12} className="flex min-h-[420px] flex-col overflow-hidden rounded-[28px] border border-ink-700 bg-[radial-gradient(70%_60%_at_50%_45%,rgb(139_92_246/0.28),transparent_70%),#0a0920]">

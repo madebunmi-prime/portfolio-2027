@@ -1,9 +1,10 @@
 'use client';
 
 import { useRef } from 'react';
-import { FULL_MOTION, gsap, useGSAP } from '@/lib/gsap';
+import { FULL_MOTION, gsap, ScrollTrigger, useGSAP } from '@/lib/gsap';
 
-export function CountUp({ value, className }: { value: number; className?: string }) {
+/** Counts up from 0 every time it scrolls into view. */
+export function CountUp({ value, decimals = 0, className }: { value: number; decimals?: number; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
 
   useGSAP(
@@ -12,27 +13,21 @@ export function CountUp({ value, className }: { value: number; className?: strin
       if (!el) return;
       gsap.matchMedia().add(FULL_MOTION, () => {
         const counter = { v: 0 };
-        el.textContent = '0';
-        gsap.to(counter, {
-          v: value,
-          duration: 1.6,
-          ease: 'power3.out',
-          onUpdate: () => {
-            el.textContent = String(Math.round(counter.v));
-          },
-          scrollTrigger: { trigger: el, start: 'top 90%', once: true },
-        });
+        const render = () => (el.textContent = counter.v.toFixed(decimals));
+        const run = () => gsap.fromTo(counter, { v: 0 }, { v: value, duration: 1.6, ease: 'power3.out', onUpdate: render, overwrite: true });
+        render();
+        ScrollTrigger.create({ trigger: el, start: 'top 90%', end: 'bottom 10%', onEnter: run, onEnterBack: run });
         return () => {
-          el.textContent = String(value);
+          el.textContent = value.toFixed(decimals);
         };
       });
     },
-    { dependencies: [value] },
+    { dependencies: [value, decimals] },
   );
 
   return (
     <span ref={ref} className={className}>
-      {value}
+      {value.toFixed(decimals)}
     </span>
   );
 }

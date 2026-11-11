@@ -11,6 +11,9 @@ const STROKE: Partial<Record<IconName, string>> = {
   chip: 'M12 3v3 M12 18v3 M3 12h3 M18 12h3 M8 8h8v8H8z',
   clock: 'M12 7v5l3 2 M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z',
   mail: 'M3 6h18v12H3z M3 7l9 6 9-6',
+  discover: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z M20 20l-4-4',
+  blueprint: 'M4 4h6v6H4z M14 14h6v6h-6z M10 7h4a3 3 0 0 1 3 3v4',
+  pulse: 'M3 12h4l3-8 4 16 3-8h4',
   globe: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M3 12h18 M12 3a14 14 0 0 1 0 18 M12 3a14 14 0 0 0 0 18',
 };
 

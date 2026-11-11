@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
-import { createSkyTexture } from '../textures';
+import { createSkyTexture } from '../sky';
 import { Box } from './Box';
 import { roomMaterials } from './materials';
 

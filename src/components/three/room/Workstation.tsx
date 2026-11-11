@@ -5,19 +5,16 @@ import { useFrame } from '@react-three/fiber';
 import { Instance, Instances } from '@react-three/drei';
 import type { MeshStandardMaterial } from 'three';
 import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
-import { createCodeTexture, createDashboardTexture, createTerminalTexture } from '../textures';
+import type { LiveScreens } from '../screens/LiveScreens';
 import { Box } from './Box';
 import { roomMaterials } from './materials';
 
-/** Monitors, laptop, backlit keyboard, mouse and mug. */
-export function Workstation() {
+/** Monitors (showing the scroll-driven live screens), laptop, backlit keyboard, mouse and mug. */
+export function Workstation({ screens }: { screens: LiveScreens }) {
   const m = roomMaterials();
   const reduced = useReducedMotion();
   const screen = useRef<MeshStandardMaterial>(null);
-  const tex = useMemo(
-    () => ({ code: createCodeTexture(), dash: createDashboardTexture(), term: createTerminalTexture() }),
-    [],
-  );
+  const tex = { code: screens.main.tex, dash: screens.side.tex, term: screens.laptop.tex };
   const keys = useMemo(() => {
     const out: [number, number, number][] = [];
     for (let r = 0; r < 5; r++) for (let c = 0; c < 15; c++) out.push([-0.03 + c * 0.04, 0.817, -2.35 + r * 0.04]);

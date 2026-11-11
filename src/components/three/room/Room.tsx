@@ -10,15 +10,16 @@ import { Shelf } from './Shelf';
 import { Shell } from './Shell';
 import { Window } from './Window';
 import { Workstation } from './Workstation';
+import type { LiveScreens } from '../screens/LiveScreens';
 
 /** The hero scene: a procedural, night-lit developer room. Units ≈ metres. */
-export function Room() {
+export function Room({ screens }: { screens: LiveScreens }) {
   return (
     <group>
       <Shell />
       <Window />
       <Desk />
-      <Workstation />
+      <Workstation screens={screens} />
       <Lamp />
       <NeonSign />
       <Shelf />

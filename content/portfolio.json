@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Your Name — Full-stack & AI Engineer",
-    "description": "Portfolio of Your Name: full-stack engineer building scalable, AI-driven products.",
+    "title": "Your Name — Lead Software Engineer",
+    "description": "Portfolio of Your Name: lead software engineer — system design, distributed systems and AI-first delivery with agent fleets.",
     "url": "https://example.com",
     "locale": "en",
     "ogImage": null
@@ -9,96 +9,1695 @@
   "person": {
     "name": "Your Name",
     "shortName": "Your Name",
-    "role": "Engineer"
+    "role": "Your Title"
   },
   "nav": {
     "links": [
-      { "label": "Stack", "href": "#stack" },
-      { "label": "Experience", "href": "#experience" },
-      { "label": "Work", "href": "#work" }
+      {
+        "label": "Process",
+        "href": "#lifecycle"
+      },
+      {
+        "label": "Systems",
+        "href": "#systems"
+      },
+      {
+        "label": "Agents",
+        "href": "#agents"
+      },
+      {
+        "label": "Work",
+        "href": "#work"
+      },
+      {
+        "label": "Experience",
+        "href": "#experience"
+      }
     ],
-    "cta": { "label": "Contact", "href": "#contact" }
+    "cta": {
+      "label": "Contact",
+      "href": "#contact"
+    }
   },
   "hero": {
-    "eyebrow": "Full-stack · AI engineer · Portfolio",
+    "eyebrow": "Your Title · AI-first engineering",
     "title": "Hi, I'm [Your]\nName",
-    "tagline": "a full-stack engineer with a passion for building scalable and [AI-driven] applications.",
-    "primaryCta": { "label": "See my Works", "href": "#work" },
-    "secondaryCta": { "label": "Get in touch", "href": "#contact" },
-    "chapters": ["01 / The room", "02 / The desk", "03 / The shelf", "04 / The code"],
-    "poster": null
+    "taglinePrefix": "I",
+    "rotatingWords": [
+      "solve problems",
+      "design systems",
+      "orchestrate AI agents",
+      "lead engineering teams",
+      "ship to production"
+    ],
+    "taglineSuffix": "with software — from the first diagram to running at scale.",
+    "primaryCta": {
+      "label": "See the systems",
+      "href": "#systems"
+    },
+    "secondaryCta": {
+      "label": "How I work with agents",
+      "href": "#agents"
+    },
+    "finalCta": {
+      "label": "Explore the work",
+      "href": "#lifecycle"
+    },
+    "chapters": [
+      "01 / The problem",
+      "02 / The design",
+      "03 / The agents",
+      "04 / The code"
+    ],
+    "poster": null,
+    "screens": {
+      "tabs": {
+        "main": [
+          "ISSUE-142.md",
+          "architecture.c4",
+          "agents — 3 running",
+          "welcome.ts"
+        ],
+        "side": [
+          "grafana · checkout",
+          "ADR-001.md",
+          "ci · PR #318",
+          "grafana · checkout"
+        ],
+        "laptop": [
+          "tail -f checkout.log",
+          "architecture.mmd",
+          "agent-run.log",
+          "deploy"
+        ]
+      },
+      "issue": [
+        "# ISSUE-142 · Checkout is slow",
+        "",
+        "Impact   p99 2.4s → 18% cart abandonment",
+        "Users    mobile · emerging markets",
+        "Goal     p99 < 200ms · zero data loss",
+        "Owner    @your-handle",
+        "",
+        "// next: design the fix, not a patch"
+      ],
+      "diagram": {
+        "caption": "C4 · Container view",
+        "nodes": [
+          {
+            "label": "Clients",
+            "sub": "web · mobile",
+            "x": 110,
+            "y": 400,
+            "accent": null
+          },
+          {
+            "label": "Gateway",
+            "sub": "Envoy",
+            "x": 420,
+            "y": 400,
+            "accent": "violet"
+          },
+          {
+            "label": "Core",
+            "sub": "TypeScript",
+            "x": 730,
+            "y": 400,
+            "accent": "violet"
+          },
+          {
+            "label": "Identity",
+            "sub": "OIDC",
+            "x": 730,
+            "y": 170,
+            "accent": "violet"
+          },
+          {
+            "label": "Event bus",
+            "sub": "Kafka",
+            "x": 1040,
+            "y": 400,
+            "accent": "amber"
+          },
+          {
+            "label": "Workers",
+            "sub": "Python",
+            "x": 1330,
+            "y": 220,
+            "accent": "violet"
+          },
+          {
+            "label": "Postgres",
+            "sub": "system of record",
+            "x": 730,
+            "y": 640,
+            "accent": "cyan"
+          },
+          {
+            "label": "Search",
+            "sub": "OpenSearch",
+            "x": 1330,
+            "y": 580,
+            "accent": "cyan"
+          }
+        ],
+        "edges": [
+          {
+            "from": 0,
+            "to": 1
+          },
+          {
+            "from": 1,
+            "to": 2
+          },
+          {
+            "from": 1,
+            "to": 3
+          },
+          {
+            "from": 2,
+            "to": 4,
+            "async": true
+          },
+          {
+            "from": 4,
+            "to": 5,
+            "async": true
+          },
+          {
+            "from": 2,
+            "to": 6
+          },
+          {
+            "from": 4,
+            "to": 7,
+            "async": true
+          }
+        ]
+      },
+      "agentPanes": [
+        {
+          "name": "claude-code",
+          "accent": "amber",
+          "lines": [
+            "export async function rateLimit(req) {",
+            "  const key = `rl:${req.ip}`;",
+            "  const n = await redis.incr(key);",
+            "  if (n === 1) await redis.expire(key, 60);",
+            "  if (n > LIMIT) throw new TooMany();",
+            "}"
+          ]
+        },
+        {
+          "name": "codex",
+          "accent": "green",
+          "lines": [
+            "describe('rateLimit', () => {",
+            "  it('allows under limit')",
+            "  it('blocks over limit')",
+            "  it('resets after 60s')",
+            "});",
+            "// 18 tests · passing"
+          ]
+        },
+        {
+          "name": "copilot",
+          "accent": "blue",
+          "lines": [
+            "-- migration 0042",
+            "ALTER TABLE orders",
+            "  ADD COLUMN idem_key text;",
+            "CREATE UNIQUE INDEX",
+            "  ON orders(idem_key);"
+          ]
+        }
+      ],
+      "welcome": {
+        "code": [
+          "const engineer = {",
+          "  name: \"Your Name\",",
+          "  solves: [\"systems\", \"teams\", \"agents\"],",
+          "  ships: \"at scale\",",
+          "};",
+          "",
+          "await welcome(engineer);"
+        ],
+        "running": "▶ running welcome(engineer)…",
+        "title": "Welcome.",
+        "line": "I build systems that solve real problems.",
+        "hint": "scroll to see how ↓"
+      },
+      "metrics": {
+        "label": "p99 latency",
+        "bad": "2.4s",
+        "good": "120ms",
+        "healthy": "✓ healthy",
+        "budget": "error budget",
+        "remaining": "% remaining"
+      },
+      "adr": [
+        "# ADR-001",
+        "Event bus over sync fan-out",
+        "",
+        "## Status",
+        "Accepted",
+        "",
+        "## Context",
+        "Order writes trigger five",
+        "downstream calls. One slow",
+        "dependency stalls checkout.",
+        "",
+        "## Decision",
+        "Publish domain events to",
+        "Kafka with an outbox.",
+        "",
+        "## Consequences",
+        "Eventual consistency.",
+        "Consumers must be idempotent.",
+        "Replay becomes free."
+      ],
+      "ci": [
+        "lint",
+        "types",
+        "unit tests · 412",
+        "integration",
+        "evals · 42/42",
+        "SAST · secrets",
+        "licence check"
+      ],
+      "laptop": {
+        "problem": [
+          "[ERR] checkout timeout 2412ms",
+          "[ERR] checkout timeout 2287ms",
+          "[WARN] retry 1/3 payments.charge",
+          "[ERR] checkout timeout 2530ms",
+          "[ERR] checkout timeout 2198ms",
+          "[WARN] retry 2/3 payments.charge",
+          "[ERR] checkout timeout 2641ms",
+          "[ERR] checkout timeout 2355ms",
+          "[WARN] retry 3/3 payments.charge",
+          "[ERR] checkout timeout 2470ms",
+          "[ERR] checkout timeout 2302ms",
+          "[WARN] retry 1/3 payments.charge",
+          "[ERR] checkout timeout 2588ms",
+          "[ERR] checkout timeout 2219ms",
+          "[WARN] retry 2/3 payments.charge",
+          "[ERR] checkout timeout 2496ms",
+          "[ERR] checkout timeout 2377ms",
+          "[ERR] checkout timeout 2603ms",
+          "[WARN] retry 3/3 payments.charge",
+          "[ERR] checkout timeout 2251ms"
+        ],
+        "design": [
+          "flowchart LR",
+          "  client --> gateway",
+          "  gateway --> core",
+          "  core -->|events| bus",
+          "  bus --> workers",
+          "  core --> postgres",
+          "  bus --> search"
+        ],
+        "agents": [
+          "# planner  split ISSUE-142 → 4 tasks",
+          "# claude   task-1 → feat/rate-limit",
+          "# codex    task-2 → 18 tests",
+          "# copilot  task-3 → migration",
+          "# evals    42/42 passed",
+          "# ci       all gates green",
+          "# PR #318 ready for review"
+        ],
+        "code": [
+          "# merged   PR #318",
+          "# deployed canary 5% → 100%",
+          "# SLO      healthy · p99 120ms",
+          "",
+          "// you are here ↓"
+        ]
+      }
+    }
   },
-  "process": {
-    "label": "How I work",
-    "steps": [
-      { "label": "Ideas", "icon": "idea", "accent": "amber" },
-      { "label": "Concepts", "icon": "concept", "accent": "pink" },
-      { "label": "Designs", "icon": "design", "accent": "violet" },
-      { "label": "Code", "icon": "code", "accent": "cyan" }
+  "proof": {
+    "note": "Placeholder figures — set yours in portfolio.json",
+    "items": [
+      {
+        "value": 12,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "Systems in production"
+      },
+      {
+        "value": 2,
+        "decimals": 0,
+        "suffix": "M+",
+        "label": "Users served"
+      },
+      {
+        "value": 99.9,
+        "decimals": 1,
+        "suffix": "%",
+        "label": "Uptime on owned services"
+      },
+      {
+        "value": 8,
+        "decimals": 0,
+        "suffix": "",
+        "label": "Agents in daily workflow"
+      },
+      {
+        "value": 15,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "Engineers led & mentored"
+      }
     ]
   },
-  "stack": {
-    "id": "stack",
-    "eyebrow": "Introduction",
-    "title": "My preferred\ntech [stack].",
-    "intro": "A short line about the kinds of problems you like to solve and the tools you reach for.",
-    "roles": [
-      { "title": "Role One", "tags": ["Tool", "Tool", "Tool"], "model": "cube", "accent": "violet" },
-      { "title": "Role Two", "tags": ["Tool", "Tool", "Tool"], "model": "hex", "accent": "green" },
-      { "title": "Role Three", "tags": ["Tool", "Tool", "Tool"], "model": "interlock", "accent": "blue" },
-      { "title": "Role Four", "tags": ["Tool", "Tool", "Tool"], "model": "orbitals", "accent": "cyan" },
-      { "title": "Role Five", "tags": ["Tool", "Tool", "Tool"], "model": "branch", "accent": "pink" }
+  "lifecycle": {
+    "id": "lifecycle",
+    "eyebrow": "01 — The lifecycle",
+    "title": "How I [solve] problems.",
+    "intro": "Five stages, each with the artefacts that make it real. Code is stage four — not stage one.",
+    "labels": {
+      "artefacts": "Artefacts",
+      "tools": "Tools"
+    },
+    "stages": [
+      {
+        "title": "Discover",
+        "line": "Frame the problem before the solution. Who hurts, how much, and how we will know it is fixed.",
+        "artefacts": [
+          "Problem statement",
+          "PRD",
+          "Success metrics",
+          "Risk register"
+        ],
+        "tools": "Event storming · interviews · data pulls",
+        "icon": "discover",
+        "accent": "amber"
+      },
+      {
+        "title": "Design",
+        "line": "Architecture that survives contact with scale. Boundaries, contracts and decisions on paper first.",
+        "artefacts": [
+          "C4 diagrams",
+          "UML sequence",
+          "ADRs",
+          "API contracts"
+        ],
+        "tools": "Mermaid · PlantUML · OpenAPI · AsyncAPI",
+        "icon": "blueprint",
+        "accent": "violet"
+      },
+      {
+        "title": "Prototype",
+        "line": "Prove the riskiest assumption first — cheaply, and with numbers.",
+        "artefacts": [
+          "Spike",
+          "Clickable prototype",
+          "Load-test baseline"
+        ],
+        "tools": "k6 · Figma · agent-generated scaffolds",
+        "icon": "concept",
+        "accent": "pink"
+      },
+      {
+        "title": "Build",
+        "line": "Agents write in parallel, I orchestrate and review. Same CI for everyone.",
+        "artefacts": [
+          "Typed services",
+          "Test suites",
+          "IaC modules",
+          "Feature flags"
+        ],
+        "tools": "Claude Code · Codex · Copilot · Terraform",
+        "icon": "code",
+        "accent": "cyan"
+      },
+      {
+        "title": "Operate",
+        "line": "Own it in production. Measure what users feel, fix what the data says.",
+        "artefacts": [
+          "SLOs",
+          "Runbooks",
+          "Dashboards",
+          "Postmortems"
+        ],
+        "tools": "OpenTelemetry · Grafana · on-call",
+        "icon": "pulse",
+        "accent": "green"
+      }
+    ]
+  },
+  "systems": {
+    "id": "systems",
+    "eyebrow": "02 — System design",
+    "title": "Systems I've [architected].",
+    "intro": "C4 views of real architectures. Click any component for the decision behind it and the trade-off I accepted.",
+    "labels": {
+      "sync": "sync",
+      "async": "async",
+      "decision": "Decision",
+      "why": "Why",
+      "tradeoff": "Trade-off accepted",
+      "modelledWith": "Modelled with",
+      "modelledWithValue": "C4 · UML sequence · OpenAPI / AsyncAPI · Terraform",
+      "adrs": "Architecture decision records",
+      "viewContext": "C4 · Context",
+      "viewContainer": "C4 · Container",
+      "viewZones": "Deployment zones",
+      "contextTitle": "System context",
+      "containerTitle": "Containers",
+      "deploymentSuffix": " + deployment",
+      "systemTech": "The system I designed",
+      "adrContext": "Context",
+      "adrDecision": "Decision",
+      "adrCost": "Cost",
+      "placeholder": {
+        "decision": "Placeholder — the decision you made here.",
+        "why": "Placeholder — the constraint that drove it.",
+        "tradeoff": "Placeholder — what you gave up, on purpose."
+      },
+      "kinds": {
+        "actor": "Person",
+        "system": "Software system",
+        "external": "External system",
+        "service": "Container · service",
+        "store": "Container · data",
+        "queue": "Container · stream",
+        "ai": "Container · AI"
+      }
+    },
+    "items": [
+      {
+        "name": "Platform A",
+        "kind": "Event-driven core",
+        "scale": [
+          {
+            "label": "p99 latency",
+            "value": "< 120 ms"
+          },
+          {
+            "label": "Peak load",
+            "value": "12k rps"
+          },
+          {
+            "label": "Availability",
+            "value": "99.95%"
+          }
+        ],
+        "context": {
+          "actors": [
+            {
+              "label": "Customers",
+              "tech": "Web · mobile"
+            },
+            {
+              "label": "Operations",
+              "tech": "Back-office"
+            }
+          ],
+          "externals": [
+            {
+              "label": "Payments",
+              "tech": "3rd-party",
+              "async": true
+            },
+            {
+              "label": "Identity provider",
+              "tech": "OIDC",
+              "async": false
+            },
+            {
+              "label": "Notifications",
+              "tech": "Email · SMS",
+              "async": true
+            }
+          ],
+          "decision": "Draw the boundary before the boxes.",
+          "why": "Agreeing what is in and out of scope prevents most re-architecture later.",
+          "tradeoff": "Some integrations deliberately pushed to v2."
+        },
+        "container": {
+          "nodes": [
+            {
+              "id": "users",
+              "label": "Clients",
+              "tech": "Web · mobile",
+              "kind": "actor",
+              "x": 7,
+              "y": 46
+            },
+            {
+              "id": "gw",
+              "label": "API gateway",
+              "tech": "Envoy",
+              "kind": "service",
+              "x": 25,
+              "y": 46,
+              "decision": "Single gateway for auth, rate limits and routing.",
+              "why": "Cross-cutting concerns live in one place, not in every service.",
+              "tradeoff": "A critical hop — run it HA across zones."
+            },
+            {
+              "id": "auth",
+              "label": "Identity",
+              "tech": "OIDC · JWT",
+              "kind": "service",
+              "x": 45,
+              "y": 14,
+              "decision": "Short-lived JWTs, verified at the edge.",
+              "why": "Services stay stateless; no session store on the hot path.",
+              "tradeoff": "Revocation needs a deny-list with a short TTL."
+            },
+            {
+              "id": "core",
+              "label": "Core service",
+              "tech": "TypeScript · Node",
+              "kind": "service",
+              "x": 45,
+              "y": 46,
+              "decision": "Modular monolith before microservices.",
+              "why": "One deployable, clear module boundaries; extract only under real load.",
+              "tradeoff": "Discipline needed to keep modules from coupling."
+            },
+            {
+              "id": "bus",
+              "label": "Event bus",
+              "tech": "Kafka",
+              "kind": "queue",
+              "x": 66,
+              "y": 46,
+              "decision": "Publish domain events instead of calling downstream.",
+              "why": "Writes stay fast; consumers scale and replay independently.",
+              "tradeoff": "Eventual consistency — UI shows pending states."
+            },
+            {
+              "id": "work",
+              "label": "Workers",
+              "tech": "Python",
+              "kind": "service",
+              "x": 88,
+              "y": 20,
+              "decision": "Idempotent consumers keyed by event id.",
+              "why": "Safe retries and replays without double effects.",
+              "tradeoff": "Every handler carries a dedupe check."
+            },
+            {
+              "id": "db",
+              "label": "Primary DB",
+              "tech": "Postgres",
+              "kind": "store",
+              "x": 45,
+              "y": 82,
+              "decision": "Postgres as the system of record.",
+              "why": "Transactions, constraints and mature tooling beat novelty.",
+              "tradeoff": "Vertical limits — read replicas + partitioning planned."
+            },
+            {
+              "id": "cache",
+              "label": "Cache",
+              "tech": "Redis",
+              "kind": "store",
+              "x": 25,
+              "y": 82,
+              "decision": "Read-through cache for hot entities only.",
+              "why": "Cuts p99 on the top 5% of keys that get 80% of reads.",
+              "tradeoff": "Invalidation on write via events."
+            },
+            {
+              "id": "search",
+              "label": "Search",
+              "tech": "OpenSearch",
+              "kind": "store",
+              "x": 88,
+              "y": 74,
+              "decision": "Search index built from events, never written directly.",
+              "why": "Rebuildable from the log at any time.",
+              "tradeoff": "Index lags writes by seconds."
+            }
+          ],
+          "edges": [
+            {
+              "from": "users",
+              "to": "gw",
+              "async": false
+            },
+            {
+              "from": "gw",
+              "to": "auth",
+              "async": false
+            },
+            {
+              "from": "gw",
+              "to": "core",
+              "async": false
+            },
+            {
+              "from": "core",
+              "to": "cache",
+              "async": false
+            },
+            {
+              "from": "core",
+              "to": "db",
+              "async": false
+            },
+            {
+              "from": "core",
+              "to": "bus",
+              "async": true
+            },
+            {
+              "from": "bus",
+              "to": "work",
+              "async": true
+            },
+            {
+              "from": "bus",
+              "to": "search",
+              "async": true
+            }
+          ],
+          "zones": [
+            {
+              "label": "Edge",
+              "x": 16,
+              "y": 28,
+              "w": 18,
+              "h": 36
+            },
+            {
+              "label": "Cluster · 3 AZs",
+              "x": 36,
+              "y": 2,
+              "w": 62,
+              "h": 60
+            },
+            {
+              "label": "Data tier",
+              "x": 16,
+              "y": 66,
+              "w": 82,
+              "h": 32
+            }
+          ]
+        },
+        "adrs": [
+          {
+            "id": "ADR-001",
+            "title": "Event bus over synchronous fan-out",
+            "status": "Accepted",
+            "context": "Order writes triggered five downstream calls; one slow dependency stalled checkout.",
+            "decision": "Publish domain events to Kafka; consumers react asynchronously.",
+            "consequence": "Eventual consistency, plus an outbox to guarantee delivery."
+          },
+          {
+            "id": "ADR-002",
+            "title": "Modular monolith first",
+            "status": "Accepted",
+            "context": "Small team, unclear seams, high change rate.",
+            "decision": "One deployable with enforced module boundaries.",
+            "consequence": "Extraction later is cheap because boundaries already exist."
+          },
+          {
+            "id": "ADR-003",
+            "title": "SLO-based alerting",
+            "status": "Accepted",
+            "context": "Threshold alerts paged on noise, missed real user pain.",
+            "decision": "Alert on error-budget burn rate per user journey.",
+            "consequence": "Fewer pages; requires journey-level instrumentation."
+          },
+          {
+            "id": "ADR-004",
+            "title": "Infrastructure as code only",
+            "status": "Accepted",
+            "context": "Console drift between staging and prod.",
+            "decision": "Terraform modules, plan in CI, apply on merge.",
+            "consequence": "Slower one-off changes; zero drift."
+          }
+        ]
+      },
+      {
+        "name": "Platform B",
+        "kind": "AI retrieval platform",
+        "scale": [
+          {
+            "label": "Answer latency",
+            "value": "< 2.5 s"
+          },
+          {
+            "label": "Docs indexed",
+            "value": "4M"
+          },
+          {
+            "label": "Eval pass rate",
+            "value": "96%"
+          }
+        ],
+        "context": {
+          "actors": [
+            {
+              "label": "End users",
+              "tech": "Chat · API"
+            }
+          ],
+          "externals": [
+            {
+              "label": "LLM providers",
+              "tech": "Multi-vendor",
+              "async": true
+            },
+            {
+              "label": "Source systems",
+              "tech": "Docs · tickets",
+              "async": true
+            },
+            {
+              "label": "Identity provider",
+              "tech": "SSO",
+              "async": false
+            }
+          ],
+          "decision": "Draw the boundary before the boxes.",
+          "why": "Agreeing what is in and out of scope prevents most re-architecture later.",
+          "tradeoff": "Some integrations deliberately pushed to v2."
+        },
+        "container": {
+          "nodes": [
+            {
+              "id": "u",
+              "label": "Users",
+              "tech": "Chat · API",
+              "kind": "actor",
+              "x": 7,
+              "y": 46
+            },
+            {
+              "id": "api",
+              "label": "API / BFF",
+              "tech": "FastAPI",
+              "kind": "service",
+              "x": 25,
+              "y": 46,
+              "decision": "Streaming responses over SSE.",
+              "why": "Perceived latency drops to first token.",
+              "tradeoff": "Harder retries mid-stream."
+            },
+            {
+              "id": "orch",
+              "label": "Orchestrator",
+              "tech": "LangGraph",
+              "kind": "ai",
+              "x": 46,
+              "y": 46,
+              "decision": "Explicit state graph, not a free-form agent loop.",
+              "why": "Every step is inspectable, testable and bounded.",
+              "tradeoff": "Less \"magic\"; more upfront design."
+            },
+            {
+              "id": "gwm",
+              "label": "Model gateway",
+              "tech": "Multi-provider",
+              "kind": "ai",
+              "x": 68,
+              "y": 14,
+              "decision": "Provider-agnostic gateway with fallback.",
+              "why": "No single-vendor outage takes the product down.",
+              "tradeoff": "Prompt behaviour differs per model — evals per provider."
+            },
+            {
+              "id": "vec",
+              "label": "Vector store",
+              "tech": "pgvector",
+              "kind": "store",
+              "x": 68,
+              "y": 46,
+              "decision": "pgvector inside Postgres before a dedicated vector DB.",
+              "why": "One fewer system; joins with metadata for free.",
+              "tradeoff": "Re-evaluate past ~50M vectors."
+            },
+            {
+              "id": "ing",
+              "label": "Ingestion",
+              "tech": "Python · queues",
+              "kind": "queue",
+              "x": 46,
+              "y": 82,
+              "decision": "Chunk + embed asynchronously, versioned.",
+              "why": "Re-index without downtime when the embedding model changes.",
+              "tradeoff": "Storage for two index versions during cut-over."
+            },
+            {
+              "id": "eval",
+              "label": "Evals & guardrails",
+              "tech": "Offline + online",
+              "kind": "ai",
+              "x": 89,
+              "y": 46,
+              "decision": "Every prompt change ships behind an eval gate.",
+              "why": "Regressions are caught before users see them.",
+              "tradeoff": "Golden datasets must be maintained."
+            },
+            {
+              "id": "obs",
+              "label": "Tracing",
+              "tech": "OpenTelemetry",
+              "kind": "service",
+              "x": 89,
+              "y": 82,
+              "decision": "Trace every LLM call with cost and tokens.",
+              "why": "Cost and quality become observable per feature.",
+              "tradeoff": "Trace volume needs sampling."
+            }
+          ],
+          "edges": [
+            {
+              "from": "u",
+              "to": "api",
+              "async": false
+            },
+            {
+              "from": "api",
+              "to": "orch",
+              "async": false
+            },
+            {
+              "from": "orch",
+              "to": "gwm",
+              "async": false
+            },
+            {
+              "from": "orch",
+              "to": "vec",
+              "async": false
+            },
+            {
+              "from": "ing",
+              "to": "vec",
+              "async": true
+            },
+            {
+              "from": "orch",
+              "to": "eval",
+              "async": false
+            },
+            {
+              "from": "eval",
+              "to": "obs",
+              "async": true
+            },
+            {
+              "from": "gwm",
+              "to": "eval",
+              "async": true
+            }
+          ],
+          "zones": [
+            {
+              "label": "Serving",
+              "x": 16,
+              "y": 2,
+              "w": 82,
+              "h": 62
+            },
+            {
+              "label": "Offline pipeline",
+              "x": 36,
+              "y": 66,
+              "w": 62,
+              "h": 32
+            }
+          ]
+        },
+        "adrs": [
+          {
+            "id": "ADR-011",
+            "title": "Retrieval-augmented, not fine-tuned",
+            "status": "Accepted",
+            "context": "Knowledge changes daily; fine-tunes go stale.",
+            "decision": "RAG over a versioned index, with citations.",
+            "consequence": "Quality depends on chunking and retrieval tuning."
+          },
+          {
+            "id": "ADR-012",
+            "title": "Model gateway with fallback",
+            "status": "Accepted",
+            "context": "Provider outages and price changes.",
+            "decision": "Route by capability and cost; fail over automatically.",
+            "consequence": "Must keep prompts portable across models."
+          },
+          {
+            "id": "ADR-013",
+            "title": "Evals gate every prompt change",
+            "status": "Accepted",
+            "context": "Small prompt edits caused silent regressions.",
+            "decision": "Offline eval suite runs in CI; online sampling in prod.",
+            "consequence": "Golden datasets become a maintained asset."
+          }
+        ]
+      },
+      {
+        "name": "Platform C",
+        "kind": "Agentic delivery pipeline",
+        "scale": [
+          {
+            "label": "Issue → PR",
+            "value": "~40 min"
+          },
+          {
+            "label": "Agent-drafted PRs",
+            "value": "70%"
+          },
+          {
+            "label": "Human-reviewed",
+            "value": "100%"
+          }
+        ],
+        "context": {
+          "actors": [
+            {
+              "label": "Engineers",
+              "tech": "Issues · reviews"
+            }
+          ],
+          "externals": [
+            {
+              "label": "Code host",
+              "tech": "Git · CI",
+              "async": true
+            },
+            {
+              "label": "LLM providers",
+              "tech": "Agents",
+              "async": false
+            },
+            {
+              "label": "Chat",
+              "tech": "Notifications",
+              "async": true
+            }
+          ],
+          "decision": "Draw the boundary before the boxes.",
+          "why": "Agreeing what is in and out of scope prevents most re-architecture later.",
+          "tradeoff": "Some integrations deliberately pushed to v2."
+        },
+        "container": {
+          "nodes": [
+            {
+              "id": "iss",
+              "label": "Issue tracker",
+              "tech": "Git host",
+              "kind": "actor",
+              "x": 7,
+              "y": 46
+            },
+            {
+              "id": "pl",
+              "label": "Planner",
+              "tech": "LangGraph",
+              "kind": "ai",
+              "x": 25,
+              "y": 46,
+              "decision": "Split work into small, testable tasks first.",
+              "why": "Small diffs are reviewable and revertible.",
+              "tradeoff": "Planning adds a step before any code."
+            },
+            {
+              "id": "mcp",
+              "label": "MCP servers",
+              "tech": "repo · docs · DB",
+              "kind": "service",
+              "x": 60,
+              "y": 88,
+              "decision": "Tools exposed via MCP, read-only by default.",
+              "why": "One protocol for every agent; scoped access.",
+              "tradeoff": "Server maintenance per tool."
+            },
+            {
+              "id": "cod",
+              "label": "Coding agents",
+              "tech": "Claude Code · Codex",
+              "kind": "ai",
+              "x": 47,
+              "y": 46,
+              "decision": "Run agents in parallel sandboxes on branches.",
+              "why": "Throughput scales with tasks, not people.",
+              "tradeoff": "Merge conflicts handled by the planner."
+            },
+            {
+              "id": "repo",
+              "label": "Repository",
+              "tech": "Monorepo",
+              "kind": "store",
+              "x": 47,
+              "y": 82,
+              "decision": "Agents never push to main.",
+              "why": "Same branch protections as humans.",
+              "tradeoff": "Slightly slower path to merge."
+            },
+            {
+              "id": "rev",
+              "label": "Review agent",
+              "tech": "Evals · SAST",
+              "kind": "ai",
+              "x": 60,
+              "y": 50,
+              "decision": "AI review before human review.",
+              "why": "Humans spend time on design, not nits.",
+              "tradeoff": "False positives need tuning."
+            },
+            {
+              "id": "ci",
+              "label": "CI gates",
+              "tech": "tests · types · lint",
+              "kind": "service",
+              "x": 74,
+              "y": 50,
+              "decision": "Identical gates for agent and human code.",
+              "why": "Quality bar is enforced, not trusted.",
+              "tradeoff": "CI minutes scale with agent output."
+            },
+            {
+              "id": "hum",
+              "label": "Human approval",
+              "tech": "Lead review",
+              "kind": "actor",
+              "x": 89,
+              "y": 82
+            }
+          ],
+          "edges": [
+            {
+              "from": "iss",
+              "to": "pl",
+              "async": false
+            },
+            {
+              "from": "pl",
+              "to": "cod",
+              "async": false
+            },
+            {
+              "from": "mcp",
+              "to": "cod",
+              "async": true
+            },
+            {
+              "from": "cod",
+              "to": "repo",
+              "async": false
+            },
+            {
+              "from": "cod",
+              "to": "rev",
+              "async": false
+            },
+            {
+              "from": "rev",
+              "to": "ci",
+              "async": false
+            },
+            {
+              "from": "ci",
+              "to": "hum",
+              "async": true
+            }
+          ],
+          "zones": [
+            {
+              "label": "Sandboxed runtime",
+              "x": 36,
+              "y": 2,
+              "w": 42,
+              "h": 62
+            },
+            {
+              "label": "Governance",
+              "x": 80,
+              "y": 28,
+              "w": 18,
+              "h": 70
+            }
+          ]
+        },
+        "adrs": [
+          {
+            "id": "ADR-021",
+            "title": "Agents propose, humans approve",
+            "status": "Accepted",
+            "context": "Autonomy without accountability is a liability.",
+            "decision": "Every agent PR requires a named human approver.",
+            "consequence": "Review capacity becomes the constraint to manage."
+          },
+          {
+            "id": "ADR-022",
+            "title": "MCP for tool access",
+            "status": "Accepted",
+            "context": "Bespoke plugins per agent did not scale.",
+            "decision": "Standardise on MCP servers with scoped tokens.",
+            "consequence": "Tools are reusable across Claude Code, Codex and others."
+          },
+          {
+            "id": "ADR-023",
+            "title": "Same CI for agents and humans",
+            "status": "Accepted",
+            "context": "Pressure to fast-path agent changes.",
+            "decision": "No bypass. Ever.",
+            "consequence": "Trust in agent output grows on evidence."
+          }
+        ]
+      }
+    ]
+  },
+  "agents": {
+    "id": "agents",
+    "eyebrow": "03 — AI-first engineering",
+    "title": "My agent [fleet].",
+    "intro": "I set intent and constraints. Agents plan, write and test in parallel. Guardrails — not vibes — decide what ships.",
+    "stats": [
+      {
+        "value": "70%",
+        "label": "PRs agent-drafted"
+      },
+      {
+        "value": "−45%",
+        "label": "Cycle time"
+      },
+      {
+        "value": "100%",
+        "label": "Human-reviewed"
+      }
+    ],
+    "labels": {
+      "live": "Live run · issue → merged PR",
+      "hint": "Click a node",
+      "role": "Role in the fleet",
+      "guardrail": "Guardrail",
+      "principles": "Principles",
+      "principlesBody": "Agents propose · humans approve · CI is the same for everyone · every run is traced and evaluated."
+    },
+    "orchestrator": "you",
+    "initial": "plan",
+    "nodes": [
+      {
+        "id": "you",
+        "label": "You",
+        "tech": "Orchestrator",
+        "mono": "ME",
+        "x": 6,
+        "y": 50,
+        "tone": "white",
+        "role": "Sets intent, constraints and the definition of done. Reviews the design, not every line.",
+        "guard": "Final approval on every merge."
+      },
+      {
+        "id": "plan",
+        "label": "Planner",
+        "tech": "LangGraph · CrewAI",
+        "mono": "PL",
+        "x": 19,
+        "y": 50,
+        "tone": "violet",
+        "role": "Breaks an issue into small, testable tasks and assigns them.",
+        "guard": "Task size capped; each task ships with acceptance tests."
+      },
+      {
+        "id": "cc",
+        "label": "Claude Code",
+        "tech": "multi-file features",
+        "mono": "CC",
+        "x": 39,
+        "y": 13,
+        "tone": "amber",
+        "role": "Owns larger features and refactors across files in a branch.",
+        "guard": "Sandboxed; no direct push; scoped repo token."
+      },
+      {
+        "id": "cx",
+        "label": "Codex",
+        "tech": "parallel tasks",
+        "mono": "CX",
+        "x": 39,
+        "y": 38,
+        "tone": "green",
+        "role": "Runs background tasks in parallel — tests, migrations, docs.",
+        "guard": "Each task isolated in its own environment."
+      },
+      {
+        "id": "cp",
+        "label": "Copilot",
+        "tech": "in-editor pair",
+        "mono": "GH",
+        "x": 39,
+        "y": 63,
+        "tone": "blue",
+        "role": "Inline completion while I hand-write the hard, novel parts.",
+        "guard": "Human-authored; same review as any code."
+      },
+      {
+        "id": "au",
+        "label": "Autonomous agent",
+        "tech": "issue → PR",
+        "mono": "AU",
+        "x": 39,
+        "y": 88,
+        "tone": "pink",
+        "role": "Picks up well-scoped tickets end-to-end, overnight.",
+        "guard": "Only labelled tickets; time and cost budget per run."
+      },
+      {
+        "id": "mcp",
+        "label": "MCP servers",
+        "tech": "tools & context",
+        "mono": "MC",
+        "x": 67,
+        "y": 88,
+        "tone": "cyan",
+        "role": "Exposes repo, docs, schema and tickets as tools to every agent.",
+        "guard": "Read-only by default; write scopes granted per task."
+      },
+      {
+        "id": "rev",
+        "label": "Review + evals",
+        "tech": "guardrails",
+        "mono": "EV",
+        "x": 67,
+        "y": 50,
+        "tone": "pink",
+        "role": "Static analysis, eval suites and an AI reviewer before any human looks.",
+        "guard": "Blocks on failed evals, secrets or licence issues."
+      },
+      {
+        "id": "ci",
+        "label": "CI gates",
+        "tech": "tests · types · SAST",
+        "mono": "CI",
+        "x": 80,
+        "y": 50,
+        "tone": "green",
+        "role": "The same gates human code passes. No exceptions.",
+        "guard": "Branch protection; required checks."
+      },
+      {
+        "id": "ship",
+        "label": "Merged",
+        "tech": "behind a flag",
+        "mono": "✓",
+        "x": 93,
+        "y": 50,
+        "tone": "cyan",
+        "role": "Ships behind a feature flag and is observed in production.",
+        "guard": "Auto-rollback on SLO burn."
+      }
+    ],
+    "edges": [
+      {
+        "from": "you",
+        "to": "plan",
+        "tool": false
+      },
+      {
+        "from": "plan",
+        "to": "cc",
+        "tool": false
+      },
+      {
+        "from": "plan",
+        "to": "cx",
+        "tool": false
+      },
+      {
+        "from": "plan",
+        "to": "cp",
+        "tool": false
+      },
+      {
+        "from": "plan",
+        "to": "au",
+        "tool": false
+      },
+      {
+        "from": "cc",
+        "to": "rev",
+        "tool": false
+      },
+      {
+        "from": "cx",
+        "to": "rev",
+        "tool": false
+      },
+      {
+        "from": "cp",
+        "to": "rev",
+        "tool": false
+      },
+      {
+        "from": "au",
+        "to": "rev",
+        "tool": false
+      },
+      {
+        "from": "mcp",
+        "to": "au",
+        "tool": true
+      },
+      {
+        "from": "mcp",
+        "to": "rev",
+        "tool": true
+      },
+      {
+        "from": "rev",
+        "to": "ci",
+        "tool": false
+      },
+      {
+        "from": "ci",
+        "to": "ship",
+        "tool": false
+      }
+    ],
+    "log": [
+      {
+        "tone": "muted",
+        "who": "you",
+        "message": "opened ISSUE-142 · \"rate-limit public API\" · constraints attached"
+      },
+      {
+        "tone": "violet",
+        "who": "planner",
+        "message": "split into 4 tasks · acceptance tests drafted"
+      },
+      {
+        "tone": "amber",
+        "who": "claude-code",
+        "message": "task-1 → branch feat/rate-limit · 6 files changed"
+      },
+      {
+        "tone": "green",
+        "who": "codex",
+        "message": "task-2 → 18 tests written · task-3 → migration added"
+      },
+      {
+        "tone": "cyan",
+        "who": "mcp",
+        "message": "served repo.search, docs.get, schema.describe"
+      },
+      {
+        "tone": "pink",
+        "who": "evals",
+        "message": "42/42 passed · no secrets · licence ok"
+      },
+      {
+        "tone": "green",
+        "who": "ci",
+        "message": "lint ✓ types ✓ tests ✓ SAST ✓ → PR #318 ready"
+      },
+      {
+        "tone": "white",
+        "who": "you",
+        "message": "reviewed design · approved · merged behind flag"
+      }
+    ]
+  },
+  "capabilities": {
+    "id": "capabilities",
+    "eyebrow": "04 — Capabilities",
+    "title": "The full [stack] of a lead.",
+    "items": [
+      {
+        "title": "Architecture & system design",
+        "line": "Turn ambiguity into diagrams, contracts and written decisions.",
+        "tools": [
+          "C4",
+          "UML",
+          "DDD",
+          "Event storming",
+          "ADRs",
+          "Mermaid",
+          "PlantUML"
+        ],
+        "model": "cube",
+        "accent": "violet"
+      },
+      {
+        "title": "Distributed systems & scale",
+        "line": "Throughput, consistency and failure — designed, then load-tested.",
+        "tools": [
+          "Kafka",
+          "Redis",
+          "Postgres",
+          "gRPC",
+          "CQRS",
+          "k6"
+        ],
+        "model": "hex",
+        "accent": "green"
+      },
+      {
+        "title": "AI engineering",
+        "line": "RAG, agents and evals that hold up in production, not just demos.",
+        "tools": [
+          "RAG",
+          "LangGraph",
+          "CrewAI",
+          "MCP",
+          "Evals",
+          "pgvector"
+        ],
+        "model": "orbitals",
+        "accent": "pink"
+      },
+      {
+        "title": "Cloud & platform",
+        "line": "Paved roads: infrastructure as code, golden paths, zero drift.",
+        "tools": [
+          "AWS",
+          "GCP",
+          "Kubernetes",
+          "Terraform",
+          "Cloudflare",
+          "Docker"
+        ],
+        "model": "orb",
+        "accent": "cyan"
+      },
+      {
+        "title": "Reliability & operations",
+        "line": "SLOs, observability and incident muscle memory.",
+        "tools": [
+          "OpenTelemetry",
+          "SLOs",
+          "Runbooks",
+          "Grafana",
+          "Postmortems"
+        ],
+        "model": "interlock",
+        "accent": "blue"
+      },
+      {
+        "title": "Engineering leadership",
+        "line": "Roadmaps, design reviews, mentoring and hiring.",
+        "tools": [
+          "Roadmaps",
+          "Design reviews",
+          "Mentoring",
+          "Hiring",
+          "OKRs"
+        ],
+        "model": "branch",
+        "accent": "amber"
+      }
+    ]
+  },
+  "work": {
+    "id": "work",
+    "eyebrow": "05 — Case studies",
+    "title": "Problems, [solved].",
+    "intro": "Each one: the problem, the architecture, the calls that mattered, and the measured result.",
+    "labels": {
+      "cover": "Cover / architecture diagram",
+      "source": "Source",
+      "demo": "Live"
+    },
+    "items": [
+      {
+        "title": "Project One",
+        "tagline": "One-line outcome headline for the project",
+        "meta": "Lead engineer · team of 5 · YYYY",
+        "tags": [
+          "Event-driven",
+          "Postgres",
+          "Kafka"
+        ],
+        "accent": "violet",
+        "cover": null,
+        "repo": null,
+        "demo": null,
+        "story": [
+          {
+            "label": "Problem",
+            "value": "What was broken, for whom, and why it mattered."
+          },
+          {
+            "label": "Architecture",
+            "value": "The shape of the solution and how the parts talk."
+          },
+          {
+            "label": "Key decisions",
+            "value": "The two or three calls that made it work, and the trade-offs."
+          },
+          {
+            "label": "Outcome",
+            "value": "The measured result — latency, cost, revenue, users."
+          }
+        ],
+        "metrics": [
+          {
+            "value": "−40%",
+            "label": "p99 latency"
+          },
+          {
+            "value": "3×",
+            "label": "Throughput"
+          },
+          {
+            "value": "99.95%",
+            "label": "Availability"
+          }
+        ]
+      },
+      {
+        "title": "Project Two",
+        "tagline": "One-line outcome headline for the project",
+        "meta": "Architect · team of 8 · YYYY",
+        "tags": [
+          "RAG",
+          "Evals",
+          "LangGraph"
+        ],
+        "accent": "cyan",
+        "cover": null,
+        "repo": null,
+        "demo": null,
+        "story": [
+          {
+            "label": "Problem",
+            "value": "What was broken, for whom, and why it mattered."
+          },
+          {
+            "label": "Architecture",
+            "value": "The shape of the solution and how the parts talk."
+          },
+          {
+            "label": "Key decisions",
+            "value": "The two or three calls that made it work, and the trade-offs."
+          },
+          {
+            "label": "Outcome",
+            "value": "The measured result — latency, cost, revenue, users."
+          }
+        ],
+        "metrics": [
+          {
+            "value": "96%",
+            "label": "Eval pass rate"
+          },
+          {
+            "value": "−60%",
+            "label": "Cost / answer"
+          },
+          {
+            "value": "2.1 s",
+            "label": "Median answer"
+          }
+        ]
+      },
+      {
+        "title": "Project Three",
+        "tagline": "One-line outcome headline for the project",
+        "meta": "Founder & lead · YYYY",
+        "tags": [
+          "Agents",
+          "MCP",
+          "CI/CD"
+        ],
+        "accent": "pink",
+        "cover": null,
+        "repo": null,
+        "demo": null,
+        "story": [
+          {
+            "label": "Problem",
+            "value": "What was broken, for whom, and why it mattered."
+          },
+          {
+            "label": "Architecture",
+            "value": "The shape of the solution and how the parts talk."
+          },
+          {
+            "label": "Key decisions",
+            "value": "The two or three calls that made it work, and the trade-offs."
+          },
+          {
+            "label": "Outcome",
+            "value": "The measured result — latency, cost, revenue, users."
+          }
+        ],
+        "metrics": [
+          {
+            "value": "70%",
+            "label": "Agent-drafted PRs"
+          },
+          {
+            "value": "−45%",
+            "label": "Cycle time"
+          },
+          {
+            "value": "0",
+            "label": "Gate bypasses"
+          }
+        ]
+      }
     ]
   },
   "experience": {
     "id": "experience",
-    "eyebrow": "What I have done so far",
-    "title": "Work [experience].",
+    "eyebrow": "06 — Experience",
+    "title": "Scope, not just [titles].",
     "labels": {
       "ribbon": "Career ribbon · parallel tracks",
-      "ribbonHint": "Hover a track",
+      "ribbonHint": "Click a track to jump",
       "present": "Present",
-      "ongoing": "ongoing",
       "solo": "Sole role at the time",
       "parallelOne": "Ran in parallel with 1 role",
       "parallelMany": "Ran in parallel with {n} roles"
     },
     "items": [
       {
-        "title": "Job Title Six",
-        "company": "Company Six",
+        "title": "Job Title One",
+        "company": "Company One",
         "logo": null,
-        "start": "2024-12",
-        "end": null,
-        "accent": "violet",
-        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack.", "Measurable impact (latency, cost, users, revenue)."]
-      },
-      {
-        "title": "Job Title Five",
-        "company": "Company Five",
-        "logo": null,
-        "start": "2025-02",
-        "end": null,
-        "accent": "cyan",
-        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack.", "Measurable impact (latency, cost, users, revenue)."]
-      },
-      {
-        "title": "Job Title Four",
-        "company": "Company Four",
-        "logo": null,
-        "start": "2024-09",
-        "end": "2025-03",
-        "accent": "amber",
-        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack."]
-      },
-      {
-        "title": "Job Title Three",
-        "company": "Company Three",
-        "logo": null,
-        "start": "2022-09",
-        "end": null,
-        "accent": "pink",
-        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack.", "Measurable impact (latency, cost, users, revenue)."]
+        "start": "2019-10",
+        "end": "2021-09",
+        "accent": "blue",
+        "scope": [
+          {
+            "label": "Team",
+            "value": "Solo"
+          },
+          {
+            "label": "Scope",
+            "value": "10+ clients"
+          },
+          {
+            "label": "Impact",
+            "value": "TBD"
+          }
+        ],
+        "bullets": [
+          "Placeholder — the system you owned and the outcome.",
+          "Placeholder — how you led: people, process, architecture."
+        ]
       },
       {
         "title": "Job Title Two",
@@ -107,111 +1706,588 @@
         "start": "2021-08",
         "end": "2022-12",
         "accent": "green",
-        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack."]
+        "scope": [
+          {
+            "label": "Team",
+            "value": "6 eng"
+          },
+          {
+            "label": "Scope",
+            "value": "Core APIs"
+          },
+          {
+            "label": "Impact",
+            "value": "TBD"
+          }
+        ],
+        "bullets": [
+          "Placeholder — the system you owned and the outcome.",
+          "Placeholder — how you led: people, process, architecture."
+        ]
       },
       {
-        "title": "Job Title One",
-        "company": "Company One",
+        "title": "Job Title Three",
+        "company": "Company Three",
         "logo": null,
-        "start": "2019-10",
-        "end": "2021-09",
-        "accent": "blue",
-        "bullets": ["Achievement placeholder — outcome and scale.", "System you owned end-to-end and its stack."]
-      }
-    ]
-  },
-  "projects": {
-    "id": "work",
-    "eyebrow": "My work",
-    "title": "Selected [projects].",
-    "intro": "A sentence framing the work below — real products, live demos, open source.",
-    "labels": { "source": "Source code", "demo": "Live demo" },
-    "items": [
-      {
-        "title": "Project One",
-        "tagline": "One-line tagline for the project",
-        "description": "Two sentences on the problem, what you built, and the result. Keep it under 30 words.",
-        "cover": null,
-        "repo": "https://github.com/your-handle/project-one",
-        "demo": null,
-        "accent": "violet",
-        "tags": [{ "label": "react", "accent": "cyan" }, { "label": "node", "accent": "green" }, { "label": "postgres", "accent": "pink" }]
-      },
-      {
-        "title": "Project Two",
-        "tagline": "One-line tagline for the project",
-        "description": "Two sentences on the problem, what you built, and the result. Keep it under 30 words.",
-        "cover": null,
-        "repo": "https://github.com/your-handle/project-two",
-        "demo": null,
-        "accent": "cyan",
-        "tags": [{ "label": "python", "accent": "blue" }, { "label": "fastapi", "accent": "green" }, { "label": "ai", "accent": "violet" }]
-      },
-      {
-        "title": "Project Three",
-        "tagline": "One-line tagline for the project",
-        "description": "Two sentences on the problem, what you built, and the result. Keep it under 30 words.",
-        "cover": null,
-        "repo": "https://github.com/your-handle/project-three",
-        "demo": null,
+        "start": "2022-09",
+        "end": null,
         "accent": "pink",
-        "tags": [{ "label": "nextjs", "accent": "cyan" }, { "label": "typescript", "accent": "blue" }, { "label": "tailwind", "accent": "amber" }]
+        "scope": [
+          {
+            "label": "Team",
+            "value": "Lead · 5"
+          },
+          {
+            "label": "Scope",
+            "value": "AI platform"
+          },
+          {
+            "label": "Impact",
+            "value": "TBD"
+          }
+        ],
+        "bullets": [
+          "Placeholder — the system you owned and the outcome.",
+          "Placeholder — how you led: people, process, architecture."
+        ]
+      },
+      {
+        "title": "Job Title Four",
+        "company": "Company Four",
+        "logo": null,
+        "start": "2024-09",
+        "end": "2025-03",
+        "accent": "amber",
+        "scope": [
+          {
+            "label": "Team",
+            "value": "Contract"
+          },
+          {
+            "label": "Scope",
+            "value": "Model evals"
+          },
+          {
+            "label": "Impact",
+            "value": "TBD"
+          }
+        ],
+        "bullets": [
+          "Placeholder — the system you owned and the outcome.",
+          "Placeholder — how you led: people, process, architecture."
+        ]
+      },
+      {
+        "title": "Job Title Five",
+        "company": "Company Five",
+        "logo": null,
+        "start": "2024-12",
+        "end": null,
+        "accent": "violet",
+        "scope": [
+          {
+            "label": "Team",
+            "value": "Founder"
+          },
+          {
+            "label": "Scope",
+            "value": "Architecture"
+          },
+          {
+            "label": "Impact",
+            "value": "TBD"
+          }
+        ],
+        "bullets": [
+          "Placeholder — the system you owned and the outcome.",
+          "Placeholder — how you led: people, process, architecture."
+        ]
+      },
+      {
+        "title": "Job Title Six",
+        "company": "Company Six",
+        "logo": null,
+        "start": "2025-02",
+        "end": null,
+        "accent": "cyan",
+        "scope": [
+          {
+            "label": "Team",
+            "value": "IC · data"
+          },
+          {
+            "label": "Scope",
+            "value": "ML pipelines"
+          },
+          {
+            "label": "Impact",
+            "value": "TBD"
+          }
+        ],
+        "bullets": [
+          "Placeholder — the system you owned and the outcome.",
+          "Placeholder — how you led: people, process, architecture."
+        ]
       }
     ]
   },
-  "approach": {
-    "eyebrow": "Why work with me",
-    "title": "How I [build].",
+  "leadership": {
+    "id": "leadership",
+    "eyebrow": "07 — Leadership",
+    "title": "How I [lead].",
     "items": [
-      { "title": "Value One", "description": "One line describing this strength.", "icon": "shield", "accent": "violet" },
-      { "title": "Value Two", "description": "One line describing this strength.", "icon": "cloud", "accent": "cyan" },
-      { "title": "Value Three", "description": "One line describing this strength.", "icon": "lock", "accent": "green" },
-      { "title": "Value Four", "description": "One line describing this strength.", "icon": "chip", "accent": "pink" },
-      { "title": "Value Five", "description": "One line describing this strength.", "icon": "clock", "accent": "amber" }
-    ],
-    "stats": [
-      { "value": 10, "suffix": "+", "label": "Stat label one" },
-      { "value": 90, "suffix": "%", "label": "Stat label two" },
-      { "value": 20, "suffix": "+", "label": "Stat label three" }
+      {
+        "title": "Write it down first",
+        "description": "PRDs and ADRs before code. Writing is how teams think at scale.",
+        "accent": "violet"
+      },
+      {
+        "title": "Design reviews, not approvals",
+        "description": "Reviews teach; approvals gatekeep. I run the first kind.",
+        "accent": "cyan"
+      },
+      {
+        "title": "Make the right way the easy way",
+        "description": "Paved roads, templates and CI beat style guides nobody reads.",
+        "accent": "pink"
+      },
+      {
+        "title": "Measure what users feel",
+        "description": "SLOs on journeys, not CPU graphs. Error budgets set the pace.",
+        "accent": "amber"
+      },
+      {
+        "title": "Agents amplify, humans decide",
+        "description": "Automation everywhere it is safe; accountability stays with people.",
+        "accent": "green"
+      },
+      {
+        "title": "Grow the next lead",
+        "description": "Delegate the interesting problems, not just the tickets.",
+        "accent": "blue"
+      }
+    ]
+  },
+  "toolbox": {
+    "id": "toolbox",
+    "eyebrow": "08 — Toolbox",
+    "title": "Everything I [ship] with.",
+    "intro": "Hover any tool to see how I use it — and where it went into production.",
+    "labels": {
+      "pause": "Hover to pause",
+      "how": "How I use it",
+      "usedIn": "Used in"
+    },
+    "categories": {
+      "Language": "amber",
+      "Frontend": "cyan",
+      "Backend": "green",
+      "Data": "blue",
+      "Cloud": "violet",
+      "AI": "pink",
+      "Delivery": "green",
+      "Observability": "amber",
+      "Collaboration": "blue",
+      "Design": "pink"
+    },
+    "items": [
+      {
+        "name": "TypeScript",
+        "icon": "typescript",
+        "category": "Language",
+        "how": "Default for services and UI — strict mode, Zod at the edges.",
+        "usedIn": [
+          "Project One",
+          "Project Three"
+        ]
+      },
+      {
+        "name": "Python",
+        "icon": "python",
+        "category": "Language",
+        "how": "AI pipelines, data work and FastAPI services.",
+        "usedIn": [
+          "Project Two"
+        ]
+      },
+      {
+        "name": "JavaScript",
+        "icon": "javascript",
+        "category": "Language",
+        "how": "Browser runtime, tooling and legacy migrations to TS.",
+        "usedIn": [
+          "Project One"
+        ]
+      },
+      {
+        "name": "React",
+        "icon": "react",
+        "category": "Frontend",
+        "how": "Component systems and complex, stateful product UI.",
+        "usedIn": [
+          "Project One",
+          "Project Two"
+        ]
+      },
+      {
+        "name": "Next.js",
+        "icon": "nextdotjs",
+        "category": "Frontend",
+        "how": "App Router sites and dashboards, static or edge-rendered.",
+        "usedIn": [
+          "Project Three"
+        ]
+      },
+      {
+        "name": "Three.js",
+        "icon": "threedotjs",
+        "category": "Frontend",
+        "how": "Real-time 3D scenes like the one at the top of this page.",
+        "usedIn": [
+          "This portfolio"
+        ]
+      },
+      {
+        "name": "GSAP",
+        "icon": "greensock",
+        "category": "Frontend",
+        "how": "Scroll-driven motion and timelines.",
+        "usedIn": [
+          "This portfolio"
+        ]
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "tailwindcss",
+        "category": "Frontend",
+        "how": "Token-driven styling at scale.",
+        "usedIn": [
+          "Project One",
+          "Project Three"
+        ]
+      },
+      {
+        "name": "Node.js",
+        "icon": "nodedotjs",
+        "category": "Backend",
+        "how": "Core APIs and event consumers.",
+        "usedIn": [
+          "Project One"
+        ]
+      },
+      {
+        "name": "FastAPI",
+        "icon": "fastapi",
+        "category": "Backend",
+        "how": "Streaming AI endpoints with typed contracts.",
+        "usedIn": [
+          "Project Two"
+        ]
+      },
+      {
+        "name": "Django",
+        "icon": "django",
+        "category": "Backend",
+        "how": "Admin-heavy products that need to ship fast.",
+        "usedIn": [
+          "Project One"
+        ]
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "postgresql",
+        "category": "Data",
+        "how": "System of record — and pgvector for retrieval.",
+        "usedIn": [
+          "Project One",
+          "Project Two"
+        ]
+      },
+      {
+        "name": "Redis",
+        "icon": "redis",
+        "category": "Data",
+        "how": "Hot-path caching, rate limits and queues.",
+        "usedIn": [
+          "Project One"
+        ]
+      },
+      {
+        "name": "Kafka",
+        "icon": "apachekafka",
+        "category": "Data",
+        "how": "Event backbone for decoupled services.",
+        "usedIn": [
+          "Project One"
+        ]
+      },
+      {
+        "name": "Docker",
+        "icon": "docker",
+        "category": "Cloud",
+        "how": "Reproducible builds and local parity.",
+        "usedIn": [
+          "All projects"
+        ]
+      },
+      {
+        "name": "Kubernetes",
+        "icon": "kubernetes",
+        "category": "Cloud",
+        "how": "Multi-AZ workloads with autoscaling.",
+        "usedIn": [
+          "Project One"
+        ]
+      },
+      {
+        "name": "Terraform",
+        "icon": "terraform",
+        "category": "Cloud",
+        "how": "All infrastructure as code — plan in CI, apply on merge.",
+        "usedIn": [
+          "Project One",
+          "Project Three"
+        ]
+      },
+      {
+        "name": "Google Cloud",
+        "icon": "googlecloud",
+        "category": "Cloud",
+        "how": "Managed data and compute.",
+        "usedIn": [
+          "Project Two"
+        ]
+      },
+      {
+        "name": "Cloudflare",
+        "icon": "cloudflare",
+        "category": "Cloud",
+        "how": "Edge workers, pages and zero-trust access.",
+        "usedIn": [
+          "Project Three"
+        ]
+      },
+      {
+        "name": "Claude Code",
+        "icon": "anthropic",
+        "category": "AI",
+        "how": "Agentic multi-file features and refactors.",
+        "usedIn": [
+          "Project Three",
+          "This portfolio"
+        ]
+      },
+      {
+        "name": "GitHub Copilot",
+        "icon": "githubcopilot",
+        "category": "AI",
+        "how": "In-editor pairing on the hard parts.",
+        "usedIn": [
+          "All projects"
+        ]
+      },
+      {
+        "name": "LangChain",
+        "icon": "langchain",
+        "category": "AI",
+        "how": "Retrieval chains and agent graphs.",
+        "usedIn": [
+          "Project Two"
+        ]
+      },
+      {
+        "name": "GitHub",
+        "icon": "github",
+        "category": "Delivery",
+        "how": "Monorepos, reviews and branch protection.",
+        "usedIn": [
+          "All projects"
+        ]
+      },
+      {
+        "name": "GitHub Actions",
+        "icon": "githubactions",
+        "category": "Delivery",
+        "how": "CI gates — tests, types, SAST, evals.",
+        "usedIn": [
+          "All projects"
+        ]
+      },
+      {
+        "name": "OpenTelemetry",
+        "icon": "opentelemetry",
+        "category": "Observability",
+        "how": "Traces across services and LLM calls.",
+        "usedIn": [
+          "Project One",
+          "Project Two"
+        ]
+      },
+      {
+        "name": "Grafana",
+        "icon": "grafana",
+        "category": "Observability",
+        "how": "SLO dashboards and burn-rate alerts.",
+        "usedIn": [
+          "Project One"
+        ]
+      },
+      {
+        "name": "Sentry",
+        "icon": "sentry",
+        "category": "Observability",
+        "how": "Error tracking with release health.",
+        "usedIn": [
+          "Project Three"
+        ]
+      },
+      {
+        "name": "Slack",
+        "icon": null,
+        "category": "Collaboration",
+        "how": "Incident channels and agent notifications.",
+        "usedIn": [
+          "All teams"
+        ]
+      },
+      {
+        "name": "Jira",
+        "icon": "jira",
+        "category": "Collaboration",
+        "how": "Roadmaps and delivery tracking.",
+        "usedIn": [
+          "Project One"
+        ]
+      },
+      {
+        "name": "Linear",
+        "icon": "linear",
+        "category": "Collaboration",
+        "how": "Issue flow that feeds the agent pipeline.",
+        "usedIn": [
+          "Project Three"
+        ]
+      },
+      {
+        "name": "Figma",
+        "icon": "figma",
+        "category": "Design",
+        "how": "Prototypes and design reviews.",
+        "usedIn": [
+          "Project One",
+          "Project Two"
+        ]
+      },
+      {
+        "name": "Mermaid",
+        "icon": "mermaid",
+        "category": "Design",
+        "how": "Architecture diagrams as code, versioned with the repo.",
+        "usedIn": [
+          "All projects"
+        ]
+      }
     ]
   },
   "testimonials": {
-    "eyebrow": "What others say",
+    "id": "testimonials",
+    "eyebrow": "09 — What others say",
     "title": "[Testimonials].",
-    "labels": { "previous": "Previous testimonial", "next": "Next testimonial" },
+    "labels": {
+      "pause": "Hover to pause"
+    },
     "items": [
-      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person One", "role": "Role", "company": "Company", "avatar": null, "accent": "violet" },
-      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person Two", "role": "Role", "company": "Company", "avatar": null, "accent": "cyan" },
-      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person Three", "role": "Role", "company": "Company", "avatar": null, "accent": "pink" },
-      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person Four", "role": "Role", "company": "Company", "avatar": null, "accent": "amber" },
-      { "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result.", "name": "Person Five", "role": "Role", "company": "Company", "avatar": null, "accent": "green" }
+      {
+        "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result delivered.",
+        "name": "Person One",
+        "role": "Role",
+        "company": "Company",
+        "avatar": null,
+        "accent": "violet"
+      },
+      {
+        "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result delivered.",
+        "name": "Person Two",
+        "role": "Role",
+        "company": "Company",
+        "avatar": null,
+        "accent": "cyan"
+      },
+      {
+        "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result delivered.",
+        "name": "Person Three",
+        "role": "Role",
+        "company": "Company",
+        "avatar": null,
+        "accent": "pink"
+      },
+      {
+        "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result delivered.",
+        "name": "Person Four",
+        "role": "Role",
+        "company": "Company",
+        "avatar": null,
+        "accent": "amber"
+      },
+      {
+        "quote": "Placeholder quote — two or three sentences on what it was like to work together, and the result delivered.",
+        "name": "Person Five",
+        "role": "Role",
+        "company": "Company",
+        "avatar": null,
+        "accent": "green"
+      }
     ]
   },
   "contact": {
     "id": "contact",
-    "eyebrow": "Contact",
+    "eyebrow": "10 — Contact",
     "title": "Get In [Touch].",
     "body": "Have a project in mind or want to discuss potential opportunities? Feel free to reach out through any of the channels below.",
     "formEndpoint": "",
     "email": "hello@example.com",
     "fields": {
-      "name": { "label": "Your name", "placeholder": "What's your name?" },
-      "email": { "label": "Your email", "placeholder": "What's your email address?" },
-      "message": { "label": "Your message", "placeholder": "What would you like to build?" }
+      "name": {
+        "label": "Your name",
+        "placeholder": "What's your name?"
+      },
+      "email": {
+        "label": "Your email",
+        "placeholder": "What's your email address?"
+      },
+      "message": {
+        "label": "Your message",
+        "placeholder": "What would you like to build?"
+      }
     },
     "labels": {
       "submit": "Send message",
       "sending": "Sending…",
       "success": "Sent — thank you",
       "error": "Something went wrong — please check the fields and try again."
-    }
+    },
+    "tags": [
+      "Lead / Staff roles",
+      "Architecture reviews",
+      "AI enablement for teams"
+    ]
   },
   "socials": [
-    { "label": "GitHub", "handle": "your-handle", "href": "https://github.com/your-handle", "icon": "github" },
-    { "label": "LinkedIn", "handle": "your-handle", "href": "https://www.linkedin.com/in/your-handle", "icon": "linkedin" }
+    {
+      "label": "GitHub",
+      "handle": "your-handle",
+      "href": "https://github.com/your-handle",
+      "icon": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "handle": "your-handle",
+      "href": "https://www.linkedin.com/in/your-handle",
+      "icon": "linkedin"
+    }
   ],
   "footer": {
     "copyright": "© {year} Your Name",
-    "note": "Built with Next.js · Three.js · GSAP"
+    "note": "Next.js · Three.js · GSAP · designed with agents, reviewed by a human"
   }
 }

@@ -11,11 +11,7 @@ export function Highlight({ text, variant = 'gradient' }: Props) {
         part.startsWith('[') && part.endsWith(']') ? (
           <span
             key={i}
-            className={
-              variant === 'gradient'
-                ? 'text-gradient'
-                : 'font-semibold text-fg underline decoration-cyan decoration-2 underline-offset-[6px]'
-            }
+            className={variant === 'gradient' ? 'text-gradient' : 'font-semibold text-fg shadow-[inset_0_-2px_0_var(--color-cyan)]'}
           >
             {part.slice(1, -1)}
           </span>

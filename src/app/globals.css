@@ -3,21 +3,24 @@
 @theme {
   /* Surfaces — night indigo */
   --color-ink-950: #05041a;
+  --color-ink-925: #0a0920;
   --color-ink-900: #0e0c28;
   --color-ink-850: #120f33;
   --color-ink-800: #151236;
+  --color-ink-750: #17143a;
   --color-ink-700: #221e4e;
   --color-ink-600: #2a2558;
   --color-ink-500: #3a3478;
 
-  /* Text */
+  /* Text — tuned for ≥ 4.5:1 on glass surfaces */
   --color-fg: #ffffff;
-  --color-body: #d6d3f0;
-  --color-soft: #c9c5ea;
-  --color-muted: #9d98c7;
-  --color-faint: #7d78a8;
+  --color-strong: #f1efff;
+  --color-body: #dcd8f7;
+  --color-soft: #d6d3f0;
+  --color-muted: #aaa5d6;
+  --color-faint: #8f8abd;
 
-  /* Neon accents (mirrored in src/lib/palette.ts for three.js) */
+  /* Neon accents (mirrored in src/lib/palette.ts for three.js / canvas) */
   --color-violet: #8b5cf6;
   --color-lilac: #c4b5fd;
   --color-cyan: #22d3ee;
@@ -36,8 +39,30 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-mona), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: 'Clash Display', var(--font-geist), ui-sans-serif, sans-serif;
+}
+
+/* Page column + gutters. Full-bleed tracks use --bleed to reach the viewport edges. */
+:root {
+  --gutter: clamp(1rem, 3vw, 2.5rem);
+  --col: 1440px;
+  --bleed: max(var(--gutter), calc((100vw - var(--col)) / 2 + var(--gutter)));
+}
+
+@utility container-page {
+  max-width: var(--col);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  box-sizing: border-box;
+}
+
+/* Breaks a child out of .container-page to both viewport edges, keeping content aligned with the column. */
+@utility bleed {
+  margin-inline: calc(-1 * var(--bleed));
+  padding-inline: var(--bleed);
+  scroll-padding-inline: var(--bleed);
 }
 
 @utility text-gradient {
@@ -51,8 +76,25 @@
   font-family: var(--font-mono);
   font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: var(--color-muted);
+}
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-faint);
+}
+
+/* Frosted glass surface used by every card. */
+@utility glass {
+  border: 1px solid rgb(196 181 253 / 0.16);
+  background: linear-gradient(180deg, rgb(28 24 72 / 0.72), rgb(12 10 36 / 0.78));
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07);
 }
 
 @utility no-scrollbar {
@@ -60,13 +102,80 @@
   &::-webkit-scrollbar { display: none; }
 }
 
+/* ---- Glow border: rotating conic ring + soft halo + cursor spotlight (see <Glow>) ---- */
+@property --ga {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes ga { to { --ga: 360deg; } }
+
+.glow-ring,
+.glow-halo {
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  background: conic-gradient(from var(--ga), transparent 0deg, var(--glow) 50deg, var(--color-cyan) 100deg, transparent 160deg, transparent 180deg, var(--glow) 230deg, var(--color-pink) 280deg, transparent 340deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  transition: opacity 0.45s;
+  opacity: 0;
+  animation: ga 3.2s linear infinite;
+}
+.glow-ring { inset: -1px; padding: 1.5px; }
+.glow-halo { inset: -6px; padding: 7px; filter: blur(8px); }
+.glow-spot {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.35s;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), color-mix(in oklab, var(--glow) 9%, transparent), transparent 60%);
+}
+.glow { --glow: var(--color-violet); position: relative; }
+.glow:hover > .glow-ring, .glow:focus-visible > .glow-ring { opacity: 1; }
+.glow:hover > .glow-halo { opacity: 0.5; }
+.glow:hover > .glow-spot { opacity: 1; }
+.glow-lift { transition: transform 0.4s var(--ease-out-expo), border-color 0.3s; }
+.glow-lift:hover { transform: translateY(-5px); }
+.glow-on > .glow-ring { opacity: 0.85; }
+
+/* Flowing dashes along C4 edges */
+.flow { animation: flow 2.1s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -19; } }
+
+/* Button shine sweep */
+.shine { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; z-index: 1; }
+.shine::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: -45%;
+  width: 38%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.42), transparent);
+  transform: skewX(-20deg);
+}
+.glow:hover > .shine::before { animation: shine 0.85s cubic-bezier(0.4, 0, 0.2, 1); }
+@keyframes shine { to { left: 125%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-ring, .glow-halo, .flow { animation: none; }
+  .glow-lift:hover { transform: none; }
+  .glow:hover > .shine::before { animation: none; }
+}
+
 @layer base {
-  html { color-scheme: dark; background: var(--color-ink-950); }
-  body { @apply bg-ink-950 font-sans text-body antialiased; }
+  html { color-scheme: dark; background: var(--color-ink-950); overflow-x: clip; }
+  body { @apply bg-ink-950 font-sans text-body antialiased; overflow-x: clip; }
   a { color: inherit; text-decoration: none; }
   ::selection { background: color-mix(in oklab, var(--color-violet) 45%, transparent); color: var(--color-fg); }
   :focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 3px; }
   [data-cursor-zone] { cursor: none; }
+  input::placeholder, textarea::placeholder { color: var(--color-faint); opacity: 1; }
 }
 
 /* Lenis */
