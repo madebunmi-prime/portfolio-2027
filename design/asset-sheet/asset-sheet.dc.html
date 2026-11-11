@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#0e0e10;color:#d9ecff;-webkit-font-smoothing:antialiased}
+a{color:#d9ecff;text-decoration-color:#839cb5}
+a:hover{color:#ffffff;text-decoration-color:#ff6a3d}
+</style>
+</helmet>
+<div style="font-family:'Mona Sans',ui-sans-serif,system-ui,sans-serif;font-variation-settings:'wght' 420,'wdth' 100;background:#0e0e10;min-height:100vh;padding:clamp(1.25rem,4vw,4rem);box-sizing:border-box">
+<div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:96px">
+
+<header style="display:flex;flex-direction:column;gap:24px;padding-top:24px">
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5;display:flex;gap:24px;flex-wrap:wrap">
+    <span>Portfolio 2027</span><span>03 · Asset generation</span><span>Direction A</span>
+  </div>
+  <h1 style="margin:0;font-size:clamp(2.75rem,3.2vw + 2rem,6.5rem);line-height:0.95;color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92;letter-spacing:-0.02em;max-width:14ch;text-wrap:balance">The signature, rendered <span style="text-decoration:underline;text-decoration-color:#ff6a3d;text-decoration-thickness:0.08em;text-underline-offset:0.12em">live</span>.</h1>
+  <p style="margin:0;max-width:62ch;font-size:clamp(1rem,0.3vw + 0.9rem,1.125rem);line-height:1.55;text-wrap:pretty">Every 3D tile below is the actual shader — gooch ramp, ember rim, film grain — on real geometry, not a generated picture. If it holds here, it holds in the build. Move your cursor fast: rim intensity follows pointer velocity.</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:1px solid #282732;padding-top:16px">
+    <h2 style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">A — Style anchor</h2>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">Same material, four geometries</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="sphere" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">A1 · Sphere</figcaption></figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="cube" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">A2 · Cube</figcaption></figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="knot" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">A3 · Torus knot</figcaption></figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="tree" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">A4 · Low-poly tree</figcaption></figure>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:1px solid #282732;padding-top:16px">
+    <h2 style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">B — Hero establishing shot</h2>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">21:9 · camera on a CatmullRom path</span>
+  </div>
+  <canvas data-tile="hero" style="width:100%;aspect-ratio:21/9;display:block;background:#0e0e10;border:1px solid #1c1c21"></canvas>
+  <p style="margin:0;max-width:70ch;font-size:15px;line-height:1.55;color:#839cb5;text-wrap:pretty">Abstracted workstation sculpture, five tech forms in orbit, lots of negative space. The camera drifts along a short authored spline — a preview of the scroll-scrubbed rig. The personal / Nigeria-first object is intentionally absent until you choose what it is.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:1px solid #282732;padding-top:16px">
+    <h2 style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">C — Props, turntable</h2>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">Modeling reference · hover to spin</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="desk" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">C1 · Workstation</figcaption></figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="node" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">C2 · Node — hex prism</figcaption></figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="python" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">C3 · Python — interlock</figcaption></figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="react" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">C4 · React — orbitals</figcaption></figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="git" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">C5 · Git — branch</figcaption></figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px"><canvas data-tile="three" style="width:100%;aspect-ratio:1;display:block;background:#0e0e10;border:1px solid #1c1c21;cursor:crosshair"></canvas><figcaption style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">C6 · Three.js — exploded cube</figcaption></figure>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:1px solid #282732;padding-top:16px">
+    <h2 style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">D — Cursor trail masks</h2>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">Pick one · draw in the pad</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+    <sc-for list="{{ shapes }}" as="s" hint-placeholder-count="4">
+      <button onClick="{{ s.pick }}" style="display:flex;flex-direction:column;gap:16px;align-items:stretch;padding:24px;background:#1c1c21;border:1px solid {{ s.border }};color:#d9ecff;cursor:pointer;text-align:left;font:inherit">
+        <svg viewBox="0 0 100 40" style="width:100%;height:auto;display:block"><path d="{{ s.d }}" fill="#ff6a3d"></path></svg>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">{{ s.label }}</span>
+      </button>
+    </sc-for>
+  </div>
+  <canvas data-trail="1" style="width:100%;height:clamp(240px,32vw,420px);display:block;background:#0e0e10;border:1px dashed #282732;cursor:none;touch-action:none"></canvas>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:24px;padding-bottom:64px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:1px solid #282732;padding-top:16px">
+    <h2 style="margin:0;font-size:clamp(1.75rem,1.6vw + 1.2rem,3rem);color:#ffffff;font-variation-settings:'wght' 680,'wdth' 92">F — Monogram</h2>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">2–3 strokes · checked at 32 and 16px</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+    <div style="display:flex;flex-direction:column;gap:24px;padding:32px;background:#1c1c21">
+      <svg viewBox="0 0 32 32" style="width:140px;height:140px"><g fill="none" stroke="#ff6a3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,27 4,5 12,16 20,5 28,27"></polyline><line x1="22.5" y1="19" x2="26" y2="19"></line></g></svg>
+      <div style="display:flex;gap:16px;align-items:end"><svg viewBox="0 0 32 32" style="width:32px;height:32px"><g fill="none" stroke="#ff6a3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,27 4,5 12,16 20,5 28,27"></polyline><line x1="22.5" y1="19" x2="26" y2="19"></line></g></svg><svg viewBox="0 0 32 32" style="width:16px;height:16px"><g fill="none" stroke="#ff6a3d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,27 4,5 12,16 20,5 28,27"></polyline><line x1="22.5" y1="19" x2="26" y2="19"></line></g></svg></div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">F1 · Shared stroke — M runs into A</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;padding:32px;background:#1c1c21">
+      <svg viewBox="0 0 32 32" style="width:140px;height:140px"><g fill="none" stroke="#ff6a3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,27 16,5 28,27"></polyline><polyline points="10.5,27 10.5,18 16,23 21.5,18 21.5,27"></polyline></g></svg>
+      <div style="display:flex;gap:16px;align-items:end"><svg viewBox="0 0 32 32" style="width:32px;height:32px"><g fill="none" stroke="#ff6a3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,27 16,5 28,27"></polyline><polyline points="10.5,27 10.5,18 16,23 21.5,18 21.5,27"></polyline></g></svg><svg viewBox="0 0 32 32" style="width:16px;height:16px"><g fill="none" stroke="#ff6a3d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,27 16,5 28,27"></polyline><polyline points="10.5,27 10.5,18 16,23 21.5,18 21.5,27"></polyline></g></svg></div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">F2 · Nested — M inside the A</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;padding:32px;background:#1c1c21">
+      <svg viewBox="0 0 32 32" style="width:140px;height:140px"><g fill="none" stroke="#ff6a3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,26 10,6 16,20 22,6 28,26"></polyline><line x1="7" y1="18" x2="25" y2="18"></line></g></svg>
+      <div style="display:flex;gap:16px;align-items:end"><svg viewBox="0 0 32 32" style="width:32px;height:32px"><g fill="none" stroke="#ff6a3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,26 10,6 16,20 22,6 28,26"></polyline><line x1="7" y1="18" x2="25" y2="18"></line></g></svg><svg viewBox="0 0 32 32" style="width:16px;height:16px"><g fill="none" stroke="#ff6a3d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,26 10,6 16,20 22,6 28,26"></polyline><line x1="7" y1="18" x2="25" y2="18"></line></g></svg></div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#839cb5">F3 · Twin peaks — one crossbar binds both</span>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;rim&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Shader&quot;},&quot;grain&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.035,&quot;min&quot;:0,&quot;max&quot;:0.12,&quot;step&quot;:0.005,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Shader&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const SHAPES = [
+  { label: 'D1 · Comet', d: 'M100 20 A8 8 0 0 1 92 28 L0 20 L92 12 A8 8 0 0 1 100 20 Z' },
+  { label: 'D2 · Chevron sliver', d: 'M100 20 L58 6 L66 18 L0 19 L0 21 L66 22 L58 34 Z' },
+  { label: 'D3 · Asymmetric leaf', d: 'M100 20 C80 2 30 6 0 20 C34 28 78 34 100 20 Z' },
+  { label: 'D4 · Zigzag sliver', d: 'M100 20 L66 8 L62 17 L30 9 L0 20 L34 26 L38 19 L70 31 Z' },
+];
+
+const VERT = `varying vec3 vN; varying vec3 vP;
+void main(){ vN = normalize(mat3(modelMatrix)*normal); vec4 w = modelMatrix*vec4(position,1.0); vP = w.xyz; gl_Position = projectionMatrix*viewMatrix*w; }`;
+const FRAG = `uniform vec3 uAccent; uniform float uRim; uniform float uGrain; uniform float uTime; uniform vec3 uLight;
+varying vec3 vN; varying vec3 vP;
+float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898,78.233)))*43758.5453); }
+void main(){
+  vec3 N = normalize(vN); if(!gl_FrontFacing) N = -N;
+  vec3 V = normalize(cameraPosition - vP);
+  float ndl = dot(N, normalize(uLight))*0.5+0.5;
+  float ndv = clamp(dot(N,V),0.0,1.0);
+  vec3 cool = vec3(0.07,0.075,0.10); vec3 warm = vec3(0.85,0.92,1.0);
+  vec3 base = mix(cool, warm, pow(ndl,1.7)*0.88);
+  vec3 rim = uAccent * pow(1.0-ndv, 2.5) * uRim;
+  float g = (hash(gl_FragCoord.xy + fract(uTime*7.0)*97.0)-0.5)*uGrain;
+  gl_FragColor = vec4(base + rim + g, 1.0);
+}`;
+
+class Component extends DCLogic {
+  state = { shape: 0 };
+
+  componentDidMount() {
+    this.alive = true;
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.setupTrail();
+    import('https://unpkg.com/three@0.170.0/build/three.module.js').then(T => { if (this.alive) this.setup3D(T); });
+  }
+
+  componentWillUnmount() {
+    this.alive = false;
+    cancelAnimationFrame(this.raf); cancelAnimationFrame(this.trailRaf);
+    this.ro && this.ro.disconnect(); this.io && this.io.disconnect();
+    window.removeEventListener('pointermove', this.onMove);
+    this.renderer && this.renderer.dispose();
+  }
+
+  componentDidUpdate() { this.applyProps(); }
+
+  motionOn() { return (this.props.motion ?? true) && !this.reduced; }
+
+  applyProps() {
+    if (!this.U) return;
+    this.rimBase = this.props.rim ?? 1;
+    this.U.uGrain.value = this.props.grain ?? 0.035;
+    this.dirty = true;
+  }
+
+  setup3D(T) {
+    this.T = T;
+    const MAXW = 2048, MAXH = 1024;
+    this.MAXH = MAXH;
+    const r = new T.WebGLRenderer({ antialias: true, alpha: false });
+    r.setPixelRatio(1); r.setSize(MAXW, MAXH, false);
+    r.setClearColor(0x0e0e10, 1); r.setScissorTest(true);
+    this.renderer = r;
+    this.U = {
+      uAccent: { value: new T.Vector3(1.0, 0.416, 0.239) },
+      uRim: { value: 1 }, uGrain: { value: 0.035 }, uTime: { value: 0 },
+      uLight: { value: new T.Vector3(-0.5, 0.85, 0.6) },
+    };
+    this.mat = new T.ShaderMaterial({ vertexShader: VERT, fragmentShader: FRAG, uniforms: this.U, side: T.DoubleSide });
+    this.applyProps();
+    this.boost = 0; this.last = null;
+    this.onMove = e => {
+      const now = performance.now();
+      if (this.last) { const dt = Math.max(1, now - this.last.t); const v = Math.hypot(e.clientX - this.last.x, e.clientY - this.last.y) / dt * 1000; this.boost = Math.max(this.boost, Math.min(1.6, v / 1800)); }
+      this.last = { x: e.clientX, y: e.clientY, t: now };
+    };
+    window.addEventListener('pointermove', this.onMove);
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.tiles = [];
+    this.ro = new ResizeObserver(ents => ents.forEach(en => {
+      const t = this.tiles.find(x => x.canvas === en.target); if (!t) return;
+      const w = en.contentRect.width, h = en.contentRect.height;
+      let pw = Math.round(w * dpr), ph = Math.round(h * dpr);
+      const s = Math.min(1, MAXW / pw, MAXH / ph); pw = Math.round(pw * s); ph = Math.round(ph * s);
+      t.canvas.width = pw; t.canvas.height = ph; t.pw = pw; t.ph = ph;
+      t.camera.aspect = pw / ph; t.camera.updateProjectionMatrix(); this.dirty = true;
+    }));
+    this.io = new IntersectionObserver(ents => ents.forEach(en => {
+      const t = this.tiles.find(x => x.canvas === en.target); if (t) { t.visible = en.isIntersecting; this.dirty = true; }
+    }));
+    document.querySelectorAll('canvas[data-tile]').forEach(c => {
+      const kind = c.getAttribute('data-tile');
+      const scene = new T.Scene();
+      const camera = new T.PerspectiveCamera(kind === 'hero' ? 30 : 35, 1, 0.1, 100);
+      const root = kind === 'hero' ? this.buildHero(T, scene) : this.makeProp(T, kind);
+      if (kind !== 'hero') { scene.add(root); camera.position.set(0, 0.6, 4.4); camera.lookAt(0, 0, 0); }
+      const t = { canvas: c, ctx: c.getContext('2d'), kind, scene, camera, root, visible: false, hover: false, pw: 0, ph: 0, spin: 0 };
+      c.addEventListener('pointerenter', () => t.hover = true);
+      c.addEventListener('pointerleave', () => t.hover = false);
+      this.tiles.push(t); this.ro.observe(c); this.io.observe(c);
+    });
+    let prev = performance.now();
+    const loop = now => {
+      if (!this.alive) return;
+      this.raf = requestAnimationFrame(loop);
+      const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
+      const moving = this.motionOn();
+      this.boost *= Math.pow(0.04, dt);
+      this.U.uRim.value = this.rimBase * (1 + this.boost);
+      if (!moving && !this.dirty) return;
+      if (moving) this.U.uTime.value = now / 1000;
+      for (const t of this.tiles) {
+        if (!t.visible || !t.pw) continue;
+        if (moving) this.animate(t, dt, now / 1000);
+        r.setViewport(0, 0, t.pw, t.ph); r.setScissor(0, 0, t.pw, t.ph);
+        r.render(t.scene, t.camera);
+        t.ctx.drawImage(r.domElement, 0, MAXH - t.ph, t.pw, t.ph, 0, 0, t.pw, t.ph);
+      }
+      this.dirty = false;
+    };
+    this.raf = requestAnimationFrame(loop);
+  }
+
+  animate(t, dt, time) {
+    if (t.kind === 'hero') {
+      const h = this.hero;
+      const u = (Math.sin(time * 0.12) + 1) / 2;
+      h.path.getPointAt(u, t.camera.position); t.camera.lookAt(0, 0.55, 0);
+      h.orbit.forEach((o, i) => {
+        const a = time * 0.18 + i * (Math.PI * 2 / h.orbit.length);
+        o.position.set(Math.cos(a) * 2.7, 1.1 + Math.sin(time * 0.8 + i) * 0.18 + (i % 2) * 0.5, Math.sin(a) * 1.6);
+        o.rotation.y += dt * 0.6; o.rotation.x += dt * 0.2;
+      });
+      return;
+    }
+    const target = t.hover ? 1.8 : 0.35;
+    t.spin += (target - t.spin) * Math.min(1, dt * 4);
+    t.root.rotation.y += dt * t.spin;
+    t.root.rotation.x = Math.sin(time * 0.4) * 0.12;
+  }
+
+  flat(T, g) { const n = g.toNonIndexed(); n.computeVertexNormals(); return n; }
+
+  makeProp(T, kind) {
+    const M = g => new T.Mesh(g, this.mat);
+    const G = new T.Group();
+    if (kind === 'sphere') G.add(M(new T.SphereGeometry(0.95, 64, 48)));
+    if (kind === 'cube') { const m = M(this.flat(T, new T.BoxGeometry(1.25, 1.25, 1.25))); m.rotation.set(0.5, 0.6, 0); G.add(m); }
+    if (kind === 'knot') G.add(M(new T.TorusKnotGeometry(0.62, 0.21, 200, 28)));
+    if (kind === 'tree') {
+      const tr = M(this.flat(T, new T.CylinderGeometry(0.07, 0.11, 0.7, 6))); tr.position.y = -0.75; G.add(tr);
+      const a = M(this.flat(T, new T.IcosahedronGeometry(0.62, 0))); a.position.y = -0.05; G.add(a);
+      const b = M(this.flat(T, new T.IcosahedronGeometry(0.42, 0))); b.position.set(0.12, 0.6, 0.05); b.rotation.z = 0.4; G.add(b);
+    }
+    if (kind === 'desk') {
+      const slab = M(this.flat(T, new T.BoxGeometry(2.2, 0.12, 1.0))); slab.position.y = 0; G.add(slab);
+      const l1 = M(this.flat(T, new T.BoxGeometry(0.16, 0.9, 0.9))); l1.position.set(-0.85, -0.51, 0); G.add(l1);
+      const l2 = M(this.flat(T, new T.BoxGeometry(0.7, 0.55, 0.9))); l2.position.set(0.62, -0.335, 0); G.add(l2);
+      const panel = M(this.flat(T, new T.BoxGeometry(1.3, 0.85, 0.06))); panel.position.set(-0.1, 0.52, -0.25); panel.rotation.x = -0.18; G.add(panel);
+      const block = M(this.flat(T, new T.BoxGeometry(0.28, 0.28, 0.28))); block.position.set(0.8, 0.2, 0.2); block.rotation.y = 0.5; G.add(block);
+      G.scale.setScalar(0.95); G.position.y = 0.1;
+    }
+    if (kind === 'node') {
+      const hex = M(this.flat(T, new T.CylinderGeometry(0.95, 0.95, 0.42, 6))); hex.rotation.x = Math.PI / 2; G.add(hex);
+      const inner = M(this.flat(T, new T.CylinderGeometry(0.5, 0.62, 0.62, 6, 1))); inner.rotation.x = Math.PI / 2; G.add(inner);
+    }
+    if (kind === 'python') {
+      const arc = Math.PI * 1.35;
+      const a = M(new T.TorusGeometry(0.5, 0.17, 24, 72, arc)); a.position.set(-0.22, 0.26, 0.08); a.rotation.z = Math.PI * 0.15; G.add(a);
+      const b = M(new T.TorusGeometry(0.5, 0.17, 24, 72, arc)); b.position.set(0.22, -0.26, -0.08); b.rotation.z = Math.PI * 1.15; G.add(b);
+    }
+    if (kind === 'react') {
+      G.add(M(new T.SphereGeometry(0.2, 32, 24)));
+      [0, 1, 2].forEach(i => { const w = new T.Group(); const ring = M(new T.TorusGeometry(1.0, 0.045, 16, 128)); ring.scale.set(1, 0.38, 1); w.add(ring); w.rotation.z = i * Math.PI / 3; G.add(w); });
+    }
+    if (kind === 'git') {
+      const p = [new T.Vector3(-0.55, -0.85, 0), new T.Vector3(-0.55, 0.85, 0), new T.Vector3(0.6, 0.15, 0)];
+      p.forEach(v => { const s = M(new T.SphereGeometry(0.21, 32, 24)); s.position.copy(v); G.add(s); });
+      G.add(M(new T.TubeGeometry(new T.LineCurve3(p[0], p[1]), 8, 0.075, 16)));
+      G.add(M(new T.TubeGeometry(new T.QuadraticBezierCurve3(new T.Vector3(-0.55, -0.45, 0), new T.Vector3(0.6, -0.45, 0), p[2]), 48, 0.075, 16)));
+    }
+    if (kind === 'three') {
+      const s = 0.5, gap = 0.03;
+      for (const x of [-1, 1]) for (const y of [-1, 1]) for (const z of [-1, 1]) {
+        const m = M(this.flat(T, new T.BoxGeometry(s, s, s)));
+        const o = (s + gap) / 2;
+        m.position.set(x * o, y * o, z * o);
+        if (x > 0 && y > 0 && z > 0) { m.position.addScalar(0.32); m.rotation.set(0.4, 0.5, 0.2); }
+        G.add(m);
+      }
+      G.rotation.set(0.45, -0.6, 0);
+      const w = new T.Group(); w.add(G); return w;
+    }
+    return G;
+  }
+
+  buildHero(T, scene) {
+    const desk = this.makeProp(T, 'desk'); desk.scale.setScalar(1.15); desk.position.y = 0.4; scene.add(desk);
+    const plinth = new T.Mesh(this.flat(T, new T.CylinderGeometry(2.4, 2.5, 0.08, 7)), this.mat); plinth.position.y = -0.7; scene.add(plinth);
+    const orbit = ['node', 'python', 'react', 'git', 'three'].map(k => { const p = this.makeProp(T, k); p.scale.setScalar(0.32); scene.add(p); return p; });
+    const path = new T.CatmullRomCurve3([new T.Vector3(-6.2, 2.6, 6.8), new T.Vector3(-2.5, 2.3, 8.2), new T.Vector3(1.8, 2.5, 8.0), new T.Vector3(5.6, 2.9, 6.4)]);
+    this.hero = { orbit, path };
+    return scene;
+  }
+
+  setupTrail() {
+    const c = document.querySelector('canvas[data-trail]'); if (!c) return;
+    const ctx = c.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const fit = () => { const b = c.getBoundingClientRect(); c.width = b.width * dpr; c.height = b.height * dpr; };
+    fit(); new ResizeObserver(fit).observe(c);
+    const pts = [];
+    let inside = false;
+    c.addEventListener('pointermove', e => { const b = c.getBoundingClientRect(); pts.push({ x: (e.clientX - b.left) * dpr, y: (e.clientY - b.top) * dpr, t: performance.now() }); inside = true; });
+    c.addEventListener('pointerleave', () => inside = false);
+    const paths = SHAPES.map(s => new Path2D(s.d));
+    const LIFE = 420;
+    const draw = () => {
+      if (!this.alive) return;
+      this.trailRaf = requestAnimationFrame(draw);
+      const now = performance.now();
+      while (pts.length && now - pts[0].t > LIFE) pts.shift();
+      ctx.clearRect(0, 0, c.width, c.height);
+      const path = paths[this.state.shape];
+      if (this.reduced || !(this.props.motion ?? true)) {
+        ctx.save(); ctx.translate(c.width / 2, c.height / 2); ctx.scale(2 * dpr, 2 * dpr); ctx.translate(-50, -20); ctx.fillStyle = '#ff6a3d'; ctx.fill(path); ctx.restore();
+        return;
+      }
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = 1; i < pts.length; i++) {
+        const a = pts[i - 1], b = pts[i];
+        const dx = b.x - a.x, dy = b.y - a.y, dt = Math.max(1, b.t - a.t);
+        const speed = Math.hypot(dx, dy) / dt;
+        const life = 1 - (now - b.t) / LIFE;
+        const len = Math.min(3.2, 0.5 + speed * 0.9) * dpr;
+        const wid = (0.55 + 0.45 * life) * dpr;
+        ctx.save();
+        ctx.globalAlpha = life * 0.55;
+        ctx.translate(b.x, b.y); ctx.rotate(Math.atan2(dy, dx));
+        ctx.scale(len * 0.6, wid * 0.6); ctx.translate(-100, -20);
+        ctx.fillStyle = '#ff6a3d'; ctx.fill(path);
+        ctx.restore();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      if (inside && pts.length) { const p = pts[pts.length - 1]; ctx.fillStyle = '#ffb199'; ctx.beginPath(); ctx.arc(p.x, p.y, 3 * dpr, 0, Math.PI * 2); ctx.fill(); }
+      else if (!pts.length) { ctx.fillStyle = '#839cb5'; ctx.font = `500 ${13 * dpr}px "JetBrains Mono", monospace`; ctx.textAlign = 'center'; ctx.fillText('MOVE CURSOR HERE — TRAIL LENGTH FOLLOWS VELOCITY', c.width / 2, c.height / 2); }
+    };
+    draw();
+  }
+
+  renderVals() {
+    return {
+      shapes: SHAPES.map((s, i) => ({ ...s, border: i === this.state.shape ? '#ff6a3d' : '#282732', pick: () => this.setState({ shape: i }) })),
+    };
+  }
+}
+</script>
+</body>
+</html>
