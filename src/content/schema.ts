@@ -136,7 +136,11 @@ export const portfolioSchema = z.object({
   experience: section.extend({
     labels: z.object({ ribbon: text, ribbonHint: text, present: text, solo: text, parallelOne: text, parallelMany: text }),
     items: z.array(
-      z.object({ title: text, company: text, mission: text, logo: media, start: yearMonth, end: yearMonth.nullable(), accent: accentSchema, scope: z.array(kv), bullets: z.array(text) }),
+      z.object({
+        title: text, company: text, mission: text, logo: media, start: yearMonth, end: yearMonth.nullable(), accent: accentSchema, scope: z.array(kv),
+        /** Top 3 achievements for this role. Each has a one-line title and 2-3 indented sub-points (label: Problem/Approach/Outcome, or similar). */
+        achievements: z.array(z.object({ title: text, points: z.array(kv).min(1) })),
+      }),
     ),
   }),
 

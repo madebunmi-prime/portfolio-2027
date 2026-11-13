@@ -99,9 +99,21 @@ export function Experience({ data }: { data: Portfolio['experience'] }) {
                   </div>
                 ))}
               </dl>
-              <ul className="flex list-disc flex-col gap-1.5 pl-[18px] text-[15px] text-body">
-                {e.bullets.map((b) => <li key={b}>{b}</li>)}
-              </ul>
+              <div className="flex flex-col gap-3">
+                {e.achievements.map((a) => (
+                  <div key={a.title} className="flex flex-col gap-1.5">
+                    <h4 className="text-[15px] leading-[1.3] font-semibold text-fg">{a.title}</h4>
+                    <ul className="flex flex-col gap-1 border-l-2 pl-3 text-[14px] leading-[1.45] text-body" style={{ borderColor: withAlpha(c, 0.4) }}>
+                      {a.points.map((p) => (
+                        <li key={p.label}>
+                          <span className="font-mono text-[10.5px] tracking-[0.04em] text-faint uppercase">{p.label}: </span>
+                          {p.value}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
               <span className="mt-auto inline-flex items-center gap-2 font-mono text-[10.5px] tracking-[0.06em] text-soft uppercase">
                 <span className="size-1.5 rounded-full" style={{ background: c }} />
                 {note(r.overlaps)}

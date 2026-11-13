@@ -1694,11 +1694,60 @@
             "value": "TBD"
           }
         ],
-        "bullets": [
-          "Placeholder — the system you owned and the outcome.",
-          "Placeholder — how you led: people, process, architecture."
-        ],
-        "mission": "Placeholder — one sentence on what this company/team exists to do."
+        "mission": "Placeholder — one sentence on what this company/team exists to do.",
+        "achievements": [
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "Job Title Two",
@@ -1721,11 +1770,60 @@
             "value": "TBD"
           }
         ],
-        "bullets": [
-          "Placeholder — the system you owned and the outcome.",
-          "Placeholder — how you led: people, process, architecture."
-        ],
-        "mission": "Placeholder — one sentence on what this company/team exists to do."
+        "mission": "Placeholder — one sentence on what this company/team exists to do.",
+        "achievements": [
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "Job Title Three",
@@ -1748,11 +1846,60 @@
             "value": "TBD"
           }
         ],
-        "bullets": [
-          "Placeholder — the system you owned and the outcome.",
-          "Placeholder — how you led: people, process, architecture."
-        ],
-        "mission": "Placeholder — one sentence on what this company/team exists to do."
+        "mission": "Placeholder — one sentence on what this company/team exists to do.",
+        "achievements": [
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "Job Title Four",
@@ -1775,11 +1922,60 @@
             "value": "TBD"
           }
         ],
-        "bullets": [
-          "Placeholder — the system you owned and the outcome.",
-          "Placeholder — how you led: people, process, architecture."
-        ],
-        "mission": "Placeholder — one sentence on what this company/team exists to do."
+        "mission": "Placeholder — one sentence on what this company/team exists to do.",
+        "achievements": [
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "Job Title Five",
@@ -1802,11 +1998,60 @@
             "value": "TBD"
           }
         ],
-        "bullets": [
-          "Placeholder — the system you owned and the outcome.",
-          "Placeholder — how you led: people, process, architecture."
-        ],
-        "mission": "Placeholder — one sentence on what this company/team exists to do."
+        "mission": "Placeholder — one sentence on what this company/team exists to do.",
+        "achievements": [
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "Job Title Six",
@@ -1829,11 +2074,60 @@
             "value": "TBD"
           }
         ],
-        "bullets": [
-          "Placeholder — the system you owned and the outcome.",
-          "Placeholder — how you led: people, process, architecture."
-        ],
-        "mission": "Placeholder — one sentence on what this company/team exists to do."
+        "mission": "Placeholder — one sentence on what this company/team exists to do.",
+        "achievements": [
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          },
+          {
+            "title": "Placeholder achievement title",
+            "points": [
+              {
+                "label": "Problem",
+                "value": "Placeholder — what was broken or missing, and for whom."
+              },
+              {
+                "label": "Approach",
+                "value": "Placeholder — what you actually built or did about it."
+              },
+              {
+                "label": "Outcome",
+                "value": "Placeholder — the measured result."
+              }
+            ]
+          }
+        ]
       }
     ]
   },
