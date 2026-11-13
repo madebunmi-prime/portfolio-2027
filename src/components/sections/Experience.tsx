@@ -87,6 +87,7 @@ export function Experience({ data }: { data: Portfolio['experience'] }) {
                   <span className="text-[15px] text-muted">{e.company}</span>
                 </div>
               </div>
+              <p className="-mt-1.5 text-[13.5px] leading-[1.45] text-soft italic">{e.mission}</p>
               <span className="self-start rounded-full border border-ink-600 bg-ink-950/70 px-[11px] py-[5px] font-mono text-[11.5px] tracking-[0.04em] text-fg">
                 {formatYearMonth(e.start)} — {e.end ? formatYearMonth(e.end) : L.present} · {formatDuration(r.months)}
               </span>
