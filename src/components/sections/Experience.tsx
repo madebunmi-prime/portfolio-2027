@@ -40,7 +40,7 @@ export function Experience({ data }: { data: Portfolio['experience'] }) {
           return (
             <button
               key={r.index}
-              title={r.item.title}
+              title={`${r.item.title} at ${r.item.company}`}
               onMouseEnter={() => setActive(r.index)}
               onClick={() => {
                 setActive(r.index);
@@ -54,7 +54,7 @@ export function Experience({ data }: { data: Portfolio['experience'] }) {
                 opacity: active >= 0 && !on ? 0.4 : 1,
               }}
             >
-              {r.item.title}
+              {r.item.title} at {r.item.company}
             </button>
           );
         })}
