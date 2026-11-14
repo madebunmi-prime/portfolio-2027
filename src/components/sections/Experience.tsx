@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useMemo, useRef, useState } from 'react';
 import type { Portfolio } from '@/content/schema';
 import { Reveal } from '@/components/motion/Reveal';
@@ -79,8 +80,12 @@ export function Experience({ data }: { data: Portfolio['experience'] }) {
               style={{ borderColor: on ? c : undefined }}
             >
               <div className="flex items-center gap-3.5">
-                <span className="grid size-12 flex-none place-items-center rounded-[14px] border bg-[repeating-linear-gradient(135deg,#1c1946_0_5px,#17143a_5px_10px)] font-mono text-xs text-fg" style={{ borderColor: c }}>
-                  {initials(e.company)}
+                <span className="relative grid size-12 flex-none place-items-center overflow-hidden rounded-[14px] border bg-[repeating-linear-gradient(135deg,#1c1946_0_5px,#17143a_5px_10px)] font-mono text-xs text-fg" style={{ borderColor: c }}>
+                  {e.logo ? (
+                    <Image src={e.logo} alt={e.company} fill sizes="48px" className="object-contain p-1.5" />
+                  ) : (
+                    initials(e.company)
+                  )}
                 </span>
                 <div className="flex min-w-0 flex-col">
                   <h3 className="text-lg leading-[1.25] font-semibold text-fg">{e.title}</h3>
