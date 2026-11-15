@@ -86,7 +86,8 @@ export function Systems({ data }: { data: Portfolio['systems'] }) {
               <span className="inline-flex items-center gap-1.5"><span className="w-4 border-t-2 border-dashed border-amber" />{L.async}</span>
             </span>
           </div>
-          <div className="no-scrollbar overflow-x-auto">
+          <div className="label px-[18px] pt-2 sm:hidden">Swipe to explore →</div>
+          <div className="no-scrollbar overflow-x-auto max-sm:[mask-image:linear-gradient(90deg,#000_92%,transparent)] max-sm:[-webkit-mask-image:linear-gradient(90deg,#000_92%,transparent)]">
             <div className="relative m-2 aspect-video min-w-[680px]">
               {showZones
                 ? V.zones.map((z) => (

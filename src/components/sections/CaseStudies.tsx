@@ -20,7 +20,7 @@ export function CaseStudies({ data }: { data: Portfolio['work'] }) {
               <div className="grid h-full grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-6 rounded-[27px] bg-ink-900 p-4">
                 <div className="relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[18px] border border-ink-700">
                   <Media src={p.cover} alt={p.title} label={`${data.labels.cover} · ${p.title}`} tint={c} />
-                  <div className="relative flex flex-wrap gap-2 p-[18px]">
+                  <div className="relative mt-auto flex flex-wrap gap-2 bg-gradient-to-t from-ink-950/80 to-transparent p-[18px] pt-10">
                     {p.tags.map((t) => (
                       <span key={t} className="rounded-full border border-ink-600 bg-ink-950/75 px-2.5 py-1 font-mono text-[11px] text-[#e4e1fa]">{t}</span>
                     ))}

@@ -86,7 +86,8 @@ export function Agents({ data }: { data: Portfolio['agents'] }) {
             <span className="inline-flex items-center gap-2"><span className="size-[7px] rounded-full bg-green shadow-[0_0_8px_var(--color-green)]" />{L.live}</span>
             <span>{L.hint}</span>
           </div>
-          <div className="no-scrollbar overflow-x-auto">
+          <div className="label px-[18px] pt-2 sm:hidden">Swipe to explore →</div>
+          <div className="no-scrollbar overflow-x-auto max-sm:[mask-image:linear-gradient(90deg,#000_92%,transparent)] max-sm:[-webkit-mask-image:linear-gradient(90deg,#000_92%,transparent)]">
             <div ref={graph} className="relative mx-3 my-2 aspect-[2.6/1] min-w-[1180px]">
               <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 size-full overflow-visible" aria-hidden="true">
                 {data.edges.map((e) => {
