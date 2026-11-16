@@ -108,14 +108,37 @@ export function Contact({ data, socials }: Props) {
           </div>
           <ul className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] border-t border-ink-700">
             {socials.map((s) => (
-              <li key={s.href} className="border-ink-700 not-last:border-r">
-                <a href={s.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3.5 px-6 py-[22px] text-fg transition-colors hover:bg-violet/10">
-                  <Icon name={s.icon} className="size-[22px] flex-none" />
-                  <span className="flex min-w-0 flex-col">
-                    <span className="font-semibold">{s.label}</span>
-                    <span className="truncate text-[13px] text-muted">{s.handle}</span>
-                  </span>
-                </a>
+              <li key={s.label} className="border-ink-700 not-last:border-r">
+                {s.links.length === 1 ? (
+                  <a href={s.links[0]!.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3.5 px-6 py-[22px] text-fg transition-colors hover:bg-violet/10">
+                    <Icon name={s.icon} className="size-[22px] flex-none" />
+                    <span className="flex min-w-0 flex-col">
+                      <span className="font-semibold">{s.label}</span>
+                      <span className="truncate text-[13px] text-muted">{s.links[0]!.handle}</span>
+                    </span>
+                  </a>
+                ) : (
+                  <div className="flex flex-col gap-2 px-6 py-[22px] text-fg">
+                    <span className="flex items-center gap-3.5">
+                      <Icon name={s.icon} className="size-[22px] flex-none" />
+                      <span className="font-semibold">{s.label}</span>
+                    </span>
+                    <ul className="flex flex-col gap-1 pl-[calc(22px+14px)]">
+                      {s.links.map((l) => (
+                        <li key={l.href}>
+                          <a
+                            href={l.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="truncate text-[13px] text-muted underline decoration-ink-500 underline-offset-4 transition-colors hover:text-fg hover:decoration-fg"
+                          >
+                            {l.handle}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

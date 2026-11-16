@@ -167,7 +167,12 @@ export const portfolioSchema = z.object({
     labels: z.object({ submit: text, sending: text, success: text, error: text }),
   }),
 
-  socials: z.array(z.object({ label: text, handle: z.string(), href: z.string().url(), icon: iconSchema })),
+  socials: z.array(z.object({
+    label: text,
+    icon: iconSchema,
+    /** One entry renders as a single link, like before. More than one renders as a list. */
+    links: z.array(z.object({ handle: z.string(), href: z.string().url() })).min(1),
+  })),
   footer: z.object({ copyright: text, note: z.string().optional() }),
 })
   .superRefine((p, ctx) => {

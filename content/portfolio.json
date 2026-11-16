@@ -2575,15 +2575,23 @@
   "socials": [
     {
       "label": "GitHub",
-      "handle": "your-handle",
-      "href": "https://github.com/your-handle",
-      "icon": "github"
+      "icon": "github",
+      "links": [
+        {
+          "handle": "your-handle",
+          "href": "https://github.com/your-handle"
+        }
+      ]
     },
     {
       "label": "LinkedIn",
-      "handle": "your-handle",
-      "href": "https://www.linkedin.com/in/your-handle",
-      "icon": "linkedin"
+      "icon": "linkedin",
+      "links": [
+        {
+          "handle": "your-handle",
+          "href": "https://www.linkedin.com/in/your-handle"
+        }
+      ]
     }
   ],
   "footer": {
